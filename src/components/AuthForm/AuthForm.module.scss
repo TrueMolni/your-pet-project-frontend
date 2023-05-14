@@ -14,7 +14,7 @@
   .container {
     padding-right: 20px;
     padding-left: 20px;
-    // background-image: url('../../images/mobile/loginBg.png');
+    background-image: url('../../images/mobile/loginbg.png');
   }
 }
 
@@ -25,7 +25,7 @@
 
 @media screen and (min-width: 768px) {
   .container {
-    // background-image: url('../../images/tablet/loginBg.png');
+    background-image: url('../../images/tablet/loginbg.png');
   }
   .form {
     padding: 60px 80px 40px;
@@ -38,7 +38,8 @@
 
 @media screen and (min-width: 1200px) {
   .container {
-    // background-image: url('../../images/desctop/loginPageBg.png');
+    // background-size: cover;
+    background-image: url('../../images/desktop/loginbg.png');
   }
   .form {
     width: 620px;
