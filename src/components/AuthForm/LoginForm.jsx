@@ -18,13 +18,14 @@ const LoginForm = (props) => {
 const [isError, setIsError] = useState(null);
 const [passwordShow, setPasswordShow] = useState(false);
 const handleSubmit = async (formData, { resetForm }) => {
+  console.log('REGISTER FORM', formData);
     // const { error } = await login(formData);
     // if (error) {
     //   setIsError({
     //     message: error.data.message,
     //     additionalInfo: error.data.additionalInfo
     //   });
-    //   resetForm();
+      resetForm();
     // } else {
     //   navigate('/user');
     // }
@@ -64,7 +65,7 @@ const handleSubmit = async (formData, { resetForm }) => {
                 className={scss.IconPassword}
                 onClick={togglePassword}
               >
-                {passwordShow ? <VisibilityIcon  /> : <VisibilityOffIcon />}
+                {passwordShow ? <VisibilityIcon /> : <VisibilityOffIcon />}
               </span>
               <ErrorMessage
                 name="password"
@@ -73,25 +74,26 @@ const handleSubmit = async (formData, { resetForm }) => {
               />
             </div>
 
+            <Button
+              type="submit"
+              className={scss.button__auth}
+              buttonName={'Login'}
+            ></Button>
+
             {isError && <p className={scss.error__login}>{isError.message}</p>}
             {isError && (
               <p className={scss.error__login}>{isError.additionalInfo}</p>
             )}
 
             <p className={scss.redirect__auth}>
-              {('Don`t have an account?')}
-              {/* <Link to="/register" className={scss.redirect_link__auth}>
-                {('Register')}
-              </Link> */}
+              {'Don`t have an account?'}
+              <Link to="/register" className={scss.redirect_link__auth}>
+                {'Register'}
+              </Link>
             </p>
-
           </Form>
         </Formik>
       </div>
     );
 }
 export default LoginForm;
-
-{/* <Input placeholder={'Email'} />
-        <Input placeholder={'Password'} />
-        <Button buttonName={'Login'} /> */}

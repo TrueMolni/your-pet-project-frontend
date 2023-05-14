@@ -4,7 +4,7 @@ const RegisterPage = () => {
     <div>
       <h1>This is Register page</h1>
       <p>Let`s create your accaunt</p>
-      <RegisterForm/>
+      <RegisterForm title={("Register")} />
     </div>
   );
 };
