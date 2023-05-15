@@ -9,12 +9,12 @@ const stepOneValidationSchema = Yup.object({
     )
     .test(
       'is-valid',
-      (message) => `${message.path} is invalid`,
+      message => `${message.path} is invalid`,
       (value, ctx) => {
         if (value) {
           if (value.substr(-2, 2) === 'ru') {
             return ctx.createError({
-              message: 'rUSSIA IS A TERRORIST STATE'
+              message: 'russia is a terorist state',
             });
           }
         }
@@ -24,7 +24,7 @@ const stepOneValidationSchema = Yup.object({
   password: Yup.string().required('Password is required').min(7),
   confirmPassword: Yup.string()
     .oneOf([Yup.ref('password'), null], 'Passwords must match')
-    .required('Confirm password is required')
+    .required('Confirm password is required'),
 });
 
 const stepTwoValidationSchema = Yup.object({
@@ -41,7 +41,7 @@ const stepTwoValidationSchema = Yup.object({
   phone: Yup.string()
     .required('Mobile phone is required')
     .label('Mobile phone')
-    .matches(/^\+380\d{9}$/, 'Correct format: +380981234567')
+    .matches(/^\+380\d{9}$/, 'Correct format: +380981234567'),
 });
 
 const loginValidationSchema = Yup.object({
@@ -53,19 +53,19 @@ const loginValidationSchema = Yup.object({
     )
     .test(
       'is-valid',
-      (message) => `${message.path} is invalid`,
+      message => `${message.path} is invalid`,
       (value, ctx) => {
         if (value) {
           if (value.substr(-2, 2) === 'ru') {
             return ctx.createError({
-              message: 'rUSSIA IS A TERRORIST STATE'
+              message: 'russia is a terorist state',
             });
           }
         }
         return true;
       }
     ),
-  password: Yup.string().required('Password is required')
+  password: Yup.string().required('Password is required'),
 });
 
 const emailValidationSchema = Yup.object({
@@ -77,25 +77,31 @@ const emailValidationSchema = Yup.object({
     )
     .test(
       'is-valid',
-      (message) => `${message.path} is invalid`,
+      message => `${message.path} is invalid`,
       (value, ctx) => {
         if (value) {
           if (value.substr(-2, 2) === 'ru') {
             return ctx.createError({
-              message: 'rUSSIA IS A TERRORIST STATE'
+              message: 'russia is a terorist state',
             });
           }
         }
         return true;
       }
-    )
+    ),
 });
 
 const passwordValidationSchema = Yup.object({
   password: Yup.string().required('Password is required').min(7),
   confirmPassword: Yup.string()
     .oneOf([Yup.ref('password'), null], 'Passwords must match')
-    .required('Confirm password is required')
+    .required('Confirm password is required'),
 });
 
-export { stepOneValidationSchema, stepTwoValidationSchema, loginValidationSchema, emailValidationSchema, passwordValidationSchema };
+export {
+  stepOneValidationSchema,
+  stepTwoValidationSchema,
+  loginValidationSchema,
+  emailValidationSchema,
+  passwordValidationSchema,
+};

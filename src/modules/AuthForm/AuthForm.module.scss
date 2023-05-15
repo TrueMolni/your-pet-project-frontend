@@ -14,7 +14,7 @@
   .container {
     padding-right: 20px;
     padding-left: 20px;
-    background-image: url('../../images/mobile/loginbg.png');
+    background-image: url('../../images/background/mobile/bg320@2x.jpg');
   }
 }
 
@@ -25,7 +25,7 @@
 
 @media screen and (min-width: 768px) {
   .container {
-    background-image: url('../../images/tablet/loginbg.png');
+    background-image: url('../../images/background/tablet/bg768@2x.jpg');
   }
   .form {
     padding: 60px 80px 40px;
@@ -38,8 +38,7 @@
 
 @media screen and (min-width: 1200px) {
   .container {
-    // background-size: cover;
-    background-image: url('../../images/desktop/loginbg.png');
+    background-image: url('../../images/background/desktop/bg@2x.jpg');
   }
   .form {
     width: 620px;
@@ -55,7 +54,7 @@
   text-align: center;
   letter-spacing: 0.04em;
 
-  color: var(--text__color);
+  // color: var(--text__color);
 }
 
 .button__container {
@@ -68,7 +67,7 @@
   line-height: 16px;
   text-align: center;
   letter-spacing: 0.04em;
-  color: var(--text__color);
+  // color: var(--text__color);
 }
 .redirect_link__auth {
   color: #3091eb;

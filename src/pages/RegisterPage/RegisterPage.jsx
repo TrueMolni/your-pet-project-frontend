@@ -1,9 +1,10 @@
-import { RegisterForm } from "components/AuthForm/RegisterForm";
+import { RegisterForm } from 'modules/AuthForm/RegisterForm';
+import Button from 'shared/components/Button/Button';
 const RegisterPage = () => {
   return (
     <div>
-      
-      <RegisterForm title={("Register")} />
+      <RegisterForm title={'Register'} />
+      <Button />
     </div>
   );
 };

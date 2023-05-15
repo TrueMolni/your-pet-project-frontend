@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { ErrorMessage, Form, Formik } from 'formik';
-import { InputForm } from 'components/Input';
+import { InputForm } from 'modules/Input';
 import scss from './AuthForm.module.scss';
-import Button from 'components/Button';
+import Button from 'shared/components/Button';
 import { user } from 'services';
 import shortid from 'shortid';
 export const RegisterForm = props => {
