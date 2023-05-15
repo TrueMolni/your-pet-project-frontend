@@ -1,7 +1,14 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
 /* overlay */
 
 .overlay {
   height: 100vh;
+  width: 100%;
 
   background-image: url('../../images/background/pawprint5.svg'),
     url('../../images/background/pawprint4.svg'),
@@ -47,31 +54,41 @@
   width: 100%;
   background-image: url('../../images/background/bg-image-mob.png');
   background-size: 100%;
-  background-position: top 216px left 0;
+  background-position: bottom 0 left 0;
   background-repeat: no-repeat;
 }
 
 @media screen and (min-width: 320px) and (min-device-pixel-ratio: 2),
-  (-webkit-min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
+  screen and (min-width: 320px) and (-webkit-min-device-pixel-ratio: 2),
+  screen and (min-width: 320px) and (min-resolution: 192dpi),
+  screen and (min-width: 320px) and (min-resolution: 2dppx) {
   .imgContainer {
     background-image: url('../../images/background/bg-image-mob@2x.png');
   }
 }
 
 @media screen and (min-width: 320px) and (min-device-pixel-ratio: 3),
-  (-webkit-min-device-pixel-ratio: 3),
-  (min-resolution: 288dpi),
-  (min-resolution: 3dppx) {
+  screen and (min-width: 320px) and (-webkit-min-device-pixel-ratio: 3),
+  screen and (min-width: 320px) and (min-resolution: 288dpi),
+  screen and (min-width: 320px) and (min-resolution: 3dppx) {
   .imgContainer {
     background-image: url('../../images/background/bg-image-mob@3x.png');
   }
 }
-
 @media screen and (min-width: 483px) {
   .imgContainer {
+    height: 100%;
     width: 483px;
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 540px) and (max-width: 550px) {
+  .imgContainer {
+    height: 100%;
+    width: 100%;
+    background-position: top 50% right 0;
+    background-size: contain;
     margin-left: auto;
     margin-right: auto;
   }
@@ -79,53 +96,67 @@
 
 @media screen and (min-width: 768px) {
   .imgContainer {
+    height: 100%;
     width: 100%;
-
     background-image: url('../../images/background/bg-image-tab.png');
-    background-position: top 260px left 0;
+    background-size: 100%;
+    background-position: bottom 0 left 0;
   }
 }
 
 @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
-  (-webkit-min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
+  screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2),
+  screen and (min-width: 768px) and (min-resolution: 192dpi),
+  screen and (min-width: 768px) and (min-resolution: 2dppx) {
   .imgContainer {
     background-image: url('../../images/background/bg-image-tab@2x.png');
   }
 }
 
 @media screen and (min-width: 768px) and (min-device-pixel-ratio: 3),
-  (-webkit-min-device-pixel-ratio: 3),
-  (min-resolution: 288dpi),
-  (min-resolution: 3dppx) {
+  screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 3),
+  screen and (min-width: 768px) and (min-resolution: 288dpi),
+  screen and (min-width: 768px) and (min-resolution: 3dppx) {
   .imgContainer {
     background-image: url('../../images/background/bg-image-tab@3x.png');
   }
 }
 
+@media screen and (min-width: 850px) {
+  .imgContainer {
+    background-position: top 50% right 0;
+    background-size: contain;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 @media screen and (min-width: 1280px) {
   .imgContainer {
+    height: 100%;
+    width: 100%;
     background-size: contain;
     background-position: bottom 0 right 0;
+    height: 100%;
+    width: 100%;
 
     background-image: url('../../images/background/bg-image-desktop.png');
   }
 }
 
 @media screen and (min-width: 1280px) and (min-device-pixel-ratio: 2),
-  (-webkit-min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
+  screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2),
+  screen and (min-width: 1280px) and (min-resolution: 192dpi),
+  screen and (min-width: 1280px) and (min-resolution: 2dppx) {
   .imgContainer {
     background-image: url('../../images/background/bg-image-desktop@2x.png');
   }
 }
 
 @media screen and (min-width: 1280px) and (min-device-pixel-ratio: 3),
-  (-webkit-min-device-pixel-ratio: 3),
-  (min-resolution: 288dpi),
-  (min-resolution: 3dppx) {
+  screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 3),
+  screen and (min-width: 1280px) and (min-resolution: 288dpi),
+  screen and (min-width: 1280px) and (min-resolution: 3dppx) {
   .imgContainer {
     background-image: url('../../images/background/bg-image-desktop@3x.png');
   }
@@ -134,6 +165,7 @@
 /* container */
 
 .container {
+  width: 100%;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 20px;
@@ -167,6 +199,7 @@
 
 .heroTitle {
   margin-top: 60px;
+  margin-right: 0;
 
   font-weight: 700;
   font-size: 32px;
@@ -193,3 +226,11 @@
     line-height: 1.3;
   }
 }
+
+/* @media screen and (min-width: 483px) {
+  .imgContainer {
+    width: 483px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+} */
