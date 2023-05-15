@@ -8,8 +8,9 @@ export const App = () => {
   return (
     // <Provider store={store}>
     <BrowserRouter basename="/your-pet-project-frontend">
+      <SharedLayout />
       <Routes>
-        <Route path="/" element={<SharedLayout />}></Route>
+        {/* <Route path="/" element={<SharedLayout />}></Route> */}
       </Routes>
     </BrowserRouter>
     // </Provider >
