@@ -1,13 +1,16 @@
 {
   "files": {
-    "main.css": "/your-pet-project-frontend/static/css/main.557418d6.css",
-    "main.js": "/your-pet-project-frontend/static/js/main.80193035.js",
+    "main.css": "/your-pet-project-frontend/static/css/main.24df7e97.css",
+    "main.js": "/your-pet-project-frontend/static/js/main.197fa8ee.js",
+    "static/media/bg@2x.jpg": "/your-pet-project-frontend/static/media/bg@2x.22be269ec4da0e2bb6e7.jpg",
+    "static/media/bg768@2x.jpg": "/your-pet-project-frontend/static/media/bg768@2x.e5d147352919bcc2525d.jpg",
+    "static/media/bg320@2x.jpg": "/your-pet-project-frontend/static/media/bg320@2x.5c736d3a21b2b58b7ec5.jpg",
     "index.html": "/your-pet-project-frontend/index.html",
-    "main.557418d6.css.map": "/your-pet-project-frontend/static/css/main.557418d6.css.map",
-    "main.80193035.js.map": "/your-pet-project-frontend/static/js/main.80193035.js.map"
+    "main.24df7e97.css.map": "/your-pet-project-frontend/static/css/main.24df7e97.css.map",
+    "main.197fa8ee.js.map": "/your-pet-project-frontend/static/js/main.197fa8ee.js.map"
   },
   "entrypoints": [
-    "static/css/main.557418d6.css",
-    "static/js/main.80193035.js"
+    "static/css/main.24df7e97.css",
+    "static/js/main.197fa8ee.js"
   ]
 }
