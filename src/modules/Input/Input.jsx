@@ -1,5 +1,5 @@
 import { Field } from 'formik';
-import scss from './Input.module.scss';
+import css from './Input.module.css';
 
 const InputForm = ({
 	type = 'text',
@@ -12,7 +12,7 @@ const InputForm = ({
 	}) => {
 	return (
 		<Field
-			className={`${scss.input} ${customStyle}`}
+			className={`${css.input} ${customStyle}`}
 			name={name}
 			type={type}
 			placeholder={placeholder}
@@ -38,7 +38,7 @@ const Input = ({
 		<label>
 			{label}
 			<input
-				className={`${scss.input} ${customStyle}`}
+				className={`${css.input} ${customStyle}`}
 				type={type}
 				id={id}
 				name={name}

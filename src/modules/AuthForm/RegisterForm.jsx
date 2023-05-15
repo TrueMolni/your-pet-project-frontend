@@ -4,7 +4,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { ErrorMessage, Form, Formik } from 'formik';
 import { InputForm } from 'modules/Input';
-import scss from './AuthForm.module.scss';
+import css from './AuthForm.module.css';
 import Button from 'shared/components/Button';
 import { user } from 'services';
 import shortid from 'shortid';
@@ -28,15 +28,15 @@ export const RegisterForm = props => {
   //   const { email, password, confirmPassword } = state;
 
   return (
-    <div className={scss.container}>
+    <div className={css.container}>
       <Formik
         onSubmit={handleSignUp}
         validationSchema={user.stepOneValidationSchema}
         initialValues={{ email: '', password: '', confirmPassword: '' }}
       >
-        <Form className={scss.form}>
-          <h2 className={scss.title}>{props.title}</h2>
-          <div className={scss.input__wrapper}>
+        <Form className={css.form}>
+          <h2 className={css.title}>{props.title}</h2>
+          <div className={css.input__wrapper}>
             <InputForm
               //   htmlFor={emailInputId}
 
@@ -46,9 +46,9 @@ export const RegisterForm = props => {
               id={emailInputId}
               placeholder="Email"
             />
-            <ErrorMessage name="email" component="p" className={scss.error} />
+            <ErrorMessage name="email" component="p" className={css.error} />
           </div>
-          <div className={scss.input__wrapper}>
+          <div className={css.input__wrapper}>
             <InputForm
               //   htmlFor={passwordInputId}
               name="password"
@@ -58,7 +58,7 @@ export const RegisterForm = props => {
             />
             <span
               id="visibilityBtn"
-              className={scss.IconPassword}
+              className={css.IconPassword}
               onClick={togglePassword}
             >
               {passwordShow ? <VisibilityIcon /> : <VisibilityOffIcon />}
@@ -66,10 +66,10 @@ export const RegisterForm = props => {
             <ErrorMessage
               name="password"
               component="p"
-              className={scss.error__password}
+              className={css.error__password}
             />
           </div>
-          <div className={scss.input__wrapper_last}>
+          <div className={css.input__wrapper_last}>
             <InputForm
               name="confirmPassword"
               type={passwordConfirm ? 'text' : 'password'}
@@ -78,7 +78,7 @@ export const RegisterForm = props => {
             />
             <span
               id="visibilityBtn"
-              className={scss.IconPassword}
+              className={css.IconPassword}
               onClick={togglePasswordConfirm}
             >
               {passwordConfirm ? <VisibilityIcon /> : <VisibilityOffIcon />}
@@ -86,19 +86,19 @@ export const RegisterForm = props => {
             <ErrorMessage
               name="confirmPassword"
               component="p"
-              className={scss.error__password}
+              className={css.error__password}
             />
           </div>
-          <div className={scss.button__container}>
+          <div className={css.button__container}>
             <Button
               type="submit"
-              className={scss.button__auth}
+              className={css.button__auth}
               buttonName={'Register'}
             ></Button>
           </div>
-          <p className={scss.redirect__auth}>
+          <p className={css.redirect__auth}>
             {'Already have an account?'}
-            <Link to="/login" className={scss.redirect_link__auth}>
+            <Link to="/login" className={css.redirect_link__auth}>
               {'Login'}
             </Link>
           </p>
