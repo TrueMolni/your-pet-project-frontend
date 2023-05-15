@@ -1,0 +1,24 @@
+.petsListWrapper{
+  display: grid;
+  grid-gap: 32px;
+  margin-top: 30px;
+
+}
+
+
+@media screen and (min-width: 768px) {
+  .petsListWrapper {
+    grid-template-columns: repeat(auto-fill, minmax(336px, 1fr));
+      margin-top: 60px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .petsListWrapper {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+.petsItemWrapper {
+  height: 100%;
+}
