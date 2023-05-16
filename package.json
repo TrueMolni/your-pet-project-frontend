@@ -5,6 +5,7 @@
   "homepage": "https://TrueMolni.github.io/your-pet-project-frontend/",
   "dependencies": {
     "@mui/icons-material": "^5.11.16",
+    "@redux-devtools/extension": "^3.2.5",
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
@@ -17,6 +18,7 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.11.1",
     "react-scripts": "5.0.1",
+    "redux-persist": "^6.0.0",
     "sass": "^1.62.1",
     "shortid": "^2.2.16",
     "web-vitals": "^2.1.3",
