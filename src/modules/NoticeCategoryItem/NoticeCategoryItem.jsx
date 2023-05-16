@@ -6,7 +6,7 @@ const NoticeCategoryItem = ({ petInformation }) => {
   const { _id, date, comments, avatarURL, category, location, sex, title } =
     petInformation;
 
-  const countFullYears = date => {
+  const countFullYears = () => {
     const recordСreationDate = moment(date);
     const currentDate = moment();
     const fullYears = currentDate.diff(recordСreationDate, 'years');
@@ -21,7 +21,7 @@ const NoticeCategoryItem = ({ petInformation }) => {
     }`;
   };
 
-  const selectIconGender = sex => {
+  const selectIconGender = () => {
     if (sex === 'male') {
       return `${sprite}#male`;
     }
