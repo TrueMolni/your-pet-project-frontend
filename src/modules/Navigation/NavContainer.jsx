@@ -8,8 +8,7 @@ const NavContainer = () => {
   return (
     <div className={css.navContainer}>
       <Navigation />
-      <UserNavigation />
-      {/* <AuthNavigation /> */}
+      {<AuthNavigation /> || <UserNavigation />}
       <BurgerMenu />
     </div>
   );
