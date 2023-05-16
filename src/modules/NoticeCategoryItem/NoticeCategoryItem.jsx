@@ -20,6 +20,13 @@ const NoticeCategoryItem = ({ petInformation }) => {
       fullYears === 1 || fullYears === 1 ? 'year' : 'years'
     }`;
   };
+
+  const selectIconGender = sex => {
+    if (sex === 'male') {
+      return `${sprite}#male`;
+    }
+    return `${sprite}#female`;
+  };
   return (
     <li key={_id}>
       <div className={styles.mainWrapper}>
@@ -51,7 +58,7 @@ const NoticeCategoryItem = ({ petInformation }) => {
             </p>
             <p className={styles.itemDescription}>
               <svg width="24" height="24">
-                <use xlinkHref={`${sprite}#male`}></use>
+                <use xlinkHref={selectIconGender()}></use>
               </svg>
               <span>{sex}</span>
             </p>
