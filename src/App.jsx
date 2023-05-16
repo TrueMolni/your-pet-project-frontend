@@ -11,9 +11,10 @@ export const App = () => {
     // <Provider store={store}>
     <BrowserRouter basename="/your-pet-project-frontend">
       <Routes>
-        <Route path="/" element={<SharedLayout />}></Route>
-        <Route path="/login" element={<LoginPage />}></Route>
-        <Route path="/register" element={<RegisterPage />}></Route>
+        <Route path="/" element={<SharedLayout />}>
+          <Route path="/login" element={<LoginPage />}></Route>
+          <Route path="/register" element={<RegisterPage />}></Route>
+        </Route>
       </Routes>
     </BrowserRouter>
     // </Provider >
