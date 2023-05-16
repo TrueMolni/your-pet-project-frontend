@@ -1,7 +1,7 @@
 import sprite from '../../images/icons/sprite.svg';
 import styles from './pet-item.module.css';
 
-const PetItem = () => {
+const NoticeCategoryItem = () => {
   return (
     <li>
       <div className={styles.mainWrapper}>
@@ -46,4 +46,4 @@ const PetItem = () => {
   );
 };
 
-export default PetItem;
+export default NoticeCategoryItem;
