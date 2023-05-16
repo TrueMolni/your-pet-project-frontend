@@ -42,7 +42,10 @@ const ModalWindow = () => {
             <span className="close" onClick={closeModal}>
               &times;
             </span>
-            <h2 className='modal-title'> cute dog looking for a home</h2>
+            
+             <img src="path_to_your_image.jpg" alt="Image" className="modal-image" />
+            <div className='modal-content'>
+              <h2 className='modal-title'> cute dog looking for a home</h2>
                       <ul className='modal-pet-info'>
                           <li>Name:</li>
                           <li>Birthday:</li>
@@ -52,7 +55,8 @@ const ModalWindow = () => {
                           <li>Email:</li>
                           <li>Phone:</li>
                       </ul>
-                      <p className='modal-pet-comments'>Comments: </p>
+              <p className='modal-pet-comments'>Comments: </p>
+              </div>
           </div>
         </div>
       )}
