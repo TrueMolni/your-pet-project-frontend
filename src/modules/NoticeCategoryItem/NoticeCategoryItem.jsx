@@ -26,7 +26,9 @@ const NoticeCategoryItem = ({ petInformation }) => {
         <div className={styles.positionWrapper}>
           <img src={avatarURL} alt={comments} width="" height="" />
           <div className={styles.wrapperGategoryInform}>
-            <p className={styles.category}>{category}</p>
+            <p className={styles.category}>
+              {category.replace(/(\.|-|\/|\\| )/g, ' ')}{' '}
+            </p>
             <button className={styles.btnAddFavorite}>
               <svg width="24" height="24">
                 <use xlinkHref={`${sprite}#heart`}></use>
