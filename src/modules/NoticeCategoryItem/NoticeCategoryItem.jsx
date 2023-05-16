@@ -1,3 +1,4 @@
+import moment from 'moment/moment';
 import sprite from '../../images/icons/sprite.svg';
 import styles from './notice-category-item.module.css';
 
