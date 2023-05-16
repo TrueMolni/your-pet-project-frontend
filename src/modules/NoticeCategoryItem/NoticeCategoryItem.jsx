@@ -41,6 +41,13 @@ const NoticeCategoryItem = ({ petInformation }) => {
                 <use xlinkHref={`${sprite}#heart`}></use>
               </svg>
             </button>
+            {/* { && (
+              <button className={styles.btnDelete}>
+                <svg width="24" height="24">
+                  <use xlinkHref={`${sprite}#trash`}></use>
+                </svg>
+              </button>
+            )} */}
           </div>
 
           <div className={styles.description}>

@@ -64,6 +64,25 @@
   fill: var(--btn-default-color);
 }
 
+.btnDelete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: var(--btn-disabled-color);
+  fill: transparent;
+  position: absolute;
+  top: 52px;
+  right: 0;
+}
+.btnDelete:hover,
+.btnDelete:focus {
+  fill: var(--btn-default-color);
+}
+
 .description {
   position: absolute;
   width: 100%;
