@@ -1,14 +1,16 @@
 import sprite from '../../images/icons/sprite.svg';
 import styles from './notice-category-item.module.css';
 
-const NoticeCategoryItem = () => {
+const NoticeCategoryItem = ({ petInformation }) => {
+  const { _id, date, comments, avatarURL, category, location, sex, title } =
+    petInformation;
   return (
-    <li>
+    <li key={_id}>
       <div className={styles.mainWrapper}>
         <div className={styles.positionWrapper}>
-          <img src="" alt="" width="" height="" />
+          <img src={avatarURL} alt={comments} width="" height="" />
           <div className={styles.wrapperGategoryInform}>
-            <p className={styles.category}>In good hands</p>
+            <p className={styles.category}>{category}</p>
             <button className={styles.btnAddFavorite}>
               <svg width="24" height="24">
                 <use xlinkHref={`${sprite}#heart`}></use>
@@ -21,24 +23,24 @@ const NoticeCategoryItem = () => {
               <svg width="24" height="24">
                 <use xlinkHref={`${sprite}#location`}></use>
               </svg>
-              <span>Lviv</span>
+              <span>{location}</span>
             </p>
             <p className={styles.itemDescription}>
               <svg width="24" height="24">
                 <use xlinkHref={`${sprite}#clock`}></use>
               </svg>
-              <span>1 year</span>
+              <span>{date}</span>
             </p>
             <p className={styles.itemDescription}>
               <svg width="24" height="24">
                 <use xlinkHref={`${sprite}#male`}></use>
               </svg>
-              <span>male</span>
+              <span>{sex}</span>
             </p>
           </div>
         </div>
         <div className={styles.wrapperLearnMore}>
-          <p className={styles.text}>Сute dog looking for a home</p>
+          <p className={styles.text}>{title}</p>
           <button className={styles.btnLearnMore}>Learn more</button>
         </div>
       </div>
