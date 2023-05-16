@@ -1,5 +1,5 @@
 import sprite from '../../images/icons/sprite.svg';
-import styles from './pet-item.module.css';
+import styles from './notice-category-item.module.css';
 
 const NoticeCategoryItem = () => {
   return (
