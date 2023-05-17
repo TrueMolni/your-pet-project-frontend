@@ -2,7 +2,7 @@ import * as api from '../../services/auth-api';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const signup = createAsyncThunk(
-  'auth/signup',
+  'auth/register',
   async (data, thunkAPI) => {
     try {
       const result = await api.signUp(data);
