@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useNavigate, Link, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import NoticesSearch from '../../shared/components/NoticesSearch/NoticesSearch';
 import NoticesCategoriesNav from '../../shared/components/NoticesSearch/NoticesSearch';
