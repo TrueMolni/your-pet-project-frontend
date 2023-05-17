@@ -1,17 +1,52 @@
 .Btn {
-  display: block;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   width: 80px;
   height: 80px;
+  gap: 4px;
 
   font-family: var(--font-family);
   font-size: 12px;
   font-weight: 600;
   line-height: 1.33;
   letter-spacing: 0em;
+  text-align: center;
+
+  border-radius: 50%;
+  box-shadow: 3px 8px 14px rgba(136, 198, 253, 0.19);
+  transition: all 250ms ease-out;
 
   text-decoration: none;
-  background-color: var(--btn-default-color);
+  background: var(--btn-default-color);
   color: var(--secondary-text-color);
+
+  @media screen and (min-width: 768px) {
+    min-width: 120px;
+    height: auto;
+
+    border-radius: 40px;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 28px;
+    gap: 12px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.375;
+  }
+  @media screen and (min-width: 1200px) {
+    padding: 8px 20px;
+    gap: 8px;
+  }
+
+  &:hover,
+  &:focus {
+    scale: 1.1;
+    background: linear-gradient(290.46deg, #419ef1 0%, #9bd0ff 107.89%);
+  }
+}
+.icon {
+  stroke: var(--secondary-text-color);
+  align-self: center;
 }
