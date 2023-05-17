@@ -1,4 +1,4 @@
-import { InputForm } from 'modules/Input';
+import { InputForm } from 'shared/components/Input';
 import Button from 'shared/components/Button/Button';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
@@ -13,7 +13,7 @@ const initialValues = {
 };
 
 const LoginForm = props => {
-  const [isError, ] = useState(null); //! setIsError
+  const [isError] = useState(null); //! setIsError
   const [passwordShow, setPasswordShow] = useState(false);
   const handleSubmit = async (formData, { resetForm }) => {
     console.log('REGISTER FORM', formData);

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { ErrorMessage, Form, Formik } from 'formik';
-import { InputForm } from 'modules/Input';
+import { InputForm } from 'shared/components/Input';
 import css from './AuthForm.module.css';
 import Button from 'shared/components/Button';
 import { user } from 'services';
