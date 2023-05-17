@@ -7,7 +7,7 @@ export const signup = createAsyncThunk(
   async (data, thunkAPI) => {
     try {
       const result = await api.signUp(data);
-      console.log('ошибка в auth-opretions');
+      // console.log('ошибка в auth-opretions');
       return result;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

@@ -15,7 +15,7 @@ const setToken = token => {
 export const signUp = async data => {
   const { data: result } = await instance.post('api/users/register', data);
   setToken(result.token);
-  console.log('ошибка в файле auth-api')
+  
   return result;
 };
 
