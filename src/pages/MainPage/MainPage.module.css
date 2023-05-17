@@ -1,0 +1,236 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/* overlay */
+
+.overlay {
+  height: 100vh;
+  width: 100%;
+
+  background-image: url('../../images/background/pawprint5.svg'),
+    url('../../images/background/pawprint4.svg'),
+    url('../../images/background/pawprint7.svg'),
+    url('../../images/background/pawprint6.svg'),
+    url('../../images/background/pawprint1.svg'),
+    url('../../images/background/pawprint3.svg'),
+    url('../../images/background/pawprint8.svg'),
+    url('../../images/background/pawprint2.svg');
+  background-size: 40px 40px, 29.64px 29.64px, 38px 38px, 38px 38px, 105px 105px,
+    105px 105px, 38px 38px, 105px 105px;
+  background-position: top 17.5% left -1%, top 15% left 130%,
+    top 31.5% left 75.5%, top 60% left -1%, top 58% left 48%, top 64% left 123%,
+    top 85.5% left 22%, top 95% left 83%;
+  background-repeat: no-repeat;
+  background-color: var(--main-background-color);
+}
+
+@media screen and (min-width: 768px) {
+  .overlay {
+    background-size: 77px 77px, 71px 71px, 76px 76px, 77px 77px, 215px 215px,
+      215px 215px, 77px 77px, 215px 215px;
+    background-position: top 19% left 4.7%, top 16% left 101%, top 33% left 67%,
+      top 61% left 4.7%, top 59.6% left 43%, top 65.1% left 103%,
+      top 87% left 24%, top 98% left 74%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .overlay {
+    background-size: 77px 77px, 71px 71px, 2px 2px, 77px 77px, 215px 215px,
+      215px 215px, 77px 77px, 215px 215px;
+    background-position: top 30.5% left 2.7%, top 25% left 50.5%,
+      top 40% left 67%, top 99.5% left 2.68%, top 106% left 19.5%,
+      top 23% left 102%, top 54% left 34%, top 78% left 100%;
+  }
+}
+
+/* imgContainer */
+
+.imgContainer {
+  height: 100%;
+  width: 100%;
+  background-image: url('../../images/background/bg-image-mob.png');
+  background-size: 100%;
+  background-position: bottom 0 left 0;
+  background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 320px) and (min-device-pixel-ratio: 2),
+  screen and (min-width: 320px) and (-webkit-min-device-pixel-ratio: 2),
+  screen and (min-width: 320px) and (min-resolution: 192dpi),
+  screen and (min-width: 320px) and (min-resolution: 2dppx) {
+  .imgContainer {
+    background-image: url('../../images/background/bg-image-mob@2x.png');
+  }
+}
+
+@media screen and (min-width: 320px) and (min-device-pixel-ratio: 3),
+  screen and (min-width: 320px) and (-webkit-min-device-pixel-ratio: 3),
+  screen and (min-width: 320px) and (min-resolution: 288dpi),
+  screen and (min-width: 320px) and (min-resolution: 3dppx) {
+  .imgContainer {
+    background-image: url('../../images/background/bg-image-mob@3x.png');
+  }
+}
+@media screen and (min-width: 483px) {
+  .imgContainer {
+    height: 100%;
+    width: 483px;
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 540px) and (max-width: 550px) {
+  .imgContainer {
+    height: 100%;
+    width: 100%;
+    background-position: top 50% right 0;
+    background-size: contain;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .imgContainer {
+    height: 100%;
+    width: 100%;
+    background-image: url('../../images/background/bg-image-tab.png');
+    background-size: 100%;
+    background-position: bottom 0 left 0;
+  }
+}
+
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
+  screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2),
+  screen and (min-width: 768px) and (min-resolution: 192dpi),
+  screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .imgContainer {
+    background-image: url('../../images/background/bg-image-tab@2x.png');
+  }
+}
+
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 3),
+  screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 3),
+  screen and (min-width: 768px) and (min-resolution: 288dpi),
+  screen and (min-width: 768px) and (min-resolution: 3dppx) {
+  .imgContainer {
+    background-image: url('../../images/background/bg-image-tab@3x.png');
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .imgContainer {
+    background-position: top 50% right 0;
+    background-size: contain;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .imgContainer {
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    background-position: bottom 0 right 0;
+    height: 100%;
+    width: 100%;
+
+    background-image: url('../../images/background/bg-image-desktop.png');
+  }
+}
+
+@media screen and (min-width: 1280px) and (min-device-pixel-ratio: 2),
+  screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2),
+  screen and (min-width: 1280px) and (min-resolution: 192dpi),
+  screen and (min-width: 1280px) and (min-resolution: 2dppx) {
+  .imgContainer {
+    background-image: url('../../images/background/bg-image-desktop@2x.png');
+  }
+}
+
+@media screen and (min-width: 1280px) and (min-device-pixel-ratio: 3),
+  screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 3),
+  screen and (min-width: 1280px) and (min-resolution: 288dpi),
+  screen and (min-width: 1280px) and (min-resolution: 3dppx) {
+  .imgContainer {
+    background-image: url('../../images/background/bg-image-desktop@3x.png');
+  }
+}
+
+/* container */
+
+.container {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 320px) {
+  .container {
+    width: var(--mobile-breakpoint);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: var(--tablet-breakpoint);
+    padding-right: 32px;
+    padding-left: 32px;
+    padding-top: 24px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    width: var(--desktop-breakpoint);
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-top: 20px;
+  }
+}
+
+.heroTitle {
+  margin-top: 60px;
+  margin-right: 0;
+
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.38;
+}
+
+@media screen and (min-width: 768px) {
+  .heroTitle {
+    margin-top: 80px;
+
+    font-weight: 700;
+    font-size: 68px;
+    line-height: 1.47;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .heroTitle {
+    margin-top: 188px;
+    max-width: 550px;
+
+    font-weight: 800;
+    font-size: 68px;
+    line-height: 1.3;
+  }
+}
+
+/* @media screen and (min-width: 483px) {
+  .imgContainer {
+    width: 483px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+} */

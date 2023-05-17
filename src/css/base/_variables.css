@@ -1,4 +1,8 @@
 :root {
+  /* ====================breakpoints==================== */
+  --mobile-breakpoint: 320px;
+  --tablet-breakpoint: 768px;
+  --desktop-breakpoint: 1280px;
   /* ====================colors==================== */
   --accent-color: #ff8356;
   --auth-nav-color: #ffc107;
