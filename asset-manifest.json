@@ -1,17 +1,35 @@
 {
   "files": {
-    "main.css": "/your-pet-project-frontend/static/css/main.c4b5fb17.css",
-    "main.js": "/your-pet-project-frontend/static/js/main.55d0d0ee.js",
+    "main.css": "/your-pet-project-frontend/static/css/main.407af8eb.css",
+    "main.js": "/your-pet-project-frontend/static/js/main.42df5baf.js",
+    "static/media/bg-image-tab@3x.png": "/your-pet-project-frontend/static/media/bg-image-tab@3x.9d059a115cc4c0f4c317.png",
+    "static/media/bg-image-desktop@3x.png": "/your-pet-project-frontend/static/media/bg-image-desktop@3x.49db6e3206b54f5b29b9.png",
+    "static/media/bg-image-tab@2x.png": "/your-pet-project-frontend/static/media/bg-image-tab@2x.04107cf51fccae6353c5.png",
+    "static/media/bg-image-desktop@2x.png": "/your-pet-project-frontend/static/media/bg-image-desktop@2x.4a06aca921f18305da2f.png",
+    "static/media/bg-image-mob@3x.png": "/your-pet-project-frontend/static/media/bg-image-mob@3x.f53c8e4d3abe05aaf0d5.png",
+    "static/media/bg-image-tab.png": "/your-pet-project-frontend/static/media/bg-image-tab.afe78e1920bdc97e6f76.png",
+    "static/media/bg-image-desktop.png": "/your-pet-project-frontend/static/media/bg-image-desktop.03a60fb299466b8dd41c.png",
+    "static/media/bg-image-mob@2x.png": "/your-pet-project-frontend/static/media/bg-image-mob@2x.44e55f735ff4ad4708d1.png",
     "static/media/bg@2x.jpg": "/your-pet-project-frontend/static/media/bg@2x.22be269ec4da0e2bb6e7.jpg",
     "static/media/bg768@2x.jpg": "/your-pet-project-frontend/static/media/bg768@2x.e5d147352919bcc2525d.jpg",
+    "static/media/bg-image-mob.png": "/your-pet-project-frontend/static/media/bg-image-mob.1544d60328add2bdfc18.png",
     "static/media/bg320@2x.jpg": "/your-pet-project-frontend/static/media/bg320@2x.5c736d3a21b2b58b7ec5.jpg",
+    "static/media/logo.svg": "/your-pet-project-frontend/static/media/logo.6e2f51eeb062dc6472f5e4aa1de019f4.svg",
     "static/media/sprite.svg": "/your-pet-project-frontend/static/media/sprite.1a3310d97d517c13677ad9bc1a09218d.svg",
+    "static/media/pawprint8.svg": "/your-pet-project-frontend/static/media/pawprint8.f14c1e05a5beb61bc89f.svg",
+    "static/media/pawprint3.svg": "/your-pet-project-frontend/static/media/pawprint3.dae3c86bd01d98030ce7.svg",
+    "static/media/pawprint5.svg": "/your-pet-project-frontend/static/media/pawprint5.637277c2d852b49f11a0.svg",
+    "static/media/pawprint7.svg": "/your-pet-project-frontend/static/media/pawprint7.b684bd719df447aa069b.svg",
+    "static/media/pawprint2.svg": "/your-pet-project-frontend/static/media/pawprint2.7f8697d6767f4ea8232a.svg",
+    "static/media/pawprint4.svg": "/your-pet-project-frontend/static/media/pawprint4.e5597ebde20ca7431f3d.svg",
+    "static/media/pawprint6.svg": "/your-pet-project-frontend/static/media/pawprint6.be12ff7cc4dbb881deff.svg",
+    "static/media/pawprint1.svg": "/your-pet-project-frontend/static/media/pawprint1.ffbb36242ed74ee8096c.svg",
     "index.html": "/your-pet-project-frontend/index.html",
-    "main.c4b5fb17.css.map": "/your-pet-project-frontend/static/css/main.c4b5fb17.css.map",
-    "main.55d0d0ee.js.map": "/your-pet-project-frontend/static/js/main.55d0d0ee.js.map"
+    "main.407af8eb.css.map": "/your-pet-project-frontend/static/css/main.407af8eb.css.map",
+    "main.42df5baf.js.map": "/your-pet-project-frontend/static/js/main.42df5baf.js.map"
   },
   "entrypoints": [
-    "static/css/main.c4b5fb17.css",
-    "static/js/main.55d0d0ee.js"
+    "static/css/main.407af8eb.css",
+    "static/js/main.42df5baf.js"
   ]
 }
