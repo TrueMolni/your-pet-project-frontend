@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import SharedLayout from 'modules/SharedLayout';
 import RegisterPage from 'pages/RegisterPage/RegisterPage';
 import LoginPage from 'pages/LoginPage/LoginPage';
+import FindPetPage from 'pages/FindPetPage/FindPetPage';
 
 export const App = () => {
   return (
@@ -14,6 +15,7 @@ export const App = () => {
         <Route path="/" element={<SharedLayout />}>
           <Route path="/login" element={<LoginPage />}></Route>
           <Route path="/register" element={<RegisterPage />}></Route>
+          <Route path="/notices" element={<FindPetPage/>}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

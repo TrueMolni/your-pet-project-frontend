@@ -1,7 +1,7 @@
 .petsListWrapper{
   display: grid;
   grid-gap: 32px;
-  margin-top: 30px;
+  margin-top: 24px;
 
 }
 
@@ -9,13 +9,14 @@
 @media screen and (min-width: 768px) {
   .petsListWrapper {
     grid-template-columns: repeat(auto-fill, minmax(336px, 1fr));
-      margin-top: 60px;
+      margin-top: 40px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .petsListWrapper {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    margin-top: 42px;
   }
 }
 
