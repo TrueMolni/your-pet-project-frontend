@@ -11,7 +11,9 @@ import shortid from 'shortid';
 import { useDispatch, useSelector } from 'react-redux'
 import { signup } from 'redux/auth/auth-operations';
 import { isUserLogin } from 'redux/auth/auth-selectors';
-import {Navigate} from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
+
+
 export const RegisterForm = props => {
   const isLogin = useSelector(isUserLogin)
   const [passwordShow, setPasswordShow] = useState(false);
