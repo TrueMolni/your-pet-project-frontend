@@ -13,13 +13,14 @@ const setToken = token => {
   instance.defaults.headers.authorization = '';
 };
 export const signUp = async data => {
-  const { data: result } = await instance.post('/users/register', data);
+  const { data: result } = await instance.post('api/users/register', data);
   setToken(result.token);
+  console.log('ошибка в файле auth-api')
   return result;
 };
 
 export const login = async data => {
-  const { data: result } = await instance.post('/users/login', data);
+  const { data: result } = await instance.post('api/users/login', data);
   // console.log(result.token)
   setToken(result.token);
   return result;
@@ -28,7 +29,7 @@ export const login = async data => {
 export const getCurrent = async token => {
   try {
     setToken(token);
-    const { data } = await instance.get('/users/current');
+    const { data } = await instance.get('api/users/current');
     return data;
   } catch (error) {
     setToken();
@@ -37,7 +38,7 @@ export const getCurrent = async token => {
 };
 
 export const logout = async () => {
-  const { data } = await instance.post('/users/logout');
+  const { data } = await instance.post('api/users/logout');
   setToken();
   return data;
 };

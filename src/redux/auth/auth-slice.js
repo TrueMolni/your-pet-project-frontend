@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-// import { fetchAllContacts , fetchAddContact , fetchDeleteContact} from './auth-operations';
+
 import { login, signup, current, logout } from './auth-operations';
 const initialState = {
   user: {},
@@ -28,6 +28,7 @@ const authSlice = createSlice({
       .addCase(signup.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
+        // console.log('payload', action.payload);
       })
       .addCase(login.pending, state => {
         state.isLoading = true;

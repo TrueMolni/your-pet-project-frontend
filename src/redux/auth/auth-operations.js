@@ -1,12 +1,13 @@
-import * as api from '../../services/auth-api';
+// import * as api from '../../services/auth-api';
+import * as api from '../../services/auth-api'
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const signup = createAsyncThunk(
-  'auth/register',
+  'auth/signup',
   async (data, thunkAPI) => {
     try {
       const result = await api.signUp(data);
-      // console.log(data);
+      console.log('ошибка в auth-opretions');
       return result;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
