@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import Modal from '../../shared/components/Modal/Modal';
 import Button from '../../shared/components/Button/Button';
+
 import PawIcon from '../../modules/Navigation/AuthNavigation/PawIcon';
+
 import css from './modalCongrats.module.css';
 
 // const handlePositiveRegistration = () => {
