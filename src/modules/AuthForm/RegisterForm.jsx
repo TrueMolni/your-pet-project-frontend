@@ -8,13 +8,21 @@ import css from './AuthForm.module.css';
 import Button from 'shared/components/Button';
 import { user } from 'services';
 import shortid from 'shortid';
+import { useDispatch, useSelector } from 'react-redux'
+import { signup } from 'redux/auth/auth-operations';
+import { isUserLogin } from 'redux/auth/auth-selectors';
+import { Navigate } from 'react-router-dom'
+
+
 export const RegisterForm = props => {
+  const isLogin = useSelector(isUserLogin)
   const [passwordShow, setPasswordShow] = useState(false);
   const [passwordConfirm, setPasswordConfirm] = useState(false);
-
+  const dispatch = useDispatch()
   const handleSignUp = (values, { resetForm }) => {
     console.log('REGISTER FORM', values);
-    // dispatch(signup(values));
+    dispatch(signup(values));
+    console.log('REGISTER FORM', values);
     resetForm();
   };
 
@@ -26,7 +34,9 @@ export const RegisterForm = props => {
   const passwordInputId = shortid.generate();
   const confirmPasswordInputId = shortid.generate();
   //   const { email, password, confirmPassword } = state;
-
+  if (isLogin) {
+    return <Navigate to="/main" />;
+  }
   return (
     <div className={css.container}>
       <Formik
