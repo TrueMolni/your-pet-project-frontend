@@ -1,0 +1,86 @@
+.backdrop {
+  position: fixed;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  padding: 16px 0;
+  background-color: var(--main-background-color);
+}
+.menuWrapper {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .menuWrapper {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+.menuHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navContainer {
+  margin-bottom: 40px;
+}
+.btnListStyle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  margin: 52px auto 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .btnListStyle {
+    display: none;
+  }
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+@media screen and (min-width: 768px) {
+  .navList {
+    gap: 60px;
+    margin-top: 92px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .navList {
+    display: none;
+  }
+}
+
+.navLink {
+  text-decoration: none;
+  font-family: var(--Manrope);
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1.38;
+  letter-spacing: 0.04;
+  color: var(--primary-text-color);
+}
+.navLink:hover,
+.navLink:focus {
+  font-weight: 700;
+  color: var(--auth-nav-color);
+}
+
+@media screen and (min-width: 768px) {
+  .navLink {
+    font-size: 48px;
+  }
+}
