@@ -1,8 +1,10 @@
 import moment from 'moment/moment';
 import sprite from '../../images/icons/sprite.svg';
 import styles from './notice-category-item.module.css';
+import { noticies } from "../NoticesCategoryList/notices";
 
-const NoticeCategoryItem = ({ petInformation }) => {
+noticies.map((petInformation) => petInformation)
+const NoticeCategoryItem = ( petInformation ) => {
   const { _id, date, comments, avatarURL, category, location, sex, title } =
     petInformation;
 

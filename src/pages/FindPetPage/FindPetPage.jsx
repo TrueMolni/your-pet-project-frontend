@@ -1,4 +1,4 @@
-import NoticesCategoryList from '../../modules/NoticesCategoryList'
+import NoticesCategoryList from '../../modules/NoticesCategoryList/NoticesCategoryList'
 
 const FindPetPage = () => {
   return (
