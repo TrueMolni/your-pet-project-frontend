@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import {store, persistor} from './redux/store.js'
+import { store, persistor } from './redux/store.js';
 import { PersistGate } from 'redux-persist/integration/react';
 
 import SharedLayout from 'modules/SharedLayout';
@@ -19,12 +19,14 @@ export const App = () => {
               <Route path="/main" element={<MainPage />}></Route>
               <Route path="/login" element={<LoginPage />}></Route>
               <Route path="/register" element={<RegisterPage />}></Route>
-              <Route path="/notices/:categoryName" element={<NoticesPage />}
+              <Route
+                path="/notices/:categoryName"
+                element={<NoticesPage />}
+              ></Route>
             </Route>
           </Routes>
         </BrowserRouter>
       </PersistGate>
     </Provider>
-
   );
 };
