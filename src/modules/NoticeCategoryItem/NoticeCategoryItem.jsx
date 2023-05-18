@@ -10,7 +10,7 @@ const NoticeCategoryItem = ({ petInformation }) => {
     <li key={_id}>
       <div className={styles.mainWrapper}>
         <div className={styles.positionWrapper}>
-          <img src={avatarURL} alt={comments} width="" height="" />
+          <img src={avatarURL} alt={comments} className={styles.petImage} />
           <div className={styles.wrapperGategoryInform}>
             <p className={styles.category}>
               {category.replace(/(\.|-|\/|\\| )/g, ' ')}{' '}
