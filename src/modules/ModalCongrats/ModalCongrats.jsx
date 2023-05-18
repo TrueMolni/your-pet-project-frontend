@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from '../../shared/components/Modal/Modal';
 import Button from '../../shared/components/Button/Button';
-import sprite from '../../images/icons/sprite.svg';
+import PawIcon from '../../modules/Navigation/AuthNavigation/PawIcon';
 import css from './modalCongrats.module.css';
 
 // const handlePositiveRegistration = () => {
@@ -17,13 +17,13 @@ const ModalCongrats = ({ handlePositiveRegistration }) => {
 
   return (
     <div className={css.backdrop}>
-      {/* <button onClick={handleOpenModal}>Відкрити модальне вікно</button> */}
       <Modal isOpen={isOpen} onClose={handleCloseModal}>
-        <h1 className={css.backdrop}>Congrats!</h1>
-        <h2 className={css.backdrop}>Youre registration is success</h2>
+        <h1 className={css.title}>Congrats!</h1>
+        <h2 className={css.text}>Youre registration is success</h2>
         <Button
           customStyle={css.succesBtn}
           buttonName={'go to profile'}
+          buttonIcon={<PawIcon />}
           type="button"
           onClick={handleCloseModal}
         />
