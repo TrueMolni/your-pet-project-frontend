@@ -65,8 +65,12 @@
   background: var(--btn-disabled-color);
   fill: transparent;
 }
-.btnAddFavorite:hover,
-.btnAddFavorite:focus {
+
+.btnAddFavorite:hover {
+  scale: 1.1;
+  fill: var(--btn-default-color);
+}
+.inFavorite {
   fill: var(--btn-default-color);
 }
 
