@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import './modal-adv.css'; 
+
 
 const ModalWindow = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,7 +45,8 @@ const ModalWindow = () => {
               &times;
             </span>
             
-             <img src="path_to_your_image.jpg" alt="Image" className="modal-image" />
+             <img src="./123.jpg"  className="modal-image" />
+
             <div className='modal-content'>
               <h2 className='modal-title'> cute dog looking for a home</h2>
                       <ul className='modal-pet-info'>

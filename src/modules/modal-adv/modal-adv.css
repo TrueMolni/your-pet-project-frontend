@@ -1,0 +1,58 @@
+/* modal-adv.css */
+
+.modal {
+    /* Стилізація модального вікна */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.modal-content {
+    /* Стилізація контейнера модального вікна */
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.close {
+    /* Стилізація кнопки закриття */
+    align-self: flex-end;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-image {
+    /* Стилізація зображення */
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    align-self: right;
+}
+
+.modal-title {
+    /* Стилізація заголовка */
+    text-align: right;
+}
+
+.modal-pet-info {
+    /* Стилізація списку інформації про тварину */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.modal-pet-comments {
+    /* Стилізація коментарів про тварину */
+    text-align: right;
+    align-self: flex-start;
+}

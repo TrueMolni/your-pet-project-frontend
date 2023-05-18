@@ -1,7 +1,7 @@
 // import { BrowserRouter } from 'react-router-dom';
 // import { Provider } from 'react-redux';
 import React, { useState } from 'react';
-import ModalWindow from './modules/modal-adv';
+import ModalWindow from './modules/modal-adv/modal-adv';
 export const App = () => {
   
 
