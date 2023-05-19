@@ -19,11 +19,11 @@ export const App = () => {
               <Route path="/main" element={<MainPage />}></Route>
               <Route path="/login" element={<LoginPage />}></Route>
               <Route path="/register" element={<RegisterPage />}></Route>
-              <Route path="/notices" element={<FindPetPage/>}></Route>
-//               <Route
-//                 path="/notices/:categoryName"
-//                 element={<NoticesPage />}
-//               ></Route>
+              <Route path="/notices" element={<FindPetPage />}></Route>
+              {/* <Route
+                path="/notices/:categoryName"
+                element={<NoticesPage />}
+              ></Route> */}
             </Route>
           </Routes>
         </BrowserRouter>
