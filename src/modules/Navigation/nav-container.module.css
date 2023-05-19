@@ -1,17 +1,31 @@
-.navContainer {
+.headerContainer {
+  padding-left: 20px;
+  padding-right: 20px;
   display: flex;
   align-items: center;
-  flex: 1;
+  justify-content: space-between;
 }
-@media screen and (max-width: 1199px) {
-  .navContainer {
-    justify-content: flex-end;
+@media screen and (min-width: 768px) {
+  .headerContainer {
+    padding: 8px 32px;
   }
 }
 @media screen and (min-width: 1200px) {
+  .headerContainer {
+    padding: 10px 16px;
+  }
+}
+
+.navContainer {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-end;
+}
+@media screen and (min-width: 1200px) {
   .navContainer {
-    margin-left: 159px;
     justify-content: space-between;
+    margin-left: 159px;
   }
 }
 
@@ -27,12 +41,12 @@
 @media screen and (min-width: 1200px) {
   .navList {
     display: flex;
+    justify-self: flex-start;
   }
 }
 
 .navLink {
   text-decoration: none;
-  padding: 8px 20px 8px 20px;
   font-family: var(--Manrope);
   font-weight: 500;
   font-size: 20px;
@@ -40,8 +54,12 @@
   letter-spacing: 0.04;
   color: var(--primary-text-color);
 }
-
 .navLink:global(.active) {
+  color: var(--auth-nav-color);
+}
+.navLink:hover,
+.navLink:focus {
+  font-weight: 700;
   color: var(--auth-nav-color);
 }
 
@@ -61,29 +79,7 @@
   }
 }
 
-.authNavLink {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  padding: 8px 20px 8px 20px;
-  font-family: var(--Manrope);
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.38;
-  letter-spacing: 0.04;
-  border: 2px solid var(--auth-nav-color);
-  border-radius: 40px;
-  background-color: var(--auth-nav-color);
-  color: var(--main-background-color);
-}
-
-.iconPaw {
-  margin-left: 8px;
-  fill: var(--main-background-color);
-}
-
 .burgerMenu {
-  margin-left: 8px;
   border: none;
 }
 @media screen and (min-width: 768px) {

@@ -1,16 +1,48 @@
-import css from './navigation.module.css';
-import BurgerMenu from './BurgerMenu';
-import Navigation from './Navigation';
+import { useState } from 'react';
+import css from './nav-container.module.css';
+import sprite from '../../images/icons/sprite.svg';
+import Logo from './Logo/index';
+import BurgerMenuBtn from './BurgerMenuBtn/BurgerMenuBtn';
+import Navigation from './Nav/Navigation';
 import UserNavigation from './UserNavigation';
-import AuthNavigation from './AuthNavigation';
+import AuthNavigation from './AuthNavigation/AuthNavigation';
+import MenuPage from 'pages/MenuPage/MenuPage';
 
 const NavContainer = () => {
+  const [isShow, setIsShow] = useState(false);
+
+  const openMenu = event => {
+    if (!event) return;
+    setIsShow(true);
+  };
+  const close = e => {
+    console.log(e.target.nodeName);
+    console.log(e.currentTarget.nodeName);
+
+    if (
+      e.target.nodeName === 'BUTTON' ||
+      e.target.nodeName === 'A' ||
+      e.currentTarget.nodeName === 'BUTTON'
+    ) {
+      setIsShow(false);
+    }
+  };
   return (
-    <div className={css.navContainer}>
-      <Navigation />
-      {<AuthNavigation /> || <UserNavigation />}
-      <BurgerMenu />
-    </div>
+    <>
+      <div className={css.headerContainer}>
+        <Logo />
+        <div className={css.navContainer}>
+          <Navigation navListStyle={css.navList} navLinkStyle={css.navLink} />
+          {<AuthNavigation listStyle={css.authNavList} /> || <UserNavigation />}
+          <BurgerMenuBtn
+            btnStyle={css.burgerMenu}
+            btnIcon={sprite + '#menu-hamburger'}
+            handleClick={openMenu}
+          />
+        </div>
+      </div>
+      {isShow && <MenuPage close={close} />}
+    </>
   );
 };
 export default NavContainer;

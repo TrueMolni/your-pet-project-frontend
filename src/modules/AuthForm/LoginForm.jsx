@@ -1,4 +1,4 @@
-import { InputForm } from 'modules/Input';
+import { InputForm } from 'shared/components/Input';
 import Button from 'shared/components/Button/Button';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
@@ -7,16 +7,24 @@ import { ErrorMessage, Formik, Form } from 'formik';
 import { user } from 'services';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from 'redux/auth/auth-operations';
+import { isUserLogin } from 'redux/auth/auth-selectors';
+import { Navigate } from 'react-router-dom';
 const initialValues = {
   email: '',
   password: '',
 };
 
 const LoginForm = props => {
-  const [isError, ] = useState(null); //! setIsError
+  const [isError] = useState(null); //! setIsError
   const [passwordShow, setPasswordShow] = useState(false);
-  const handleSubmit = async (formData, { resetForm }) => {
-    console.log('REGISTER FORM', formData);
+  const dispatch = useDispatch();
+  const handleSubmit = async (values, { resetForm }) => {
+     
+
+     dispatch(login( values ));
+    console.log('Login FORM', values);
     // const { error } = await login(formData);
     // if (error) {
     //   setIsError({
@@ -31,6 +39,12 @@ const LoginForm = props => {
 
   const togglePassword = () => setPasswordShow(prevState => !prevState);
 
+
+  const isLogin = useSelector(isUserLogin);
+
+  if (isLogin) {
+    return <Navigate to="/main" />;
+  }
   return (
     <div className={css.container}>
       <Formik
