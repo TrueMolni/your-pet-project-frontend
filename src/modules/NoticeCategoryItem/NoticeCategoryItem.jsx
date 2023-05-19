@@ -5,11 +5,11 @@ import {
 } from 'helpers/helpersNoticeCategoryItem';
 import sprite from '../../images/icons/sprite.svg';
 import styles from './notice-category-item.module.css';
-import { noticies } from '../NoticesCategoryList/notices';
+//import { noticies } from '../NoticesCategoryList/notices';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-noticies.map(petInformation => petInformation);
+//noticies.map(petInformation => petInformation);
 const NoticeCategoryItem = petInformation => {
   const { _id, date, comments, avatarURL, category, location, sex, title } =
     petInformation;
