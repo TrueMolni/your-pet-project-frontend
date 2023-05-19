@@ -7,7 +7,7 @@ import { isLoading, isToken } from 'redux/auth/auth-selectors.js';
 import SharedLayout from 'modules/SharedLayout';
 import RegisterPage from 'pages/RegisterPage/RegisterPage';
 import LoginPage from 'pages/LoginPage/LoginPage';
-import NoticesPage from 'pages/NoticesPage/NoticesPage';
+import FindPetPage from 'pages/FindPetPage/FindPetPage';
 import MainPage from 'pages/MainPage/MainPage';
 // import { current } from 'redux/auth/auth-operations.js';
 
@@ -30,10 +30,11 @@ export const App = () => {
               <Route path="/main" element={<MainPage />}></Route>
               <Route path="/login" element={<LoginPage />}></Route>
               <Route path="/register" element={<RegisterPage />}></Route>
-              <Route
+              <Route path="/notices" element={<FindPetPage />}></Route>
+              {/* <Route
                 path="/notices/:categoryName"
                 element={<NoticesPage />}
-              ></Route>
+              ></Route> */}
             </Route>
           </Routes>
         </BrowserRouter>
