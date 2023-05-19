@@ -3,40 +3,32 @@ import NoticeCategoryItem from "modules/NoticeCategoryItem/NoticeCategoryItem";
 import styles from "./notices-category-list.module.css"
 import { noticies } from "./notices";
 
-const NoticesCategoryList = ({ petInformation }) => {
+const NoticesCategoryList = () => {
   return (
 
 <div className={styles.section}>
       <ul className={styles.petsListWrapper}>
-        
+
 
         {noticies.map(
             ({
-              _id,
+             _id,
               avatarURL,
               title,
-              petName,
-              breed,
               location,
-              dateOfBirth,
-              price,
+              date,
               category,
-              favorite,
-              owner,
+              sex,
             }) => (
               <NoticeCategoryItem
                 key={_id}
-                image={avatarURL}
+                avatarURL={avatarURL}
                 title={title}
-                petName={petName}
-                breed={breed}
                 place={location}
-                dateOfBirth={dateOfBirth}
-                price={price}
+                date={date}
+                location={location}
                 category={category}
-                favorite={favorite}
-                owner={owner}
-
+                sex ={sex}
               />
             )
           )}
