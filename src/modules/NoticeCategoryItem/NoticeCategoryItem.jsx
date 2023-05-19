@@ -1,4 +1,4 @@
-import { countFullYears, selectIconGender } from 'helpers/noticesHelpers';
+import { countFullYears, selectIconGender } from '../../helpers/helpersNoticeCategoryItem';
 import sprite from '../../images/icons/sprite.svg';
 import styles from './notice-category-item.module.css';
 import { noticies } from "../NoticesCategoryList/notices";

@@ -24,7 +24,7 @@ const LoginForm = props => {
   const dispatch = useDispatch();
   const handleSubmit = async (values, { resetForm }) => {
     dispatch(login(values));
-    console.log('Login FORM', values);
+    // console.log('Login FORM', values);
     const { error } = await login(values);
     if (error) {
       setIsError({

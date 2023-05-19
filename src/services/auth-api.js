@@ -2,8 +2,8 @@ import axios from 'axios';
 
 
 const instance = axios.create({
-  baseURL: 'http://localhost:3030',
-  // baseURL: 'https://connections-api.herokuapp.com',
+  baseURL: 'https://your-pet-project-backend.onrender.com',
+
 });
 
 const setToken = token => {
@@ -29,7 +29,7 @@ export const login = async data => {
 export const getCurrent = async token => {
   try {
     setToken(token);
-    const { data } = await instance.get('api/users/current');
+    const { data } = await instance.get('api/users/info');
     return data;
   } catch (error) {
     setToken();

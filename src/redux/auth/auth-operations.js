@@ -21,7 +21,10 @@ export const login = createAsyncThunk(
   async (data, { rejectWithValue }) => {
     try {
       const result = await api.login(data);
-      Notify.success('Welcome');
+      Notify.success('Welcome', {
+        timeout: 3000, // Таймаут в миллисекундах (3 секунды)
+        position: 'top-left', // Позиция уведомления (в данном случае, верхний правый угол)
+      });
       return result;
       
     } catch (error) {
