@@ -1,10 +1,10 @@
 ul {
   list-style: none;
-  background-color: #FEF9F9;
 }
 
 .petsListWrapper{
   justify-content: center;
+  width: inherit;
   display: grid;
   grid-gap: 32px;
   margin-top: 24px;
@@ -15,7 +15,7 @@ ul {
   .petsListWrapper {
     grid-template-columns: repeat(auto-fill, minmax(336px, 1fr));
       margin-top: 40px;
-      padding-left: 32px ;
+
       }
 }
 
@@ -23,7 +23,7 @@ ul {
   .petsListWrapper {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     margin-top: 42px;
-    padding-left: 16px;
+
   }
 }
 
@@ -34,24 +34,23 @@ ul {
 
     padding-left: 20px;
     padding-right: 20px;
-    width: 100%;
+
   }
 
   @media screen and (min-width: 480px) {
-    .container {
+    .section {
       width: 480px;
     }
   }
 
   @media screen and (min-width: 768px) {
     .section {
-      padding-left: 32px;
-      padding-right: 32px;
+      
       width: 768px;
     }
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1200px) {
     .section {
       padding-left: 18px;
       padding-right: 18px;
