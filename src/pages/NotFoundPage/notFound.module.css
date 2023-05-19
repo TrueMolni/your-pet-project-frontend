@@ -1,0 +1,49 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.boxImages {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.text {
+  font-family: Manrope;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 42px;
+  margin-bottom: 80px;
+}
+
+.numberLeft {
+  font-family: Manrope;
+  font-weight: 800;
+  font-size: 381px;
+  line-height: 130%;
+  color: #54adff;
+  rotate: 11.34deg;
+}
+.numberRight {
+  font-family: Manrope;
+  font-weight: 800;
+  font-size: 381px;
+  line-height: 130%;
+  color: #54adff;
+  rotate: -24.23deg;
+}
+.image {
+  background-image: url('../../images/notfound/notfound@1x.jpg');
+  border-radius: 50%;
+  background-color: #ffc107;
+}
