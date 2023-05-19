@@ -10,11 +10,13 @@ import { user } from 'services';
 import shortid from 'shortid';
 import { useDispatch, useSelector } from 'react-redux'
 import { signup } from 'redux/auth/auth-operations';
-import { isUserLogin } from 'redux/auth/auth-selectors';
+import { isUserLogin, isLoading } from 'redux/auth/auth-selectors';
 import { Navigate } from 'react-router-dom'
+import Loader from 'shared/components/Loader/Loader';
 
 
 export const RegisterForm = props => {
+  const ifLoading = useSelector(isLoading)
   const isLogin = useSelector(isUserLogin)
   const [passwordShow, setPasswordShow] = useState(false);
   const [passwordConfirm, setPasswordConfirm] = useState(false);
@@ -36,6 +38,9 @@ export const RegisterForm = props => {
   //   const { email, password, confirmPassword } = state;
   if (isLogin) {
     return <Navigate to="/main" />;
+  }
+  if (ifLoading) {
+    return <Loader/>
   }
   return (
     <div className={css.container}>

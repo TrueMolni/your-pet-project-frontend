@@ -1,13 +1,14 @@
 // import * as api from '../../services/auth-api';
 import * as api from '../../services/auth-api'
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 
 export const signup = createAsyncThunk(
   'auth/signup',
   async (data, thunkAPI) => {
     try {
       const result = await api.signUp(data);
-      // console.log('ошибка в auth-opretions');
       return result;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -20,8 +21,12 @@ export const login = createAsyncThunk(
   async (data, { rejectWithValue }) => {
     try {
       const result = await api.login(data);
+      Notify.success('Welcome');
       return result;
+      
     } catch (error) {
+      // console.log("error login")
+      Notify.failure(error.message);
       return rejectWithValue(error.message);
     }
   }
