@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { IoClose } from 'react-icons/io5';
+import Close from './Close';
+
 import css from './modal.module.css';
 
 const Modal = ({ isOpen, onClose, children }) => {
@@ -47,9 +48,13 @@ const Modal = ({ isOpen, onClose, children }) => {
       <div className={css.backdrop} onClick={handleClose}></div>
       <div className={css.modal}>
         <div className={css.modalContent}>
-          <span className={css.closeButton} onClick={handleClose}>
-            <IoClose className={css.closeButtonIcon} />
-          </span>
+          <button
+            type="button"
+            className={css.closeButton}
+            onClick={handleClose}
+          >
+            <Close className={css.closeButtonIcon} />
+          </button>
           {children}
         </div>
       </div>
