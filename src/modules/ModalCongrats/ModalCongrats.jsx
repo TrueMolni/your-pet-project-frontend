@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import Modal from '../../shared/components/Modal/Modal';
 import Button from '../../shared/components/Button/Button';
-
-import PawIcon from '../../modules/Navigation/AuthNavigation/PawIcon';
+import sprite from '../../images/icons/sprite.svg';
 
 import css from './modalCongrats.module.css';
 
@@ -11,7 +10,7 @@ import css from './modalCongrats.module.css';
 // };
 
 const ModalCongrats = ({ handlePositiveRegistration }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const handleCloseModal = () => {
     setIsOpen(false);
@@ -25,7 +24,11 @@ const ModalCongrats = ({ handlePositiveRegistration }) => {
         <Button
           customStyle={css.succesBtn}
           buttonName={'Go to profile'}
-          buttonIcon={<PawIcon />}
+          buttonIcon={
+            <svg width={24} height={24} className={css.iconPaw}>
+              <use href={sprite + '#paw-white'}></use>
+            </svg>
+          }
           type="button"
           onClick={handleCloseModal}
         />
