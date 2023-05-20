@@ -9,9 +9,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from 'redux/auth/auth-operations';
-import { isLoading, isUserLogin } from 'redux/auth/auth-selectors';
-import { Navigate } from 'react-router-dom';
+// import { Navigate } from 'react-router-dom';
 import Loader from 'shared/components/Loader/Loader';
+import { getAuth } from 'redux/auth/auth-selectors';
 
 const initialValues = {
   email: '',
@@ -21,10 +21,10 @@ const initialValues = {
 const LoginForm = props => {
   const [isError, setIsError] = useState(null); //! setIsError
   const [passwordShow, setPasswordShow] = useState(false);
+    const { isLoading } = useSelector(getAuth);
   const dispatch = useDispatch();
   const handleSubmit = async (values, { resetForm }) => {
     dispatch(login(values));
-    // console.log('Login FORM', values);
     const { error } = await login(values);
     if (error) {
       setIsError({
@@ -41,14 +41,7 @@ const LoginForm = props => {
 
   const togglePassword = () => setPasswordShow(prevState => !prevState);
 
-  const ifLoading = useSelector(isLoading);
-  const isLogin = useSelector(isUserLogin);
-
-  if (isLogin) {
-    return <Navigate to="/main" />;
-  }
-
-  if (ifLoading) {
+  if (isLoading) {
     return <Loader />;
   }
   return (

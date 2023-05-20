@@ -21,10 +21,7 @@ export const login = createAsyncThunk(
   async (data, { rejectWithValue }) => {
     try {
       const result = await api.login(data);
-      Notify.success('Welcome', {
-        timeout: 3000, // Таймаут в миллисекундах (3 секунды)
-        position: 'top-left', // Позиция уведомления (в данном случае, верхний правый угол)
-      });
+      Notify.success('Welcome');
       return result;
       
     } catch (error) {
@@ -63,7 +60,7 @@ export const logout = createAsyncThunk(
       const data = await api.logout();
       return data;
     } catch ({ response }) {
-      return rejectWithValue(response);
+      return rejectWithValue(response.data);
     }
   }
 );

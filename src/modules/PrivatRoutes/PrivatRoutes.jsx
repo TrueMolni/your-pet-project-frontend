@@ -6,10 +6,6 @@ import { getAuth } from 'redux/auth/auth-selectors';
 const PrivateRoute = () => {
   const { isLogin, token } = useSelector(getAuth);
 
-  // if ( token) {
-  //   return <p>...LOADING USER DATA</p>;
-  // }
-
   if (!isLogin && !token) {
     return <Navigate to="/login" />;
   }

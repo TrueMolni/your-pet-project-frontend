@@ -11,7 +11,7 @@ const PublicRoute = () => {
   }
 
   if (isLogin) {
-    return <Navigate to="/notices" />;
+    return <Navigate to="/main" />;
   }
 
   return <Outlet />;
