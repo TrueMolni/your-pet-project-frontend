@@ -8,19 +8,19 @@ import css from './AuthForm.module.css';
 import Button from 'shared/components/Button';
 import { user } from 'services';
 import shortid from 'shortid';
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { signup } from 'redux/auth/auth-operations';
-// import { isUserLogin, isLoading , isModalOpen} from 'redux/auth/auth-selectors';
+import {  isLoading , } from 'redux/auth/auth-selectors';
 // import { Navigate } from 'react-router-dom'
-// import Loader from 'shared/components/Loader/Loader';
-import ModalCongrats from 'modules/ModalCongrats/ModalCongrats'; //!1
+import Loader from 'shared/components/Loader/Loader';
+import ModalCongrats from 'modules/ModalCongrats/ModalCongrats'; 
 
 export const RegisterForm = props => {
-  // const ifLoading = useSelector(isLoading);
+  const ifLoading = useSelector(isLoading);
   // const isLogin = useSelector(isUserLogin);
   const [passwordShow, setPasswordShow] = useState(false);
   const [passwordConfirm, setPasswordConfirm] = useState(false);
-const [modalOpen, setModalOpen] = useState(false); //!1
+const [modalOpen, setModalOpen] = useState(false);
   const dispatch = useDispatch();
 
   const handleSignUp = (values, { resetForm }) => {
@@ -28,13 +28,13 @@ const [modalOpen, setModalOpen] = useState(false); //!1
     dispatch(signup(values));
     
     resetForm();
-    setModalOpen(true);//!2
+    setModalOpen(true);
     console.log('REGISTER FORM', values);
   };
 
 
 const handleCloseModal = () => {
-  setModalOpen(false); //!3 функция для закрытия модального окна
+  setModalOpen(false); 
 };
 
   const togglePassword = () => setPasswordShow(prevState => !prevState);
@@ -49,9 +49,9 @@ const handleCloseModal = () => {
 
   //   return <Navigate to="/main" />;
   // }
-  // if (ifLoading) {
-  //   return <Loader />;
-  // }
+  if (ifLoading) {
+    return <Loader />;
+  }
   
   return (
     <div className={css.container}>

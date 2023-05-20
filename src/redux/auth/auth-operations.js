@@ -21,16 +21,18 @@ export const login = createAsyncThunk(
   async (data, { rejectWithValue }) => {
     try {
       const result = await api.login(data);
-      Notify.success('Welcome');
+      Notify.success('Welcome', {
+        timeout: 2000,
+        clickToClose: true,
+      });
       return result;
-      
     } catch (error) {
-      // console.log("error login")
       Notify.failure(error.message);
       return rejectWithValue(error.message);
     }
   }
 );
+
 
 export const current = createAsyncThunk(
   'auth/current',
@@ -38,9 +40,10 @@ export const current = createAsyncThunk(
     try {
       const { auth } = getState();
       const data = await api.getCurrent(auth.token);
+      console.log("data =>", data)
       return data;
     } catch ({ response }) {
-      return rejectWithValue(response);
+      return rejectWithValue(response.data);
     }
   },
   {
@@ -53,6 +56,7 @@ export const current = createAsyncThunk(
   }
 );
 
+
 export const logout = createAsyncThunk(
   'auth/logout',
   async (_, { rejectWithValue }) => {
@@ -64,3 +68,4 @@ export const logout = createAsyncThunk(
     }
   }
 );
+

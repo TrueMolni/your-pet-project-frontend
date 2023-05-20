@@ -22,7 +22,7 @@ export const App = () => {
   useEffect(() => {
     dispatch(current());
     console.log('useeffect')
-  }, [dispatch]);
+  }, [dispatch, isLogin ]);
 
  if (isLoading) {
    return <Loader />;
