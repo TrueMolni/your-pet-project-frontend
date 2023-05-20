@@ -24,7 +24,7 @@ const ModalCongrats = ({ handlePositiveRegistration }) => {
         <h2 className={css.text}>Youre registration is success</h2>
         <Button
           customStyle={css.succesBtn}
-          buttonName={'go to profile'}
+          buttonName={'Go to profile'}
           buttonIcon={<PawIcon />}
           type="button"
           onClick={handleCloseModal}
