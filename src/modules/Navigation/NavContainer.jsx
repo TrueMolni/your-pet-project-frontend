@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import css from './nav-container.module.css';
 import sprite from '../../images/icons/sprite.svg';
 import Logo from './Logo/index';
@@ -7,18 +8,17 @@ import Navigation from './Nav/Navigation';
 import UserNavigation from './UserNavigation';
 import AuthNavigation from './AuthNavigation/AuthNavigation';
 import MenuPage from 'pages/MenuPage/MenuPage';
+import { isUserLogin } from 'redux/auth/auth-selectors';
 
 const NavContainer = () => {
   const [isShow, setIsShow] = useState(false);
+  const isLogin = useSelector(isUserLogin);
 
   const openMenu = event => {
     if (!event) return;
     setIsShow(true);
   };
   const close = e => {
-    console.log(e.target.nodeName);
-    console.log(e.currentTarget.nodeName);
-
     if (
       e.target.nodeName === 'BUTTON' ||
       e.target.nodeName === 'A' ||
@@ -33,7 +33,11 @@ const NavContainer = () => {
         <Logo />
         <div className={css.navContainer}>
           <Navigation navListStyle={css.navList} navLinkStyle={css.navLink} />
-          {<AuthNavigation listStyle={css.authNavList} /> || <UserNavigation />}
+          {isLogin ? (
+            <UserNavigation />
+          ) : (
+            <AuthNavigation listStyle={css.authNavList} />
+          )}
           <BurgerMenuBtn
             btnStyle={css.burgerMenu}
             btnIcon={sprite + '#menu-hamburger'}
