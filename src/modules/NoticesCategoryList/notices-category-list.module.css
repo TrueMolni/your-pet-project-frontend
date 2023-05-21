@@ -8,6 +8,7 @@ ul {
   display: grid;
   grid-gap: 32px;
   margin-top: 24px;
+  margin-left: -5px;
 }
 
 
