@@ -1,9 +1,11 @@
 import axios from 'axios';
 
 
+
 const instance = axios.create({
   // baseURL: 'http://localhost:3030',
   baseURL: 'https://your-pet-project-backend.onrender.com/',
+
 });
 
 const setToken = token => {
@@ -15,7 +17,7 @@ const setToken = token => {
 export const signUp = async data => {
   const { data: result } = await instance.post('api/users/register', data);
   setToken(result.token);
-  
+
   return result;
 };
 

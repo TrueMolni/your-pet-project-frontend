@@ -13,6 +13,9 @@ import { getAuth } from 'redux/auth/auth-selectors';
 import { current } from 'redux/auth/auth-operations';
 import UserPage from 'pages/UserPage/UserPage';
 
+import NoticesPage from 'pages/NoticesPage/NoticesPage';
+
+
 export const App = () => {
   const dispatch = useDispatch();
   const { isLogin } = useSelector(getAuth);
@@ -24,12 +27,13 @@ export const App = () => {
   }, [dispatch, isLogin]);
 
   return (
+
     <BrowserRouter basename="/your-pet-project-frontend">
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route path="/main"  element={<MainPage />}></Route>
           <Route path="/notices" element={<FindPetPage />}></Route>
-          
+          <Route path="/notices/:categoryName" element={<NoticesPage />}></Route>
 
           <Route element={<PublicRoute />}>
             <Route path="/register" element={<RegisterPage />} />
@@ -39,12 +43,10 @@ export const App = () => {
             <Route path="/user" element={<UserPage />} />
           </Route>
 
-          {/* <Route
-                path="/notices/:categoryName"
-                element={<NoticesPage />}
-              ></Route> */}
+         
         </Route>
       </Routes>
     </BrowserRouter>
+
   );
 };
