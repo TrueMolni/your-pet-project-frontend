@@ -1,6 +1,6 @@
 import { Field, ErrorMessage } from 'formik';
 import styles from './File.module.css';
-import addIcon from '../../../../images/icons/add-icon.svg';
+// import addIcon from '../../../../images/icons/add-icon.svg';
 
 const Input = ({ label, name, ...props }) => {
   return (
