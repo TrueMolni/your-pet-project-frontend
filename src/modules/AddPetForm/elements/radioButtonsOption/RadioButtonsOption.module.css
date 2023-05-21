@@ -1,0 +1,30 @@
+.input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.buttonLabel {
+  display: block;
+  padding: 8px 16px;
+  border-radius: 17.5px;
+  width: fit-content;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.36;
+  letter-spacing: 0.04em;
+  color: var(--btn-default-color);
+  background-color: var(--btn-disabled-color);
+
+  cursor: pointer;
+}
+
+.input:checked + .buttonLabel {
+  background-color: var(--btn-default-color);
+  color: var(--main-background-color);
+}
+
+.buttonLabel:not(:last-child) {
+  margin-bottom: 12px;
+}

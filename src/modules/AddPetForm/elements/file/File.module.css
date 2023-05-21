@@ -1,0 +1,42 @@
+.fileWrapper {
+  margin-bottom: 24px;
+}
+
+.fileContainer {
+  display: flex;
+  align-items: center;
+}
+
+.capture {
+  margin-right: 27px;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.36;
+}
+
+.input {
+  display: none;
+}
+
+.labelFile {
+  display: block;
+  width: 112px;
+  height: 112px;
+  background-color: var(--btn-disabled-color);
+  cursor: pointer;
+  border-radius: 20px;
+  background-image: url('../../../../images/icons/add-icon.svg');
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  background-position: center;
+}
+
+.inputWrapper > p {
+  margin: 0;
+  padding: 0;
+
+  color: red;
+  font-size: 9px;
+  line-height: 1.2;
+}

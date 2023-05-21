@@ -1,0 +1,15 @@
+.header {
+  margin-bottom: 24px;
+
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.35;
+  color: #111111;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 24px;
+}

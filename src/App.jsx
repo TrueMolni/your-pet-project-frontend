@@ -7,6 +7,7 @@ import RegisterPage from 'pages/RegisterPage/RegisterPage';
 import LoginPage from 'pages/LoginPage/LoginPage';
 import FindPetPage from 'pages/FindPetPage/FindPetPage';
 import MainPage from 'pages/MainPage/MainPage';
+import AddPetPage from 'pages/AddPetPage/AddPetPage.jsx';
 import PrivateRoute from 'modules/PrivatRoutes/PrivatRoutes';
 import PublicRoute from 'modules/PublicRoutes/PublicRoutes';
 import { getAuth } from 'redux/auth/auth-selectors';
@@ -14,6 +15,7 @@ import { current } from 'redux/auth/auth-operations';
 import UserPage from 'pages/UserPage/UserPage';
 
 import NoticesPage from 'pages/NoticesPage/NoticesPage';
+
 
 
 export const App = () => {
@@ -28,6 +30,7 @@ export const App = () => {
 
   return (
 
+
     <BrowserRouter basename="/your-pet-project-frontend">
       <Routes>
         <Route path="/" element={<SharedLayout />}>
@@ -41,12 +44,12 @@ export const App = () => {
           </Route>
           <Route element={<PrivateRoute />}>
             <Route path="/user" element={<UserPage />} />
+            <Route path="/add-pet" element={<AddPetPage />}></Route>
           </Route>
 
          
         </Route>
       </Routes>
     </BrowserRouter>
-
   );
 };
