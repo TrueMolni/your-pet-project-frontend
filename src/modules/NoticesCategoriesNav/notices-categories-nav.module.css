@@ -79,17 +79,16 @@
     color: var(--main-background-color);
     cursor: pointer;
   }
-  &.active {
+  /* &.active {
     background-color: var(--btn-default-color);
     color: var(--main-background-color);
-  }
+  } */
 }
 
-/* @media screen and (max-width: 768px) {
-  .category_btn {
-    font-size: 20px;
-  }
-} */
+.category_btn:global(.active) {
+  background-color: var(--btn-default-color);
+  color: var(--main-background-color);
+}
 
 .category_auth_links {
   display: flex;
