@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/your-pet-project-frontend/static/css/main.f7352a26.css",
-    "main.js": "/your-pet-project-frontend/static/js/main.147f1b61.js",
+    "main.css": "/your-pet-project-frontend/static/css/main.f2431352.css",
+    "main.js": "/your-pet-project-frontend/static/js/main.31451e93.js",
     "static/media/bg-image-tab@3x.png": "/your-pet-project-frontend/static/media/bg-image-tab@3x.9d059a115cc4c0f4c317.png",
     "static/media/bg-image-desktop@3x.png": "/your-pet-project-frontend/static/media/bg-image-desktop@3x.49db6e3206b54f5b29b9.png",
     "static/media/bg-image-tab@2x.png": "/your-pet-project-frontend/static/media/bg-image-tab@2x.04107cf51fccae6353c5.png",
@@ -26,11 +26,11 @@
     "static/media/pawprint6.svg": "/your-pet-project-frontend/static/media/pawprint6.be12ff7cc4dbb881deff.svg",
     "static/media/pawprint1.svg": "/your-pet-project-frontend/static/media/pawprint1.ffbb36242ed74ee8096c.svg",
     "index.html": "/your-pet-project-frontend/index.html",
-    "main.f7352a26.css.map": "/your-pet-project-frontend/static/css/main.f7352a26.css.map",
-    "main.147f1b61.js.map": "/your-pet-project-frontend/static/js/main.147f1b61.js.map"
+    "main.f2431352.css.map": "/your-pet-project-frontend/static/css/main.f2431352.css.map",
+    "main.31451e93.js.map": "/your-pet-project-frontend/static/js/main.31451e93.js.map"
   },
   "entrypoints": [
-    "static/css/main.f7352a26.css",
-    "static/js/main.147f1b61.js"
+    "static/css/main.f2431352.css",
+    "static/js/main.31451e93.js"
   ]
 }
