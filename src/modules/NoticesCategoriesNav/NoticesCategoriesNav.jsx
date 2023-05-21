@@ -1,7 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { nanoid } from 'nanoid';
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { isUserLogin } from '../../redux/auth/auth-selectors';
 
 import css from './notices-categories-nav.module.css';
 
@@ -32,7 +33,7 @@ const authCategory = [
 ];
 
 const NoticesCategoriesNav = () => {
-  // const isLoggedIn = useSelector();
+  const isLoggedIn = useSelector(isUserLogin);
 
   return (
     <div className={css.category_wrapper}>
@@ -51,17 +52,18 @@ const NoticesCategoriesNav = () => {
           ))}
         </div>
         <div className={css.category_auth_links}>
-          {authCategory.map(value => (
-            <li className={css.category_item} key={nanoid()}>
-              <NavLink
-                className={css.category_btn}
-                to={'/notices/' + value.link}
-                name={value.link}
-              >
-                {value.text}
-              </NavLink>
-            </li>
-          ))}
+          {isLoggedIn &&
+            authCategory.map(value => (
+              <li className={css.category_item} key={nanoid()}>
+                <NavLink
+                  className={css.category_btn}
+                  to={'/notices/' + value.link}
+                  name={value.link}
+                >
+                  {value.text}
+                </NavLink>
+              </li>
+            ))}
         </div>
       </ul>
     </div>
