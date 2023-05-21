@@ -1,8 +1,6 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import {  useDispatch, useSelector } from 'react-redux';
-
-import Loader from 'shared/components/Loader/Loader.jsx';
+import { useDispatch, useSelector } from 'react-redux';
 
 import SharedLayout from 'modules/SharedLayout';
 import RegisterPage from 'pages/RegisterPage/RegisterPage';
@@ -13,32 +11,31 @@ import PrivateRoute from 'modules/PrivatRoutes/PrivatRoutes';
 import PublicRoute from 'modules/PublicRoutes/PublicRoutes';
 import { getAuth } from 'redux/auth/auth-selectors';
 import { current } from 'redux/auth/auth-operations';
+import UserPage from 'pages/UserPage/UserPage';
 
 export const App = () => {
   const dispatch = useDispatch();
-  const { isLogin, token, isLoading } = useSelector(getAuth);
-  console.log(token, isLogin)
+  const { isLogin } = useSelector(getAuth);
+  // console.log(token, isLogin);
 
   useEffect(() => {
     dispatch(current());
-    console.log('useeffect')
-  }, [dispatch, isLogin ]);
-
- if (isLoading) {
-   return <Loader />;
- }
+    // console.log('useeffect');
+  }, [dispatch, isLogin]);
 
   return (
     <BrowserRouter basename="/your-pet-project-frontend">
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <Route element={<PublicRoute />}>
+          <Route path="/main"  element={<MainPage />}></Route>
             <Route path="/notices" element={<FindPetPage />}></Route>
+
+          <Route element={<PublicRoute />}>
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/login" element={<LoginPage />} />
           </Route>
           <Route element={<PrivateRoute />}>
-            <Route path="/main" element={<MainPage />}></Route>
+            <Route path="/user" element={<UserPage />} />
           </Route>
 
           {/* <Route

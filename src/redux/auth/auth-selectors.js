@@ -5,6 +5,6 @@ export const isToken = ({ auth }) => auth.token;
 export const isLoading = ({ auth }) => auth.isLoading;
 export const isModalOpen = ({ auth }) => auth.isModalOpen;
 export const getAuth = ({ auth }) => {
-  const { isLogin, token } = auth;
-  return { isLogin, token };
+  const { isLogin, token, isLoading } = auth;
+  return { isLogin, token , isLoading};
 };

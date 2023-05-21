@@ -21,9 +21,10 @@ export const login = createAsyncThunk(
   async (data, { rejectWithValue }) => {
     try {
       const result = await api.login(data);
-      Notify.success('Welcome', {
+      Notify.success('Welcome to Your Pet', {
         timeout: 2000,
         clickToClose: true,
+        position: 'center-top'
       });
       return result;
     } catch (error) {
@@ -40,7 +41,7 @@ export const current = createAsyncThunk(
     try {
       const { auth } = getState();
       const data = await api.getCurrent(auth.token);
-      console.log("data =>", data)
+      // console.log("data =>", data)
       return data;
     } catch ({ response }) {
       return rejectWithValue(response.data);
