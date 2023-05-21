@@ -6,9 +6,10 @@ import { PersistGate } from 'redux-persist/integration/react';
 import SharedLayout from 'modules/SharedLayout';
 import RegisterPage from 'pages/RegisterPage/RegisterPage';
 import LoginPage from 'pages/LoginPage/LoginPage';
-import NoticesPage from 'pages/NoticesPage/NoticesPage';
+import FindPetPage from 'pages/FindPetPage/FindPetPage';
 import MainPage from 'pages/MainPage/MainPage';
 import NotFoundPage from 'pages/NotFoundPage/NotFoundPage.jsx';
+import NoticesPage from 'pages/NoticesPage/NoticesPage.jsx';
 
 export const App = () => {
   return (
@@ -20,11 +21,12 @@ export const App = () => {
               <Route path="/main" element={<MainPage />}></Route>
               <Route path="/login" element={<LoginPage />}></Route>
               <Route path="/register" element={<RegisterPage />}></Route>
+              <Route path="/notices" element={<FindPetPage />}></Route>
               <Route
                 path="/notices/:categoryName"
                 element={<NoticesPage />}
               ></Route>
-              <Route path="*" element={<NotFoundPage />} />
+              <Route path="*" element={<NotFoundPage />}></Route>
             </Route>
           </Routes>
         </BrowserRouter>

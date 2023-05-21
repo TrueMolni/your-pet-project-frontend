@@ -1,10 +1,25 @@
-import { countFullYears, selectIconGender } from 'helpers/noticesHelpers';
+import {
+  countFullYears,
+  selectIconGender,
+  notification,
+} from 'helpers/helpersNoticeCategoryItem';
 import sprite from '../../images/icons/sprite.svg';
 import styles from './notice-category-item.module.css';
+//import { noticies } from '../NoticesCategoryList/notices';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const NoticeCategoryItem = ({ petInformation }) => {
+//noticies.map(petInformation => petInformation);
+const NoticeCategoryItem = petInformation => {
   const { _id, date, comments, avatarURL, category, location, sex, title } =
     petInformation;
+  const isAuth = false;
+  const toggleFavorite = () => {
+    if (!isAuth) {
+      notification();
+      return;
+    }
+  };
 
   return (
     <li key={_id}>
@@ -15,7 +30,11 @@ const NoticeCategoryItem = ({ petInformation }) => {
             <p className={styles.category}>
               {category.replace(/(\.|-|\/|\\| )/g, ' ')}{' '}
             </p>
-            <button className={styles.btnAddFavorite}>
+            <button
+              className={styles.btnAddFavorite}
+              type="button"
+              onClick={toggleFavorite}
+            >
               <svg width="24" height="24">
                 <use xlinkHref={`${sprite}#heart`}></use>
               </svg>
@@ -55,6 +74,7 @@ const NoticeCategoryItem = ({ petInformation }) => {
           <button className={styles.btnLearnMore}>Learn more</button>
         </div>
       </div>
+      <ToastContainer />
     </li>
   );
 };
