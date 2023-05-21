@@ -7,104 +7,105 @@ import { ErrorMessage, Formik, Form } from 'formik';
 import { user } from 'services';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch,   } from 'react-redux';
 import { login } from 'redux/auth/auth-operations';
-import { isUserLogin } from 'redux/auth/auth-selectors';
-import { Navigate } from 'react-router-dom';
 const initialValues = {
   email: '',
   password: '',
 };
 
 const LoginForm = props => {
-  const [isError] = useState(null); //! setIsError
+  const [isError, setIsError] = useState(null); //! setIsError
   const [passwordShow, setPasswordShow] = useState(false);
+
   const dispatch = useDispatch();
   const handleSubmit = async (values, { resetForm }) => {
-     
-
-     dispatch(login( values ));
-    console.log('Login FORM', values);
-    // const { error } = await login(formData);
-    // if (error) {
-    //   setIsError({
-    //     message: error.data.message,
-    //     additionalInfo: error.data.additionalInfo
-    //   });
-    resetForm();
-    // } else {
-    //   navigate('/user');
-    // }
+    dispatch(login(values));
+    const { error } = await login(values);
+    if (error) {
+      setIsError({
+        message: error.data.message,
+        additionalInfo: error.data.additionalInfo,
+      });
+      resetForm();
+    } else {
+      // navigate('/user');
+      // console.log('navigate to ...');
+    }
   };
+
+ 
 
   const togglePassword = () => setPasswordShow(prevState => !prevState);
 
-
-  const isLogin = useSelector(isUserLogin);
-
-  if (isLogin) {
-    return <Navigate to="/main" />;
-  }
   return (
-    <div className={css.container}>
-      <Formik
-        validationSchema={user.loginValidationSchema}
-        initialValues={initialValues}
-        onSubmit={handleSubmit}
-      >
-        <Form className={css.form}>
-          <h2 className={css.title}>{props.title}</h2>
-          <div className={css.input__wrapper}>
-            <InputForm
-              autofocus="autofocus"
-              name="email"
-              type="email"
-              placeholder="Email"
-              autoComplete="off"
-            />
-            <ErrorMessage name="email" component="p" className={css.error} />
-          </div>
-          <div className={css.input__wrapper_last}>
-            <InputForm
-              name="password"
-              type={passwordShow ? 'text' : 'password'}
-              placeholder="Password"
-              autoComplete="off"
-            />
-            <span
-              id="visibilityBtn"
-              className={css.IconPassword}
-              onClick={togglePassword}
-            >
-              {passwordShow ? <VisibilityIcon /> : <VisibilityOffIcon />}
-            </span>
-            <ErrorMessage
-              name="password"
-              component="p"
-              className={css.error__password}
-            />
-          </div>
+    <>
+      
+        <div className={css.container}>
+          <Formik
+            validationSchema={user.loginValidationSchema}
+            initialValues={initialValues}
+            onSubmit={handleSubmit}
+          >
+            <Form className={css.form}>
+              <h2 className={css.title}>{props.title}</h2>
+              <div className={css.input__wrapper}>
+                <InputForm
+                  autofocus="autofocus"
+                  name="email"
+                  type="email"
+                  placeholder="Email"
+                  autoComplete="off"
+                />
+                <ErrorMessage
+                  name="email"
+                  component="p"
+                  className={css.error}
+                />
+              </div>
+              <div className={css.input__wrapper_last}>
+                <InputForm
+                  name="password"
+                  type={passwordShow ? 'text' : 'password'}
+                  placeholder="Password"
+                  autoComplete="off"
+                />
+                <span
+                  id="visibilityBtn"
+                  className={css.IconPassword}
+                  onClick={togglePassword}
+                >
+                  {passwordShow ? <VisibilityIcon /> : <VisibilityOffIcon />}
+                </span>
+                <ErrorMessage
+                  name="password"
+                  component="p"
+                  className={css.error__password}
+                />
+              </div>
 
-          <Button
-            type="submit"
-            className={css.button__auth}
-            buttonName={'Login'}
-          ></Button>
+              <Button
+                type="submit"
+                className={css.button__auth}
+                buttonName={'Login'}
+              ></Button>
 
-          {isError && <p className={css.error__login}>{isError.message}</p>}
-          {isError && (
-            <p className={css.error__login}>{isError.additionalInfo}</p>
-          )}
+              {isError && <p className={css.error__login}>{isError.message}</p>}
+              {isError && (
+                <p className={css.error__login}>{isError.additionalInfo}</p>
+              )}
 
-          <p className={css.redirect__auth}>
-            {'Don`t have an account?'}
-            <Link to="/register" className={css.redirect_link__auth}>
-              {'Register'}
-            </Link>
-          </p>
-        </Form>
-      </Formik>
-    </div>
+              <p className={css.redirect__auth}>
+                {'Don`t have an account?'}
+                <Link to="/register" className={css.redirect_link__auth}>
+                  {'Register'}
+                </Link>
+              </p>
+            </Form>
+          </Formik>
+        </div>
+     
+    </>
   );
 };
 export default LoginForm;
