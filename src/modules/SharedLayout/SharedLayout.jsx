@@ -1,17 +1,19 @@
 import { Outlet } from 'react-router-dom';
 import NavContainer from 'modules/Navigation/NavContainer';
-
+import { getAuth } from 'redux/auth/auth-selectors';
 import css from './shared-layout.module.css';
-
+import { useSelector } from 'react-redux';
+import Loader from 'shared/components/Loader/Loader';
 const SharedLayout = () => {
+  const { isLoading, isLogin } = useSelector(getAuth)
+  console.log('isLogin', isLogin);
+
   return (
     <div className={css.container}>
       <header>
         <NavContainer />
       </header>
-      <main>
-        <Outlet />
-      </main>
+      <main>{isLoading ? <Loader /> : <Outlet />}</main>
     </div>
   );
 };

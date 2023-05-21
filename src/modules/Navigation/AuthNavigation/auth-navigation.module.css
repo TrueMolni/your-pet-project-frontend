@@ -12,6 +12,9 @@
   border-radius: 40px;
   background-color: var(--auth-nav-color);
   color: var(--main-background-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+      border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  
 }
 
 .registerBtn {
@@ -26,9 +29,29 @@
   border-radius: 40px;
   background-color: var(--main-background-color);
   color: var(--auth-nav-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+      border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 
 .iconPaw {
   margin-left: 8px;
   fill: var(--main-background-color);
 }
+.iconPaw:hover,
+.loginBtn:focus {
+  fill: orange;
+}
+
+.loginBtn:hover,
+.loginBtn:focus {
+  background-color: var(--main-background-color);
+  color: var(--auth-nav-color);
+}
+
+.registerBtn:hover,
+.registerBtn:focus {
+
+  background-color: var(--auth-nav-color);
+  color: var(--main-background-color);
+}
+

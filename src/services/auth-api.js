@@ -1,9 +1,11 @@
 import axios from 'axios';
 
 
+
 const instance = axios.create({
-  baseURL: 'http://localhost:3030',
-  // baseURL: 'https://connections-api.herokuapp.com',
+  // baseURL: 'http://localhost:3030',
+  baseURL: 'https://your-pet-project-backend.onrender.com/',
+
 });
 
 const setToken = token => {
@@ -15,7 +17,7 @@ const setToken = token => {
 export const signUp = async data => {
   const { data: result } = await instance.post('api/users/register', data);
   setToken(result.token);
-  
+
   return result;
 };
 
@@ -37,7 +39,7 @@ export const getCurrent = async token => {
   }
 };
 
-export const logout = async () => {
+export const logout = async (token) => {
   const { data } = await instance.post('api/users/logout');
   setToken();
   return data;
