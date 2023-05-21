@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-
-// import NoticesSearch from '../../modules/NoticesSearch/NoticesSearch';
-// import NoticesCategoriesNav from '../../modules/NoticesCategoriesNav';
+import NoticesSearch from '../../shared/components/NoticesSearch/NoticesSearch';
+import NoticesCategoriesNav from '../../modules/NoticesCategoriesNav/NoticesCategoriesNav';
 // import NoticesFilters from '../../modules/NoticesFilters/NoticesFilters';
-// import NoticesCategoriesList from '../../modules/NoticesCategoriesList/NoticesCategoriesList';
+import NoticesCategoriesList from '../../modules/NoticesCategoryList/NoticesCategoryList';
 import AddPetBtn from 'shared/components/AddPetBtn';
-
 
 const NoticesPage = () => {
   const navigate = useNavigate();
@@ -21,12 +19,11 @@ const NoticesPage = () => {
 
   return (
     <div>
-
       <AddPetBtn />
-       <NoticesSearch />
+      <NoticesSearch />
       <NoticesCategoriesNav />
-      <NoticesCategoryList />
-      <NoticesFilters />
+      <NoticesCategoriesList />
+      {/* <NoticesFilters /> */}
     </div>
   );
 };
