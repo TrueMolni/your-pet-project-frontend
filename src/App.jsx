@@ -8,6 +8,7 @@ import RegisterPage from 'pages/RegisterPage/RegisterPage';
 import LoginPage from 'pages/LoginPage/LoginPage';
 import FindPetPage from 'pages/FindPetPage/FindPetPage';
 import MainPage from 'pages/MainPage/MainPage';
+import AddPetPage from 'pages/AddPetPage/AddPetPage.jsx';
 
 export const App = () => {
   return (
@@ -20,6 +21,7 @@ export const App = () => {
               <Route path="/login" element={<LoginPage />}></Route>
               <Route path="/register" element={<RegisterPage />}></Route>
               <Route path="/notices" element={<FindPetPage />}></Route>
+              <Route path="/add-pet" element={<AddPetPage />}></Route>
               {/* <Route
                 path="/notices/:categoryName"
                 element={<NoticesPage />}
