@@ -25,7 +25,7 @@
     background-image: url('../../images/background/svg/bg_tablet.svg');
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .container {
     background-image: url('../../images/background/svg/bg_desktop.svg');
   }
@@ -59,7 +59,7 @@
     margin-bottom: 70px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .boxImages {
     height: 360px;
     margin-bottom: 18px;
@@ -107,7 +107,7 @@
     margin-bottom: 80px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .textbox {
     display: flex;
     flex-direction: row;
@@ -144,7 +144,7 @@
     margin-bottom: 0px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1280px) {
   .numberLeft,
   .numberRight {
     font-size: 381px;
@@ -184,7 +184,7 @@
     width: 276px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .image {
     height: 323px;
     width: 323px;
