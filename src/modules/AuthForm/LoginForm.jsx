@@ -9,8 +9,6 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch,   } from 'react-redux';
 import { login } from 'redux/auth/auth-operations';
-// import { Navigate } from 'react-router-dom';
-
 const initialValues = {
   email: '',
   password: '',
@@ -32,7 +30,6 @@ const LoginForm = props => {
       resetForm();
     } else {
       // navigate('/user');
-      
       // console.log('navigate to ...');
     }
   };

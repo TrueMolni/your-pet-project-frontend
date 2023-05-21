@@ -28,7 +28,8 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route path="/main"  element={<MainPage />}></Route>
-            <Route path="/notices" element={<FindPetPage />}></Route>
+          <Route path="/notices" element={<FindPetPage />}></Route>
+          
 
           <Route element={<PublicRoute />}>
             <Route path="/register" element={<RegisterPage />} />
