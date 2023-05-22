@@ -13,18 +13,18 @@ const getNoticesByCategory = createAsyncThunk(
   }
 );
 
-// const getNoticeById = createAsyncThunk(
-//   'notices/getOneNotice',
-//   async (id, { rejectWithValue }) => {
-//     try {
-//       const { data } = await api.getNoticeById(id);
+const getNoticeById = createAsyncThunk(
+  'notices/getOneNotice',
+  async (id, { rejectWithValue }) => {
+    try {
+      const { data } = await api.getNoticeById(id);
 
-//       return data;
-//     } catch (error) {
-//       return rejectWithValue(error.message);
-//     }
-//   }
-// );
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
 
 const updateFavorite = createAsyncThunk(
   'notices/updateFavorite',
@@ -52,6 +52,7 @@ export const deleteUserNotice = createAsyncThunk(
 
 const operations = {
   getNoticesByCategory,
+  getNoticeById,
   updateFavorite,
   deleteUserNotice,
 };

@@ -10,11 +10,11 @@ export const getNoticesByCategory = async category => {
 
 //для отримання одного оголошення
 
-// export const getNoticeById = async _id => {
-//   const { data } = await instance.get(`api/notices/${_id}`);
-//   console.log(data);
-//   return data;
-// };
+export const getNoticeById = async id => {
+  const { data } = await instance.get(`api/notices/${id}`);
+  console.log(data);
+  return data;
+};
 
 //для додавання оголошення до обраних
 

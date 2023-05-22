@@ -34,22 +34,22 @@ const noticesSlice = createSlice({
           store.isLoading = false;
           store.isError = payload;
         }
-      );
-    // отримання одного оголошення
-    // .addCase(operations.getOneNotice.pending, store => {
-    //   store.isLoading = true;
-    //   store.isError = null;
-    // })
-    // .addCase(operations.getOneNotice.fulfilled, (store, { payload }) => {
-    //   store.noticeById = payload;
-    //   store.isLoading = false;
-    //   store.isError = null;
-    // })
-    // .addCase(operations.getOneNotice.rejected, (store, { payload }) => {
-    //   store.noticeById = null;
-    //   store.isLoading = false;
-    //   store.isError = payload;
-    // });
+      )
+      // отримання одного оголошення
+      .addCase(operations.getNoticeById.pending, store => {
+        store.isLoading = true;
+        store.isError = null;
+      })
+      .addCase(operations.getNoticeById.fulfilled, (store, { payload }) => {
+        store.noticeById = payload;
+        store.isLoading = false;
+        store.isError = null;
+      })
+      .addCase(operations.getNoticeById.rejected, (store, { payload }) => {
+        store.noticeById = null;
+        store.isLoading = false;
+        store.isError = payload;
+      });
     //додавання оголошення до обраних
     // .addCase(operations.updateFavorite.pending, store => {
     //   store.isLoading = true;
