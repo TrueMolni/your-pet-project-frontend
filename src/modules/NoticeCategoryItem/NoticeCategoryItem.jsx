@@ -1,5 +1,11 @@
-import { useState, useSelector, useDispatch, useEffect } from 'react';
-import { isUserLogin } from 'redux/auth/auth-selectors';
+import { useSelector, useDispatch } from 'react-redux';
+import { useState, useEffect } from 'react';
+import {
+  isUserLogin,
+  getAuth,
+  getUser,
+  getUserId,
+} from 'redux/auth/auth-selectors';
 import { selectFavorites } from 'redux/notices/notices-selectors';
 import operations from 'redux/notices/notices-operations';
 
@@ -15,7 +21,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import ModalDeleteNotice from 'modules/ModalDeleteNotice/ModalDeleteNotice';
 
 const NoticeCategoryItem = ({
-  key,
+  id,
   avatarURL,
   title,
   place,
@@ -24,21 +30,21 @@ const NoticeCategoryItem = ({
   category,
   sex,
   favorite,
-  owner,
+  // owner,
 }) => {
-  // const favoriteNotices = useSelector(selectFavorites);
+  const favoriteNotices = useSelector(selectFavorites);
   const [isModalDeleteNoticeOpen, setModalDeleteNoticeOpen] = useState(false);
-  // const { isLogin } = useSelector(isUserLogin);
-  // const userId = useSelector(selectUsersId);
-  // const dispatch = useDispatch();
-  const isLogin = false;
+  const isLogin = useSelector(isUserLogin);
+  const dispatch = useDispatch();
+  const owner = true;
 
   const toggleFavorite = () => {
     if (!isLogin) {
       notification();
       return;
     }
-    // dispatch(operations.updateFavorite(key));
+    console.log(id);
+    dispatch(operations.updateFavorite(id));
   };
 
   const openModalDeleteNotice = () => {
@@ -47,9 +53,9 @@ const NoticeCategoryItem = ({
   const closeModalDeleteNotice = () => {
     setModalDeleteNoticeOpen(false);
   };
-  // useEffect(() => {}, [favoriteNotices]);
+  useEffect(() => {}, [favoriteNotices]);
   return (
-    <li key={key}>
+    <li>
       <div className={styles.mainWrapper}>
         <div className={styles.positionWrapper}>
           <img src={avatarURL} alt="" className={styles.petImage} />
@@ -74,7 +80,7 @@ const NoticeCategoryItem = ({
             {owner && (
               <button
                 className={styles.btnDelete}
-                onClick={() => openModalDeleteNotice(title, key)}
+                onClick={() => openModalDeleteNotice(title, id)}
               >
                 <svg width="24" height="24">
                   <use xlinkHref={`${sprite}#trash`}></use>
@@ -118,7 +124,7 @@ const NoticeCategoryItem = ({
         isOpen={isModalDeleteNoticeOpen}
         onClose={closeModalDeleteNotice}
         title={title}
-        key={key}
+        id={id}
       />
     </li>
   );

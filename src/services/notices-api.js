@@ -23,7 +23,7 @@ export const updateFavorite = async id => {
   return data;
 };
 
-//для отримання оголошень авторизованого користувача доданих ним же в обрані
+// для отримання оголошень авторизованого користувача доданих ним же в обрані
 // export const getAllNoticesByAuthUserAddedToFavorites = async id => {
 //   const { data } = await instance.get(`api/notices/user/${id}/favorite`);
 //   return data;

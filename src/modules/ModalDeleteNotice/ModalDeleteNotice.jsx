@@ -3,11 +3,11 @@ import operations from 'redux/notices/notices-operations';
 import Modal from 'shared/components/Modal/Modal';
 import styles from './modal-delete-notice.module.css';
 
-const ModalDeleteNotice = ({ isOpen, onClose, title, key }) => {
+const ModalDeleteNotice = ({ isOpen, onClose, title, id }) => {
   const dispatch = useDispatch();
   const confirmDeletion = () => {
+    dispatch(operations.deleteUserNotice(id));
     onClose();
-    dispatch(operations.deleteUserNotice(key));
   };
   return (
     <Modal isOpen={isOpen} onClose={() => onClose()}>
