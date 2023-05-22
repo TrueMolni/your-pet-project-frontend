@@ -1,0 +1,30 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 248px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+
+  color: var(--main-background-color);
+
+  background-color: var(--btn-default-color);
+}
+
+.icon {
+  fill: var(--main-background-color);
+  width: 24px;
+  height: 24px;
+  margin-left: 12px;
+}
+
+.button:hover {
+  background-image: linear-gradient(290.46deg, #419ef1 0%, #9bd0ff 107.89%);
+}
