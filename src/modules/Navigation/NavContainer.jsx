@@ -5,7 +5,7 @@ import sprite from '../../images/icons/sprite.svg';
 import Logo from './Logo/index';
 import BurgerMenuBtn from './BurgerMenuBtn/BurgerMenuBtn';
 import Navigation from './Nav/Navigation';
-import UserNavigation from './UserNavigation';
+import UserNavigation from './UserNavigation/UserNavigation';
 import AuthNavigation from './AuthNavigation/AuthNavigation';
 import MenuPage from 'pages/MenuPage/MenuPage';
 import { isUserLogin } from 'redux/auth/auth-selectors';
@@ -34,7 +34,10 @@ const NavContainer = () => {
         <div className={css.navContainer}>
           <Navigation navListStyle={css.navList} navLinkStyle={css.navLink} />
           {isLogin ? (
-            <UserNavigation />
+            <UserNavigation
+              userIconContainer={css.userIconContainer}
+              userNameStyle={css.userName}
+            />
           ) : (
             <AuthNavigation listStyle={css.authNavList} />
           )}
