@@ -45,21 +45,34 @@ const ModalWindow = () => {
               &times;
             </span>
             
-             <img src="./123.jpg"  className="modal-image" />
-
+             
+                  
             <div className='modal-content'>
+             
+              <div className='modal-main-info'>
+                
               <h2 className='modal-title'> cute dog looking for a home</h2>
-                      <ul className='modal-pet-info'>
-                          <li>Name:</li>
-                          <li>Birthday:</li>
-                          <li>Breed:</li>
-                          <li>Place:</li>
-                          <li>The sex:</li>
-                          <li>Email:</li>
-                          <li>Phone:</li>
-                      </ul>
-              <p className='modal-pet-comments'>Comments: </p>
-              </div>
+                      <ul className='modal-pet-info-list'>
+                          <li>Name:<span></span></li>
+                          <li>Birthday:<span></span></li>
+                          <li>Breed:<span></span></li>
+                          <li>Place:<span></span></li>
+                          <li>The sex:<span></span></li>
+                          <li>Email:<span></span></li>
+                          <li>Phone:<span></span></li>
+                </ul>
+                </div>
+              
+            </div>
+            <div className='modal-comment-section'>
+              <p className='modal-pet-comments'>Comments: <span></span></p>
+            </div>
+            
+            <div className='modal-buttons'>
+              <button type='button' className='modal-add-favs'></button>
+              <button type='button' className='modal-contact'></button>
+
+            </div>
           </div>
         </div>
       )}
