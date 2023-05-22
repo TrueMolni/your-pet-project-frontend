@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './modal-adv.css'; 
-
+import './modal-adv.css';
+import myImage from './123.jpg';
 
 const ModalWindow = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,34 +44,56 @@ const ModalWindow = () => {
             <span className="close" onClick={closeModal}>
               &times;
             </span>
-            
-             
-                  
-            <div className='modal-content'>
-             
-              <div className='modal-main-info'>
-                
-              <h2 className='modal-title'> cute dog looking for a home</h2>
-                      <ul className='modal-pet-info-list'>
-                          <li>Name:<span></span></li>
-                          <li>Birthday:<span></span></li>
-                          <li>Breed:<span></span></li>
-                          <li>Place:<span></span></li>
-                          <li>The sex:<span></span></li>
-                          <li>Email:<span></span></li>
-                          <li>Phone:<span></span></li>
-                </ul>
-                </div>
-              
-            </div>
-            <div className='modal-comment-section'>
-              <p className='modal-pet-comments'>Comments: <span></span></p>
-            </div>
-            
-            <div className='modal-buttons'>
-              <button type='button' className='modal-add-favs'></button>
-              <button type='button' className='modal-contact'></button>
 
+            <div className="modal-main-content">
+              <div className="modal-top-side">
+                <div className="modal-image-container">
+                  <img src={myImage} alt="My Image" className="modal-image" />
+                  <span className="modal-pet-price">Price</span>
+                </div>
+                <div className="modal-main-info">
+                  <h2 className="modal-title">cute dog looking for a home</h2>
+                  <ul className="modal-pet-info-list">
+                    <li>
+                      Name:<span className="modal-list-info"></span>
+                    </li>
+                    <li>
+                      Birthday:<span className="modal-list-info"></span>
+                    </li>
+                    <li>
+                      Breed:<span className="modal-list-info"></span>
+                    </li>
+                    <li>
+                      Place:<span className="modal-list-info"></span>
+                    </li>
+                    <li>
+                      The sex:<span className="modal-list-info"></span>
+                    </li>
+                    <li>
+                      Email:<span className="modal-list-info"></span>
+                    </li>
+                    <li>
+                      Phone:<span className="modal-list-info"></span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="modal-bot-side">
+                <div className="modal-comment-section">
+                  <p className="modal-pet-comments">
+                    Comments: <span></span>
+                  </p>
+                </div>
+
+                <div className="modal-buttons">
+                  <button type="button" className="modal-add-favs">
+                    <span>Add to</span>
+                  </button>
+                  <button type="button" className="modal-contact">
+                    <span>Contact</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

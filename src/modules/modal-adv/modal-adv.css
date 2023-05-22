@@ -15,21 +15,23 @@
     
 }
 .modal-main-info{
-    padding: 0;
+    
 }
 
 .modal-content {
     /* Стилізація контейнера модального вікна */
     background-color: white;
     padding: 32px;
-    border-radius: 5px;
+    border-radius: 40px;
     flex-direction: column;
+    position: relative;display: flex;
+        align-items: flex-start;
         
 }
 
-.modal-content {
-    /* ... решта стилів */
-    position: relative;
+
+.modal-top-side{
+    display: flex;
 }
 
 .close {
@@ -41,7 +43,8 @@
 
 .modal-image {
     /* Стилізація зображення */
-    align-self: flex-start;
+    position: relative;
+    
 }
 
 .modal-title {
@@ -60,14 +63,9 @@
 
 .modal-pet-comments {
     /* Стилізація коментарів про тварину */
-    text-align: right;
-    align-self: flex-start;
+    
 }
-.modal-content {
-    /* ... решта стилів */
-    display: flex;
-        align-items: flex-start;
-}
+
 
 .modal-image {
     /* ... решта стилів */
@@ -93,25 +91,28 @@
 }
 
 .modal-main-info {
-    /* ... решта стилів */
-    align-self: flex-end;
+    margin-left: 24px;
 }
 .modal-buttons {
     display: flex;
-    margin-top: 0px;
-    align-items: flex-end;
+  margin-left: 343px;
+  align-items: center;
     
   
+}
+.modal-list-info{
+    margin-left: 70px;
 }
 .modal-contact{
     margin-left: 17px;
     height: 40px;
         width: 129px;
         border-radius: 40px;
-        outline-color: #31608b;
+        
         background-color: #fff;
         border-color: #54ADFF;
         border-style: double;
+        color: #54ADFF;
         
         
 }
@@ -123,6 +124,7 @@
     background-color: #54ADFF;
     border-color:#54ADFF;
     border-style: double;
+    color: white;
    
 }
 .modal-pet-info-list{
@@ -137,4 +139,19 @@
         font-weight: 700;
         font-size: 28px;
         line-height: 38px;;
+}
+
+.modal-pet-info-list{
+    margin: 0;
+    padding: 0;
+   
+}
+.modal-image-container {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.modal-pet-price {
+  position: relative;
 }
