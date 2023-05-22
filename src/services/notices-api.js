@@ -18,10 +18,10 @@ export const getNoticesByCategory = async category => {
 
 //для додавання оголошення до обраних
 
-// export const updateFavorite = async id => {
-//   const { data } = await instance.patch(`api/notices/favorite/${id}`);
-//   return data;
-// };
+export const updateFavorite = async id => {
+  const { data } = await instance.patch(`api/notices/favorite/${id}`);
+  return data;
+};
 
 //для отримання оголошень авторизованого користувача доданих ним же в обрані
 // export const getAllNoticesByAuthUserAddedToFavorites = async id => {
@@ -36,10 +36,10 @@ export const getNoticesByCategory = async category => {
 //   return data;
 // };
 
-// export const deleteUserNotice = async id => {
-//   const { data } = await instance.delete(`/notices/${id}`);
-//   return data;
-// };
+export const deleteUserNotice = async id => {
+  const { data } = await instance.delete(`/notices/${id}`);
+  return data;
+};
 
 //для додавання оголошень відповідно до обраної категорії
 
