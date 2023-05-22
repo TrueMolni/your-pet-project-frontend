@@ -160,7 +160,7 @@
   }
 }
 .image {
-  background-image: url('../../images/notfound/cat.svg');
+  background-image: url('../../images/notfound/cat.png');
   background-repeat: no-repeat;
   background-size: contain;
   border-radius: 50%;
