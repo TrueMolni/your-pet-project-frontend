@@ -29,6 +29,7 @@ const NoticesCategoryList = () => {
           ({ _id, avatarURL, title, location, date, category, sex }) => (
             <NoticeCategoryItem
               key={_id}
+              id={_id}
               avatarURL={avatarURL}
               title={title}
               place={location}

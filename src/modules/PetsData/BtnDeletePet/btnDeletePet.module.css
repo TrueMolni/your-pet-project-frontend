@@ -1,0 +1,32 @@
+.deleteBtn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  right: 0;
+  border: none;
+  /* background-color: #fdf7f2; */
+  cursor: pointer;
+  @media screen and (min-width: 768px) {
+    width: 32px;
+    height: 32px;
+  }
+  :hover,
+  :focus {
+    transform: scale(1.1);
+    /* transition: transform ${transition}; */
+  }
+}
+
+.iconTrash {
+  fill: var(--btn-default-color);
+  /* @media screen and (min-width: 768px) {
+    width: 24px;
+    height: 24px;
+  } */
+  :hover,
+  :focus {
+    fill: #f59256;
+  }
+}
