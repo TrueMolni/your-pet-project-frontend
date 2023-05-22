@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/your-pet-project-frontend/static/css/main.1a654962.css",
-    "main.js": "/your-pet-project-frontend/static/js/main.6c63124a.js",
+    "main.css": "/your-pet-project-frontend/static/css/main.82053d55.css",
+    "main.js": "/your-pet-project-frontend/static/js/main.0a05c821.js",
     "static/media/bg-image-tab@3x.png": "/your-pet-project-frontend/static/media/bg-image-tab@3x.9d059a115cc4c0f4c317.png",
     "static/media/bg-image-desktop@3x.png": "/your-pet-project-frontend/static/media/bg-image-desktop@3x.49db6e3206b54f5b29b9.png",
     "static/media/bg-image-tab@2x.png": "/your-pet-project-frontend/static/media/bg-image-tab@2x.04107cf51fccae6353c5.png",
@@ -15,7 +15,7 @@
     "static/media/bg-image-mob.png": "/your-pet-project-frontend/static/media/bg-image-mob.1544d60328add2bdfc18.png",
     "static/media/bg320@2x.jpg": "/your-pet-project-frontend/static/media/bg320@2x.5c736d3a21b2b58b7ec5.jpg",
     "static/media/logo.svg": "/your-pet-project-frontend/static/media/logo.6e2f51eeb062dc6472f5e4aa1de019f4.svg",
-    "static/media/sprite.svg": "/your-pet-project-frontend/static/media/sprite.694b99c8da9e2689f1f9321216ee2d15.svg",
+    "static/media/sprite.svg": "/your-pet-project-frontend/static/media/sprite.ea67adcb241711fe9b4a0f1b20ef5d17.svg",
     "static/media/leg-white.svg": "/your-pet-project-frontend/static/media/leg-white.756865185251503188e9.svg",
     "static/media/pawprint8.svg": "/your-pet-project-frontend/static/media/pawprint8.f14c1e05a5beb61bc89f.svg",
     "static/media/pawprint3.svg": "/your-pet-project-frontend/static/media/pawprint3.dae3c86bd01d98030ce7.svg",
@@ -29,11 +29,11 @@
     "static/media/search (1).svg": "/your-pet-project-frontend/static/media/search (1).41d49a9ae2e0cf1b87a3b9eb48d223c9.svg",
     "static/media/add-icon.svg": "/your-pet-project-frontend/static/media/add-icon.3fdcbabce23e0703cc95.svg",
     "static/media/cross-small (1).svg": "/your-pet-project-frontend/static/media/cross-small (1).1166adf076ef516f7a1e4dd89d226f31.svg",
-    "main.1a654962.css.map": "/your-pet-project-frontend/static/css/main.1a654962.css.map",
-    "main.6c63124a.js.map": "/your-pet-project-frontend/static/js/main.6c63124a.js.map"
+    "main.82053d55.css.map": "/your-pet-project-frontend/static/css/main.82053d55.css.map",
+    "main.0a05c821.js.map": "/your-pet-project-frontend/static/js/main.0a05c821.js.map"
   },
   "entrypoints": [
-    "static/css/main.1a654962.css",
-    "static/js/main.6c63124a.js"
+    "static/css/main.82053d55.css",
+    "static/js/main.0a05c821.js"
   ]
 }
