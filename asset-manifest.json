@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/your-pet-project-frontend/static/css/main.82053d55.css",
-    "main.js": "/your-pet-project-frontend/static/js/main.0a05c821.js",
+    "main.css": "/your-pet-project-frontend/static/css/main.4ae457c8.css",
+    "main.js": "/your-pet-project-frontend/static/js/main.a9d0ff9b.js",
+    "static/media/cat.svg": "/your-pet-project-frontend/static/media/cat.3d0269fb66ebb5c3d5af.svg",
     "static/media/bg-image-tab@3x.png": "/your-pet-project-frontend/static/media/bg-image-tab@3x.9d059a115cc4c0f4c317.png",
     "static/media/bg-image-desktop@3x.png": "/your-pet-project-frontend/static/media/bg-image-desktop@3x.49db6e3206b54f5b29b9.png",
     "static/media/bg-image-tab@2x.png": "/your-pet-project-frontend/static/media/bg-image-tab@2x.04107cf51fccae6353c5.png",
@@ -15,6 +16,9 @@
     "static/media/bg-image-mob.png": "/your-pet-project-frontend/static/media/bg-image-mob.1544d60328add2bdfc18.png",
     "static/media/bg320@2x.jpg": "/your-pet-project-frontend/static/media/bg320@2x.5c736d3a21b2b58b7ec5.jpg",
     "static/media/logo.svg": "/your-pet-project-frontend/static/media/logo.6e2f51eeb062dc6472f5e4aa1de019f4.svg",
+    "static/media/bg_tablet.svg": "/your-pet-project-frontend/static/media/bg_tablet.7e4ccb9cf1d73a757e74.svg",
+    "static/media/bg_mobile.svg": "/your-pet-project-frontend/static/media/bg_mobile.a200de17623370c44022.svg",
+    "static/media/bg_desktop.svg": "/your-pet-project-frontend/static/media/bg_desktop.6672ae2c617fecf43ea9.svg",
     "static/media/sprite.svg": "/your-pet-project-frontend/static/media/sprite.ea67adcb241711fe9b4a0f1b20ef5d17.svg",
     "static/media/leg-white.svg": "/your-pet-project-frontend/static/media/leg-white.756865185251503188e9.svg",
     "static/media/pawprint8.svg": "/your-pet-project-frontend/static/media/pawprint8.f14c1e05a5beb61bc89f.svg",
@@ -29,11 +33,11 @@
     "static/media/search (1).svg": "/your-pet-project-frontend/static/media/search (1).41d49a9ae2e0cf1b87a3b9eb48d223c9.svg",
     "static/media/add-icon.svg": "/your-pet-project-frontend/static/media/add-icon.3fdcbabce23e0703cc95.svg",
     "static/media/cross-small (1).svg": "/your-pet-project-frontend/static/media/cross-small (1).1166adf076ef516f7a1e4dd89d226f31.svg",
-    "main.82053d55.css.map": "/your-pet-project-frontend/static/css/main.82053d55.css.map",
-    "main.0a05c821.js.map": "/your-pet-project-frontend/static/js/main.0a05c821.js.map"
+    "main.4ae457c8.css.map": "/your-pet-project-frontend/static/css/main.4ae457c8.css.map",
+    "main.a9d0ff9b.js.map": "/your-pet-project-frontend/static/js/main.a9d0ff9b.js.map"
   },
   "entrypoints": [
-    "static/css/main.82053d55.css",
-    "static/js/main.0a05c821.js"
+    "static/css/main.4ae457c8.css",
+    "static/js/main.a9d0ff9b.js"
   ]
 }
