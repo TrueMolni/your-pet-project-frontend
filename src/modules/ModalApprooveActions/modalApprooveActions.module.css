@@ -1,0 +1,48 @@
+.title {
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+  font-family: var(--Manrope);
+  margin-top: 58px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 36px;
+    margin-top: 28px;
+  }
+}
+
+.approoveBtn {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-family: var(--Manrope);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.38;
+  letter-spacing: 0.04;
+  border-radius: 40px;
+  color: var(--main-background-color);
+
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  width: 248px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 60px;
+    margin-bottom: 36px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-top: 69px;
+    margin-bottom: 45px;
+  }
+}
+.logout {
+  margin-left: 12px;
+  fill: var(--main-background-color);
+}
+
+.btnWrapper {
+  display: flex;
+}
