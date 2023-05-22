@@ -2,7 +2,7 @@ import Button from '../../../shared/components/Button/Button';
 import AddIcon from '@mui/icons-material/Add';
 import css from './btnAddPet.module.css';
 
-export const BtnAddPet = ({ onPostHandler }) => {
+const BtnAddPet = ({ onPostHandler }) => {
   return (
     <Button
       // onClick={onPostHandler}
@@ -15,3 +15,5 @@ export const BtnAddPet = ({ onPostHandler }) => {
     ></Button>
   );
 };
+
+export default BtnAddPet;
