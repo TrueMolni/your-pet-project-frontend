@@ -26,21 +26,34 @@ const getNoticesByCategory = createAsyncThunk(
 //   }
 // );
 
-// const updateFavorite = createAsyncThunk(
-//   'notices/updateFavorite',
-//   async (id, { rejectWithValue }) => {
-//     try {
-//       const { data } = await api.updateFavorite(id);
+const updateFavorite = createAsyncThunk(
+  'notices/updateFavorite',
+  async (id, { rejectWithValue }) => {
+    try {
+      const { data } = await api.updateFavorite(id);
 
-//       return data;
-//     } catch (error) {
-//       return rejectWithValue(error.message);
-//     }
-//   }
-// );
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+export const deleteUserNotice = createAsyncThunk(
+  'notices/deleteNotice',
+  async (id, { rejectWithValue }) => {
+    try {
+      const { data } = await api.deleteUserNotice(`/notices/${id}`);
+      return data._id;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
 
 const operations = {
   getNoticesByCategory,
+  updateFavorite,
+  deleteUserNotice,
 };
 
 export default operations;
