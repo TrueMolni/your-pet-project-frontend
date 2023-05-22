@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/your-pet-project-frontend/static/css/main.75751bed.css",
-    "main.js": "/your-pet-project-frontend/static/js/main.6880758d.js",
+    "main.css": "/your-pet-project-frontend/static/css/main.f65b2c88.css",
+    "main.js": "/your-pet-project-frontend/static/js/main.a9eec0e8.js",
     "static/media/cat.svg": "/your-pet-project-frontend/static/media/cat.3d0269fb66ebb5c3d5af.svg",
     "static/media/bg-image-tab@3x.png": "/your-pet-project-frontend/static/media/bg-image-tab@3x.9d059a115cc4c0f4c317.png",
     "static/media/bg-image-desktop@3x.png": "/your-pet-project-frontend/static/media/bg-image-desktop@3x.49db6e3206b54f5b29b9.png",
@@ -34,11 +34,11 @@
     "static/media/trash.svg": "/your-pet-project-frontend/static/media/trash.af696e495cd728094545.svg",
     "static/media/add-icon.svg": "/your-pet-project-frontend/static/media/add-icon.3fdcbabce23e0703cc95.svg",
     "static/media/cross-small (1).svg": "/your-pet-project-frontend/static/media/cross-small (1).1166adf076ef516f7a1e4dd89d226f31.svg",
-    "main.75751bed.css.map": "/your-pet-project-frontend/static/css/main.75751bed.css.map",
-    "main.6880758d.js.map": "/your-pet-project-frontend/static/js/main.6880758d.js.map"
+    "main.f65b2c88.css.map": "/your-pet-project-frontend/static/css/main.f65b2c88.css.map",
+    "main.a9eec0e8.js.map": "/your-pet-project-frontend/static/js/main.a9eec0e8.js.map"
   },
   "entrypoints": [
-    "static/css/main.75751bed.css",
-    "static/js/main.6880758d.js"
+    "static/css/main.f65b2c88.css",
+    "static/js/main.a9eec0e8.js"
   ]
 }
