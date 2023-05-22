@@ -1,19 +1,17 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { getUser } from 'redux/auth/auth-selectors';
+import { getUserEmail, } from 'redux/auth/auth-selectors';
 import sprite from '../../../images/icons/sprite.svg';
 
 const UserNavigation = ({ userNameStyle, userIconContainer }) => {
-  const [name, setName] = useState('');
-  const user = useSelector(getUser);
+  const userEmail = useSelector(getUserEmail);
+
+  const [name, setName] = useState(userEmail || 'user');
+
   useEffect(() => {
-    const infoUser = () => {
-      if (!!user) return setName(user);
-      return setName('user');
-    };
-    infoUser();
-  }, [name, user]);
+    setName(userEmail || 'user');
+  }, [userEmail]);
 
   return (
     <NavLink to={'/user'} className={userIconContainer}>
