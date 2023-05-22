@@ -4,8 +4,9 @@ import { getAuth } from 'redux/auth/auth-selectors';
 import css from './shared-layout.module.css';
 import { useSelector } from 'react-redux';
 import Loader from 'shared/components/Loader/Loader';
+
 const SharedLayout = () => {
-  const { isLoading, isLogin } = useSelector(getAuth)
+  const { isLoading, isLogin } = useSelector(getAuth);
   console.log('isLogin', isLogin);
 
   return (

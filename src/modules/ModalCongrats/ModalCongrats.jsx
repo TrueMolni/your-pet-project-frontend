@@ -1,5 +1,4 @@
-
-import React, {  } from 'react';
+import React from 'react';
 import Modal from '../../shared/components/Modal/Modal';
 import Button from '../../shared/components/Button/Button';
 
@@ -10,7 +9,6 @@ import css from './modalCongrats.module.css';
 // const handlePositiveRegistration = () => {
 //   setIsOpen(true);
 // };
-
 
 const ModalCongrats = ({ isOpen, onClose }) => {
   // const [isOpen, setIsOpen] = useState(false);
