@@ -1,6 +1,4 @@
-import Button from 'shared/components/Button/Button';
 import styles from './notFound.module.css';
-import sprite from '../../images/icons/sprite.svg';
 import { useNavigate } from 'react-router-dom';
 import Icon from './Icon';
 import ButtonNav from 'shared/components/Button/ButtonNav';
