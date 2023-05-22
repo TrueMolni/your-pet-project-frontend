@@ -1,8 +1,14 @@
+import { useDispatch } from 'react-redux';
+import operations from 'redux/notices/notices-operations';
 import Modal from 'shared/components/Modal/Modal';
 import styles from './modal-delete-notice.module.css';
-import { deleteUserNotice } from 'redux/notices/notices-operations';
 
 const ModalDeleteNotice = ({ isOpen, onClose, title, key }) => {
+  const dispatch = useDispatch();
+  const confirmDeletion = () => {
+    onClose();
+    dispatch(operations.deleteUserNotice(key));
+  };
   return (
     <Modal isOpen={isOpen} onClose={() => onClose()}>
       <div className={styles.modalWrapper}>
@@ -16,10 +22,7 @@ const ModalDeleteNotice = ({ isOpen, onClose, title, key }) => {
           <button className={styles.btnCancel} onClick={() => onClose()}>
             Cancel
           </button>
-          <button
-            className={styles.btnYes}
-            onClick={() => deleteUserNotice(key)}
-          >
+          <button className={styles.btnYes} onClick={confirmDeletion}>
             Yes
           </button>
         </div>
