@@ -45,6 +45,7 @@
     /* Стилізація зображення */
     position: relative;
     
+    
 }
 
 .modal-title {
@@ -62,8 +63,8 @@
 }
 
 .modal-pet-comments {
-    /* Стилізація коментарів про тварину */
-    
+    max-width: 618px;
+    margin: 0;
 }
 
 
@@ -88,6 +89,7 @@
 .modal-comment-section {
     /* ... решта стилів */
     margin-top: auto;
+    margin-bottom: 70px;
 }
 
 .modal-main-info {
@@ -154,4 +156,68 @@
 
 .modal-pet-price {
   position: relative;
+}
+.modal-pet-info-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.modal-pet-info-list li {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Розподіл стовпців на дві рівні частини */
+    align-items: center;
+}
+
+.modal-pet-info-list li span {
+    text-align: left;
+}
+.modal-image-container {
+    display: flex;
+        align-items: center;
+        justify-content: center;
+}
+.modal-pet-price {
+    position: absolute;
+    top: 16px;
+    /* Відступ зверху */
+    left: 0;
+    /* Вирівнювання по лівому краю */
+    background-color:#CCE4FB;
+    color: black;
+    border-radius: 5px;
+    font-size: 12px;
+    border-top-right-radius: 40px;
+        border-bottom-right-radius: 40px;
+        width: 126px;
+        align-self: center;
+        width: 126px;
+            height: 32px;
+    
+
+}
+.modal-top-side{
+    margin-bottom: 28px;
+}
+@media (max-width: 600px) {
+    .modal-content {
+        flex-direction: initial;
+        align-items: initial;
+        text-align: initial;
+    }
+
+    .modal-main-info {
+        margin-top: initial;
+    }
+
+    .modal-pet-info-list {
+        margin-left: initial;
+        padding-left: initial;
+        text-align: initial;
+    }
+}
+.svg-icon{
+background-color: tomato;
+fill: blue;
 }

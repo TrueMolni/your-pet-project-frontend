@@ -55,25 +55,25 @@ const ModalWindow = () => {
                   <h2 className="modal-title">cute dog looking for a home</h2>
                   <ul className="modal-pet-info-list">
                     <li>
-                      Name:<span className="modal-list-info"></span>
+                      Name:<span className="modal-list-info">Rich</span>
                     </li>
                     <li>
-                      Birthday:<span className="modal-list-info"></span>
+                      Birthday:<span className="modal-list-info">21.09.2020</span>
                     </li>
                     <li>
-                      Breed:<span className="modal-list-info"></span>
+                      Breed:<span className="modal-list-info">Pomeranian</span>
                     </li>
                     <li>
-                      Place:<span className="modal-list-info"></span>
+                      Place:<span className="modal-list-info">Lviv</span>
                     </li>
                     <li>
-                      The sex:<span className="modal-list-info"></span>
+                      The sex:<span className="modal-list-info">male</span>
                     </li>
                     <li>
-                      Email:<span className="modal-list-info"></span>
+                      Email:<span className="modal-list-info modal-list-info-email">user@mail.com</span>
                     </li>
                     <li>
-                      Phone:<span className="modal-list-info"></span>
+                      Phone:<span className="modal-list-info modal-list-info-phone">+380971234567</span>
                     </li>
                   </ul>
                 </div>
@@ -81,7 +81,7 @@ const ModalWindow = () => {
               <div className="modal-bot-side">
                 <div className="modal-comment-section">
                   <p className="modal-pet-comments">
-                    Comments: <span></span>
+                    Comments: <span>Rich would be the perfect addition to an active family that loves to play and go on walks. I bet he would love having a doggy playmate too! </span>
                   </p>
                 </div>
 
