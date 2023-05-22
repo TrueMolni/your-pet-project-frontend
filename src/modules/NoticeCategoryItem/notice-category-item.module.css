@@ -1,9 +1,8 @@
-
 .mainWrapper {
   height: 456px;
   box-shadow: 3px 8px 14px rgba(136, 198, 253, 0.19);
   border-radius: 0px 0px 40px 40px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 @media screen and (max-width: 767px) {
@@ -17,7 +16,7 @@
     width: 336px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .mainWrapper {
     width: 280px;
   }
@@ -48,7 +47,9 @@
 
 .category {
   display: block;
+  text-align: center;
   margin: 0;
+  min-width: 126px;
   padding: 8px 14px;
   background: var(--btn-disabled-color);
   border-radius: 0px 16px 16px 0px;
@@ -92,6 +93,7 @@
 }
 .btnDelete:hover,
 .btnDelete:focus {
+  scale: 1.1;
   fill: var(--btn-default-color);
 }
 
@@ -105,7 +107,7 @@
   column-gap: 12px;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) and (max-width: 1279px) {
   .description {
     column-gap: 24px;
   }
@@ -136,10 +138,14 @@
   display: flex;
   flex-direction: column;
   margin-top: 20px;
+  gap: auto;
 }
 
 .text {
+  flex-grow: 0;
   width: 231px;
+  height: 66px;
+  overflow: hidden;
   padding: 0;
   margin: 0 auto;
   font-weight: 700;
@@ -148,6 +154,7 @@
 }
 
 .btnLearnMore {
+  flex-grow: 1;
   color: var(--btn-default-color);
   background-color: transparent;
   border: 2px solid var(--btn-default-color);

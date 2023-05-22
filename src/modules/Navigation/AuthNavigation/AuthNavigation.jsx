@@ -5,7 +5,6 @@ import PawIcon from './PawIcon';
 
 const AuthNavigation = ({ listStyle }) => {
   const navigate = useNavigate();
-
   return (
     <ul className={listStyle}>
       <li>

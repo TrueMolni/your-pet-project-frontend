@@ -5,7 +5,7 @@ import sprite from '../../../images/icons/sprite.svg';
 
 const AddPetBtn = () => {
   return (
-    <Link className={css.Btn} href="/add-pet">
+    <Link className={css.Btn} to="/add-pet">
       Add Pet
       <svg width="24px" height="24px" className={css.icon}>
         <use href={sprite + '#plus'}></use>

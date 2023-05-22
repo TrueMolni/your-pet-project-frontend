@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-// import NoticesSearch from '../../shared/components/NoticesSearch/NoticesSearch';
-// import NoticesCategoriesNav from '../../shared/components/NoticesSearch/NoticesSearch';
-// import NoticesFilters from '../../shared/components/NoticesSearch/NoticesSearch';
-// import NoticesCategoriesList from '../../shared/components/NoticesSearch/NoticesSearch';
+import NoticesSearch from '../../shared/components/NoticesSearch/NoticesSearch';
+import NoticesCategoriesNav from '../../modules/NoticesCategoriesNav/NoticesCategoriesNav';
+// import NoticesFilters from '../../modules/NoticesFilters/NoticesFilters';
+import NoticesCategoriesList from '../../modules/NoticesCategoryList/NoticesCategoryList';
 import AddPetBtn from 'shared/components/AddPetBtn';
 
 const NoticesPage = () => {
@@ -20,11 +20,10 @@ const NoticesPage = () => {
   return (
     <div>
       <AddPetBtn />
-      {/* <NoticesSearch />
+      <NoticesSearch />
       <NoticesCategoriesNav />
-       <AddPetBtn />
-      <NoticesFilters />
-      <NoticesCategoriesList /> */}
+      <NoticesCategoriesList />
+      {/* <NoticesFilters /> */}
     </div>
   );
 };
