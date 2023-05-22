@@ -2,9 +2,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 import {
   isUserLogin,
-  getAuth,
-  getUser,
-  getUserId,
+  // getAuth,
+  // getUser,
+  // getUserId,
 } from 'redux/auth/auth-selectors';
 import { selectFavorites } from 'redux/notices/notices-selectors';
 import operations from 'redux/notices/notices-operations';
