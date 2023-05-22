@@ -1,8 +1,8 @@
 import css from './btnDeletePet.module.css';
 import sprite from '../../../images/icons/sprite.svg';
 
-export const BtnDeletePet = ({ onClick, name }) => {
-  const handleDelete = e => {
+const BtnDeletePet = ({ onClick, name }) => {
+  const clickHandler = e => {
     onClick(e);
   };
   return (
@@ -10,7 +10,7 @@ export const BtnDeletePet = ({ onClick, name }) => {
       className={css.deleteBtn}
       name={name}
       type="button"
-      onClick={handleDelete}
+      onClick={clickHandler}
     >
       <svg width={24} height={24} className={css.iconTrash}>
         <use href={sprite + '#trash'}></use>
@@ -18,3 +18,4 @@ export const BtnDeletePet = ({ onClick, name }) => {
     </button>
   );
 };
+export default BtnDeletePet;

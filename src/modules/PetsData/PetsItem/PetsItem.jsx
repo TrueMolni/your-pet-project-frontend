@@ -2,7 +2,7 @@
 // import { useDispatch } from 'react-redux';
 
 import defImage from '../../../images/defaultImg/defaultImg.jpeg';
-import { BtnDeletePet } from '../BtnDeletePet/BtnDeletePet';
+import BtnDeletePet from '../BtnDeletePet/BtnDeletePet';
 import css from './petsItem.module.css';
 
 const PostItem = ({ pet }) => {
