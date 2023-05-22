@@ -3,12 +3,15 @@ import { Provider } from 'react-redux';
 import { store, persistor } from './redux/store.js';
 import { PersistGate } from 'redux-persist/integration/react';
 
+import { PrivateRoute } from 'routes/PrivetRoutes.jsx';
+import { RestrictedRoute } from 'routes/RestrictedRoutes.jsx';
 import SharedLayout from 'modules/SharedLayout';
 import RegisterPage from 'pages/RegisterPage/RegisterPage';
 import LoginPage from 'pages/LoginPage/LoginPage';
 import FindPetPage from 'pages/FindPetPage/FindPetPage';
 import MainPage from 'pages/MainPage/MainPage';
-
+import UserInfoPage from 'pages/UserInfoPage/UserInfoPage';
+// @emotion/styled  @chakra-ui/react
 export const App = () => {
   return (
     <Provider store={store}>
@@ -17,9 +20,11 @@ export const App = () => {
           <Routes>
             <Route path="/" element={<SharedLayout />}>
               <Route path="/main" element={<MainPage />}></Route>
-              <Route path="/login" element={<LoginPage />}></Route>
-              <Route path="/register" element={<RegisterPage />}></Route>
+              <Route path="/login" element={<RestrictedRoute redirectTo="/userInfo" component={<LoginPage />} />}></Route>
+              <Route path="/register" element={<RestrictedRoute redirectTo="/userInfo" component={<RegisterPage />} />}></Route>
               <Route path="/notices" element={<FindPetPage />}></Route>
+              <Route path="/userInfo" element={<PrivateRoute redirectTo="/login" component={<UserInfoPage />} />}></Route>
+
               {/* <Route
                 path="/notices/:categoryName"
                 element={<NoticesPage />}
