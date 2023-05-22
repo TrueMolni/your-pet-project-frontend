@@ -2,8 +2,7 @@
 import React, {  } from 'react';
 import Modal from '../../shared/components/Modal/Modal';
 import Button from '../../shared/components/Button/Button';
-
-import PawIcon from '../../modules/Navigation/AuthNavigation/PawIcon';
+import sprite from '../../images/icons/sprite.svg';
 
 import css from './modalCongrats.module.css';
 
@@ -26,8 +25,12 @@ const ModalCongrats = ({ isOpen, onClose }) => {
         <h2 className={css.text}>Youre registration is success</h2>
         <Button
           customStyle={css.succesBtn}
-          buttonName={'go to profile'}
-          buttonIcon={<PawIcon />}
+          buttonName={'Go to profile'}
+          buttonIcon={
+            <svg width={24} height={24} className={css.iconPaw}>
+              <use href={sprite + '#paw-white'}></use>
+            </svg>
+          }
           type="button"
           onClick={onClose}
         />
