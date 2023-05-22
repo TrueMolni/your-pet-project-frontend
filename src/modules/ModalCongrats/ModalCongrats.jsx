@@ -10,7 +10,7 @@ import css from './modalCongrats.module.css';
 // };
 
 const ModalCongrats = ({ handlePositiveRegistration }) => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleCloseModal = () => {
     setIsOpen(false);
