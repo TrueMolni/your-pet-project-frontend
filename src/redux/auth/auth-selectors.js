@@ -6,5 +6,5 @@ export const isLoading = ({ auth }) => auth.isLoading;
 export const isModalOpen = ({ auth }) => auth.isModalOpen;
 export const getAuth = ({ auth }) => {
   const { isLogin, token, isLoading } = auth;
-  return { isLogin, token , isLoading};
+  return { isLogin, token, isLoading };
 };
