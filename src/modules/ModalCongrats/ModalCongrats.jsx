@@ -12,7 +12,6 @@ import css from './modalCongrats.module.css';
 
 const ModalCongrats = ({ isOpen, onClose }) => {
   // const [isOpen, setIsOpen] = useState(false);
-
   // const handleCloseModal = () => {
   //   setIsOpen(false);
   // };

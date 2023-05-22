@@ -34,7 +34,7 @@ export const App = () => {
     <BrowserRouter basename="/your-pet-project-frontend">
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <Route path="/main"  element={<MainPage />}></Route>
+          <Route path="/main" index element={<MainPage />}></Route>
           <Route path="/notices" element={<FindPetPage />}></Route>
           <Route path="/notices/:categoryName" element={<NoticesPage />}></Route>
 
