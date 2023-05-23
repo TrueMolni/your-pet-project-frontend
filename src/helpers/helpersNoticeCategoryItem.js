@@ -1,7 +1,6 @@
 import moment from 'moment/moment';
 import sprite from '../images/icons/sprite.svg';
-import { toast } from 'react-toastify';
-import { GiCat } from 'react-icons/gi';
+import { Notify } from 'notiflix';
 
 const countFullYears = date => {
   const fullYears = moment(date, 'DD-MM-YYYY')
@@ -15,11 +14,13 @@ const countFullYears = date => {
   return fullYears;
 };
 
-const notification = () =>
-  toast.info('You should be logged in to add to favorites', {
-    theme: 'colored',
-    icon: <GiCat />,
+const notification = () => {
+  Notify.info('You should be logged in to add to favorites', {
+    timeout: 2000,
+    clickToClose: true,
+    position: 'right-top',
   });
+};
 const selectIconGender = sex => {
   if (sex === 'male') {
     return `${sprite}#male`;

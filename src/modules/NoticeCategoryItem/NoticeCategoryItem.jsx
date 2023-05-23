@@ -1,11 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
-import {
-  isUserLogin,
-  // getAuth,
-  // getUser,
-  // getUserId,
-} from 'redux/auth/auth-selectors';
+import { isUserLogin } from 'redux/auth/auth-selectors';
 import { selectFavorites } from 'redux/notices/notices-selectors';
 import operations from 'redux/notices/notices-operations';
 
@@ -30,20 +25,18 @@ const NoticeCategoryItem = ({
   category,
   sex,
   favorite,
-  // owner,
+  owner,
 }) => {
   const favoriteNotices = useSelector(selectFavorites);
   const [isModalDeleteNoticeOpen, setModalDeleteNoticeOpen] = useState(false);
   const isLogin = useSelector(isUserLogin);
   const dispatch = useDispatch();
-  const owner = true;
 
   const toggleFavorite = () => {
     if (!isLogin) {
       notification();
       return;
     }
-    console.log(id);
     dispatch(operations.updateFavorite(id));
   };
 
@@ -54,6 +47,7 @@ const NoticeCategoryItem = ({
     setModalDeleteNoticeOpen(false);
   };
   useEffect(() => {}, [favoriteNotices]);
+  console.log(category);
   return (
     <li>
       <div className={styles.mainWrapper}>
@@ -61,7 +55,9 @@ const NoticeCategoryItem = ({
           <img src={avatarURL} alt="" className={styles.petImage} />
           <div className={styles.wrapperGategoryInform}>
             <p className={styles.category}>
-              {category.replace(/(\.|-|\/|\\| )/g, ' ')}{' '}
+              {category === 'lost-found'
+                ? 'lost/found'
+                : category.replace(/(\.|-|\/|\\| )/g, ' ')}{' '}
             </p>
             <button
               className={styles.btnAddFavorite}
@@ -76,7 +72,6 @@ const NoticeCategoryItem = ({
                 <use xlinkHref={`${sprite}#heart`}></use>
               </svg>
             </button>
-            {/* === userId */}
             {owner && (
               <button
                 className={styles.btnDelete}
