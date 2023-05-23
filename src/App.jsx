@@ -9,13 +9,15 @@ const MainPage = lazy(() => import('pages/MainPage'));
 const NotFoundPage = lazy(() => import('pages/NotFoundPage/NotFoundPage.jsx'));
 const AddPetPage = lazy(() => import('pages/AddPetPage'));
 const UserPage = lazy(() => import('pages/UserPage'));
-const NoticesPage = lazy (()=> import ('pages/NoticesPage/NoticesPage'));
+const NoticesPage = lazy(() => import('pages/NoticesPage/NoticesPage'));
 const SharedLayout = lazy(() => import('modules/SharedLayout'));
 const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
 const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
 const FindPetPage = lazy(() => import('pages/FindPetPage/FindPetPage'));
 const PrivateRoute = lazy(() => import('modules/PrivatRoutes/PrivatRoutes'));
 const PublicRoute = lazy(() => import('modules/PublicRoutes/PublicRoutes'));
+const News = lazy(() => import('pages/News/News'));
+
 export const App = () => {
   const dispatch = useDispatch();
   const { isLogin } = useSelector(getAuth);
@@ -27,15 +29,16 @@ export const App = () => {
 
   return (
     <BrowserRouter basename="/your-pet-project-frontend">
-      <Suspense fallback={<Loader/>}>
+      <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<SharedLayout />}>
-            <Route path="/main" element={<MainPage />}></Route>
+            <Route index element={<MainPage />}></Route>
             <Route path="/notices" element={<FindPetPage />}></Route>
             <Route
               path="/notices/:categoryName"
               element={<NoticesPage />}
             ></Route>
+            <Route path="/news" element={<News />} />
 
             <Route element={<PublicRoute />}>
               <Route path="/register" element={<RegisterPage />} />

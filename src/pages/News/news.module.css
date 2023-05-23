@@ -1,0 +1,6 @@
+.errorMessage {
+  color: red;
+  font-family: var(--Manrope);
+  font-weight: 700;
+  font-size: 16px;
+}
