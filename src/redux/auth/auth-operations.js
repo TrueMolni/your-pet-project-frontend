@@ -3,7 +3,6 @@ import * as api from '../../services/auth-api'
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-
 export const signup = createAsyncThunk(
   'auth/signup',
   async (data, thunkAPI) => {
@@ -18,21 +17,30 @@ export const signup = createAsyncThunk(
 
 export const login = createAsyncThunk(
   'auth/login',
+
   async (data, { rejectWithValue }) => {
     try {
       const result = await api.login(data);
-      Notify.success('Welcome to Your Pet', {
+      // console.log(data)
+      const userEmail = data.email;
+
+      Notify.success(`Welcome ${userEmail}`, {
         timeout: 2000,
         clickToClose: true,
-        position: 'center-top'
+        position: 'center-top',
       });
       return result;
     } catch (error) {
-      Notify.failure(error.message);
+      Notify.failure('Wrong password or email', {
+        timeout: 2000,
+        clickToClose: true,
+        position: 'center-top',
+      });
       return rejectWithValue(error.message);
     }
   }
 );
+
 
 
 export const current = createAsyncThunk(
@@ -62,7 +70,13 @@ export const logout = createAsyncThunk(
   'auth/logout',
   async (_, { rejectWithValue }) => {
     try {
+       
       const data = await api.logout();
+      Notify.info(`Good bye!`, {
+        timeout: 2000,
+        clickToClose: true,
+        position: 'center-top',
+      });
       return data;
     } catch ({ response }) {
       return rejectWithValue(response.data);
