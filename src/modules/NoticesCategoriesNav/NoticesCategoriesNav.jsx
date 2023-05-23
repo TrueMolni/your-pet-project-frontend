@@ -4,6 +4,8 @@ import { nanoid } from 'nanoid';
 import { useSelector } from 'react-redux';
 import { isUserLogin } from '../../redux/auth/auth-selectors';
 
+import AddPetBtn from '../../shared/components/AddPetBtn';
+
 import css from './notices-categories-nav.module.css';
 
 const category = [
@@ -66,6 +68,7 @@ const NoticesCategoriesNav = () => {
             ))}
         </div>
       </ul>
+      <AddPetBtn />
     </div>
   );
 };
