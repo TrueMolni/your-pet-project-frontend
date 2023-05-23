@@ -10,8 +10,8 @@ const NotFoundPage = () => {
     navigate('/main');
   };
   return (
-    <>
-      <header>
+    <div className={styles.overlay}>
+      <header className={styles.header}>
         <NavContainer />
       </header>
       <div className={styles.container}>
@@ -36,7 +36,7 @@ const NotFoundPage = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
