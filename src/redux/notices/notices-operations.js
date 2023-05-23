@@ -28,10 +28,9 @@ const getNoticeById = createAsyncThunk(
 
 const updateFavorite = createAsyncThunk(
   'notices/updateFavorite',
-  async (data, { rejectWithValue }) => {
-    const { id, updateData } = data;
+  async (id, { rejectWithValue }) => {
     try {
-      const result = await api.updateFavorite(id, updateData);
+      const result = await api.updateFavorite(id);
       return result;
     } catch (error) {
       return rejectWithValue(error.message);
