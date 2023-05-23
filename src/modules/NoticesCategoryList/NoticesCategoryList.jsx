@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
@@ -26,7 +25,7 @@ const NoticesCategoryList = () => {
     <div className={styles.section}>
       <ul className={styles.petsListWrapper}>
         {notices.map(
-          ({ _id, avatarURL, title, location, date, category, sex }) => (
+          ({ _id, avatarURL, title, location, date, category, sex, owner }) => (
             <NoticeCategoryItem
               key={_id}
               id={_id}
@@ -37,6 +36,7 @@ const NoticesCategoryList = () => {
               location={location}
               category={category}
               sex={sex}
+              owner={owner}
             />
           )
         )}

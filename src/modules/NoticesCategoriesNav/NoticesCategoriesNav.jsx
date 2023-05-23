@@ -26,7 +26,7 @@ const category = [
 const authCategory = [
   {
     text: 'favorite ads',
-    link: 'favorite',
+    link: 'favorites',
   },
   {
     text: 'my ads',

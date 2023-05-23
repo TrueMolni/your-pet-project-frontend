@@ -1,9 +1,13 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
-import { isUserLogin } from 'redux/auth/auth-selectors';
-import { selectFavorites } from 'redux/notices/notices-selectors';
+import {
+  isUserLogin,
+  getUserFavoriteNotices,
+  getUserID,
+} from 'redux/auth/auth-selectors';
 import operations from 'redux/notices/notices-operations';
-
+import { selectFavorites } from 'redux/notices/notices-selectors';
+import ModalDeleteNotice from 'modules/ModalDeleteNotice/ModalDeleteNotice';
 import {
   countFullYears,
   notification,
@@ -11,23 +15,23 @@ import {
 } from 'helpers/helpersNoticeCategoryItem';
 import sprite from '../../images/icons/sprite.svg';
 import styles from './notice-category-item.module.css';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import ModalDeleteNotice from 'modules/ModalDeleteNotice/ModalDeleteNotice';
 
-const NoticeCategoryItem = ({
-  id,
-  avatarURL,
-  title,
-  place,
-  date,
-  location,
-  category,
-  sex,
-  favorite,
-  owner,
-}) => {
-  const favoriteNotices = useSelector(selectFavorites);
+const NoticeCategoryItem = props => {
+  const { id, avatarURL, title, place, date, category, sex, owner } = props;
+  const userID = useSelector(getUserID);
+  const favoriteNotice = useSelector(selectFavorites);
+  const favoriteUserNotice = useSelector(getUserFavoriteNotices);
+  const markAddedFavorites = () => {
+    if (!userID) {
+      return '';
+    } else if (!favoriteNotice.length) {
+      const favorite = favoriteUserNotice.includes(id) ? styles.inFavorite : '';
+      return favorite;
+    } else {
+      const favorite = favoriteNotice.includes(id) ? styles.inFavorite : '';
+      return favorite;
+    }
+  };
   const [isModalDeleteNoticeOpen, setModalDeleteNoticeOpen] = useState(false);
   const isLogin = useSelector(isUserLogin);
   const dispatch = useDispatch();
@@ -46,8 +50,7 @@ const NoticeCategoryItem = ({
   const closeModalDeleteNotice = () => {
     setModalDeleteNoticeOpen(false);
   };
-  useEffect(() => {}, [favoriteNotices]);
-  console.log(category);
+  useEffect(() => {}, []);
   return (
     <li>
       <div className={styles.mainWrapper}>
@@ -64,15 +67,11 @@ const NoticeCategoryItem = ({
               type="button"
               onClick={toggleFavorite}
             >
-              <svg
-                width="24"
-                height="24"
-                className={favorite ? styles.inFavorite : ''}
-              >
+              <svg width="24" height="24" className={markAddedFavorites()}>
                 <use xlinkHref={`${sprite}#heart`}></use>
               </svg>
             </button>
-            {owner && (
+            {owner === userID && (
               <button
                 className={styles.btnDelete}
                 onClick={() => openModalDeleteNotice(title, id)}
@@ -114,7 +113,6 @@ const NoticeCategoryItem = ({
           <button className={styles.btnLearnMore}>Learn more</button>
         </div>
       </div>
-      <ToastContainer />
       <ModalDeleteNotice
         isOpen={isModalDeleteNoticeOpen}
         onClose={closeModalDeleteNotice}

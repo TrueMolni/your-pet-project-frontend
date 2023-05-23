@@ -2,15 +2,14 @@ import instance from './auth-api';
 
 export const getNoticesByCategory = async category => {
   const { data } = await instance.get(`api/notices/category/${category}`);
-
   return data;
 };
 
 export const getNoticeById = async id => {
   const { data } = await instance.get(`api/notices/${id}`);
-  console.log(data);
   return data;
 };
+
 
 export const updateFavorite = async _id => {
   const { data } = await instance.patch(`api/notices/favorite/${_id}`);
@@ -34,5 +33,6 @@ export const getUserNotices = async () => {
 
 export const deleteUserNotice = async id => {
   const { data } = await instance.delete(`api/notices/${id}`);
+
   return data;
 };
