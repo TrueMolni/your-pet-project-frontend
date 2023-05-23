@@ -5,7 +5,7 @@ import NoticesSearch from '../../shared/components/NoticesSearch/NoticesSearch';
 import NoticesCategoriesNav from '../../modules/NoticesCategoriesNav/NoticesCategoriesNav';
 // import NoticesFilters from '../../modules/NoticesFilters/NoticesFilters';
 import NoticesCategoriesList from '../../modules/NoticesCategoryList/NoticesCategoryList';
-import AddPetBtn from 'shared/components/AddPetBtn';
+// import AddPetBtn from 'shared/components/AddPetBtn';
 
 const NoticesPage = () => {
   const navigate = useNavigate();
@@ -19,9 +19,9 @@ const NoticesPage = () => {
 
   return (
     <div>
-      <AddPetBtn />
       <NoticesSearch />
       <NoticesCategoriesNav />
+      {/* <AddPetBtn /> */}
       <NoticesCategoriesList />
       {/* <NoticesFilters /> */}
     </div>

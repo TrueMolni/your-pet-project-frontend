@@ -93,7 +93,6 @@ const operations = {
   getNoticesByCategory,
   getNoticeById,
   updateFavorite,
-
   getNoticeByFavorite,
   addNoticeByCategory,
   getUserNotices,
