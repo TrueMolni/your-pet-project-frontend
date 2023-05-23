@@ -29,10 +29,9 @@ const getNoticeById = createAsyncThunk(
 const updateFavorite = createAsyncThunk(
   'notices/updateFavorite',
   async (data, { rejectWithValue }) => {
-    const { _id, updateData } = data;
+    const { id, updateData } = data;
     try {
-      const result = await api.updateFavorite(_id, updateData);
-
+      const result = await api.updateFavorite(id, updateData);
       return result;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -58,7 +57,7 @@ export const deleteUserNotice = createAsyncThunk(
   async (id, { rejectWithValue }) => {
     try {
       const { data } = await api.deleteUserNotice(`/notices/${id}`);
-      return data._id;
+      return data;
     } catch (error) {
       return rejectWithValue(error.message);
     }

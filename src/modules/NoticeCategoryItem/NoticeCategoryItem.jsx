@@ -1,11 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
-import {
-  isUserLogin,
-  // getAuth,
-  // getUser,
-  // getUserId,
-} from 'redux/auth/auth-selectors';
+import { isUserLogin } from 'redux/auth/auth-selectors';
 import { selectFavorites } from 'redux/notices/notices-selectors';
 import operations from 'redux/notices/notices-operations';
 
@@ -16,7 +11,6 @@ import {
 } from 'helpers/helpersNoticeCategoryItem';
 import sprite from '../../images/icons/sprite.svg';
 import styles from './notice-category-item.module.css';
-import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ModalDeleteNotice from 'modules/ModalDeleteNotice/ModalDeleteNotice';
 
@@ -30,20 +24,19 @@ const NoticeCategoryItem = ({
   category,
   sex,
   favorite,
-  // owner,
+  owner,
 }) => {
   const favoriteNotices = useSelector(selectFavorites);
   const [isModalDeleteNoticeOpen, setModalDeleteNoticeOpen] = useState(false);
   const isLogin = useSelector(isUserLogin);
   const dispatch = useDispatch();
-  const owner = true;
+  // const owner = true;
 
   const toggleFavorite = () => {
     if (!isLogin) {
       notification();
       return;
     }
-    console.log(id);
     dispatch(operations.updateFavorite(id));
   };
 
@@ -119,7 +112,6 @@ const NoticeCategoryItem = ({
           <button className={styles.btnLearnMore}>Learn more</button>
         </div>
       </div>
-      <ToastContainer />
       <ModalDeleteNotice
         isOpen={isModalDeleteNoticeOpen}
         onClose={closeModalDeleteNotice}
