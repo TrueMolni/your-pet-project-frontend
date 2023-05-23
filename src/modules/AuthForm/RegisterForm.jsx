@@ -15,22 +15,19 @@ import ModalCongrats from 'modules/ModalCongrats/ModalCongrats';
 export const RegisterForm = props => {
   const [passwordShow, setPasswordShow] = useState(false);
   const [passwordConfirm, setPasswordConfirm] = useState(false);
-const [modalOpen, setModalOpen] = useState(false);
   const dispatch = useDispatch();
-
+  // const handlePositiveRegistration = () => {
+  //   setIsOpen(true);
+  // };
   const handleSignUp = (values, { resetForm }) => {
-
     dispatch(signup(values));
-    
+
     resetForm();
-    setModalOpen(true);
+    // const handlePositiveRegistration = () => {
+    //   setIsOpen(true);
+    // };
     console.log('REGISTER FORM', values);
   };
-
-
-const handleCloseModal = () => {
-  setModalOpen(false); 
-};
 
   const togglePassword = () => setPasswordShow(prevState => !prevState);
   const togglePasswordConfirm = () =>
@@ -39,10 +36,9 @@ const handleCloseModal = () => {
   const emailInputId = shortid.generate();
   const passwordInputId = shortid.generate();
   const confirmPasswordInputId = shortid.generate();
-  
+
   return (
     <div className={css.container}>
-      <ModalCongrats isOpen={modalOpen} onClose={handleCloseModal} />
       <Formik
         onSubmit={handleSignUp}
         validationSchema={user.stepOneValidationSchema}
