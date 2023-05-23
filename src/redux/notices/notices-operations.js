@@ -28,9 +28,23 @@ const getNoticeById = createAsyncThunk(
 
 const updateFavorite = createAsyncThunk(
   'notices/updateFavorite',
-  async (id, { rejectWithValue }) => {
+  async (data, { rejectWithValue }) => {
+    const { _id, updateData } = data;
     try {
-      const { data } = await api.updateFavorite(id);
+      const result = await api.updateFavorite(_id, updateData);
+
+      return result;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+const getNoticeByFavorite = createAsyncThunk(
+  'notices/getFavorites',
+  async (_, { rejectWithValue }) => {
+    try {
+      const { data } = await api.getNoticeByFavorite();
 
       return data;
     } catch (error) {
@@ -38,6 +52,7 @@ const updateFavorite = createAsyncThunk(
     }
   }
 );
+
 export const deleteUserNotice = createAsyncThunk(
   'notices/deleteNotice',
   async (id, { rejectWithValue }) => {
@@ -50,10 +65,40 @@ export const deleteUserNotice = createAsyncThunk(
   }
 );
 
+const addNoticeByCategory = createAsyncThunk(
+  'notices/addNoticeByCategory',
+  async (notice, { rejectWithValue }) => {
+    try {
+      const { data } = await api.addNoticeByCategory(notice);
+
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+const getUserNotices = createAsyncThunk(
+  'notices/getOwn',
+  async (_, { rejectWithValue }) => {
+    try {
+      const { data } = await api.getUserNotices();
+
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
 const operations = {
   getNoticesByCategory,
   getNoticeById,
   updateFavorite,
+
+  getNoticeByFavorite,
+  addNoticeByCategory,
+  getUserNotices,
   deleteUserNotice,
 };
 
