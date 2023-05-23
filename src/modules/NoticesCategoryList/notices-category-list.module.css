@@ -8,6 +8,7 @@ ul {
   display: grid;
   grid-gap: 32px;
   margin-top: 24px;
+  margin-left: -5px;
 }
 
 
@@ -19,7 +20,8 @@ ul {
       }
 }
 
-@media screen and (min-width: 1200px) {
+
+@media screen and (min-width: 1280px) {
   .petsListWrapper {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     margin-top: 42px;
@@ -45,12 +47,11 @@ ul {
 
   @media screen and (min-width: 768px) {
     .section {
-      
       width: 768px;
     }
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     .section {
       padding-left: 18px;
       padding-right: 18px;

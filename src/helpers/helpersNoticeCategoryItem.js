@@ -9,14 +9,10 @@ const countFullYears = date => {
     .split(' ')
     .slice(0, 2)
     .join(' ');
-  return fullYears;
-};
-
-const selectIconGender = sex => {
-  if (sex === 'male') {
-    return `${sprite}#male`;
+  if (fullYears.includes('in')) {
+    return 'no inform';
   }
-  return `${sprite}#female`;
+  return fullYears;
 };
 
 const notification = () =>
@@ -24,5 +20,11 @@ const notification = () =>
     theme: 'colored',
     icon: <GiCat />,
   });
+const selectIconGender = sex => {
+  if (sex === 'male') {
+    return `${sprite}#male`;
+  }
+  return `${sprite}#female`;
+};
 
-export { countFullYears, selectIconGender, notification };
+export { countFullYears, notification, selectIconGender };

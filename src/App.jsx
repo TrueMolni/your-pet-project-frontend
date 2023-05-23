@@ -1,38 +1,54 @@
+import React, { useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { store, persistor } from './redux/store.js';
-import { PersistGate } from 'redux-persist/integration/react';
+import { useDispatch, useSelector } from 'react-redux';
+import Loader from 'shared/components/Loader/Loader';
+import { getAuth } from 'redux/auth/auth-selectors';
+import { current } from 'redux/auth/auth-operations';
 
-import { PrivateRoute } from 'routes/PrivetRoutes.jsx';
-import { RestrictedRoute } from 'routes/RestrictedRoutes.jsx';
-import SharedLayout from 'modules/SharedLayout';
-import RegisterPage from 'pages/RegisterPage/RegisterPage';
-import LoginPage from 'pages/LoginPage/LoginPage';
-import FindPetPage from 'pages/FindPetPage/FindPetPage';
-import MainPage from 'pages/MainPage/MainPage';
-import UserInfoPage from 'pages/UserInfoPage/UserInfoPage';
-// @emotion/styled  @chakra-ui/react
+const MainPage = lazy(() => import('pages/MainPage'));
+const NotFoundPage = lazy(() => import('pages/NotFoundPage/NotFoundPage.jsx'));
+const AddPetPage = lazy(() => import('pages/AddPetPage'));
+const UserPage = lazy(() => import('pages/UserPage'));
+const NoticesPage = lazy (()=> import ('pages/NoticesPage/NoticesPage'));
+const SharedLayout = lazy(() => import('modules/SharedLayout'));
+const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
+const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
+const FindPetPage = lazy(() => import('pages/FindPetPage/FindPetPage'));
+const PrivateRoute = lazy(() => import('modules/PrivatRoutes/PrivatRoutes'));
+const PublicRoute = lazy(() => import('modules/PublicRoutes/PublicRoutes'));
 export const App = () => {
-  return (
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter basename="/your-pet-project-frontend">
-          <Routes>
-            <Route path="/" element={<SharedLayout />}>
-              <Route path="/main" element={<MainPage />}></Route>
-              <Route path="/login" element={<RestrictedRoute redirectTo="/userInfo" component={<LoginPage />} />}></Route>
-              <Route path="/register" element={<RestrictedRoute redirectTo="/userInfo" component={<RegisterPage />} />}></Route>
-              <Route path="/notices" element={<FindPetPage />}></Route>
-              <Route path="/userInfo" element={<PrivateRoute redirectTo="/login" component={<UserInfoPage />} />}></Route>
+  const dispatch = useDispatch();
+  const { isLogin } = useSelector(getAuth);
 
-              {/* <Route
-                path="/notices/:categoryName"
-                element={<NoticesPage />}
-              ></Route> */}
+  useEffect(() => {
+    dispatch(current());
+    // console.log('useeffect');
+  }, [dispatch, isLogin]);
+
+  return (
+    <BrowserRouter basename="/your-pet-project-frontend">
+      <Suspense fallback={<Loader/>}>
+        <Routes>
+          <Route path="/" element={<SharedLayout />}>
+            <Route path="/main" element={<MainPage />}></Route>
+            <Route path="/notices" element={<FindPetPage />}></Route>
+            <Route
+              path="/notices/:categoryName"
+              element={<NoticesPage />}
+            ></Route>
+
+            <Route element={<PublicRoute />}>
+              <Route path="/register" element={<RegisterPage />} />
+              <Route path="/login" element={<LoginPage />} />
             </Route>
-          </Routes>
-        </BrowserRouter>
-      </PersistGate>
-    </Provider>
+            <Route element={<PrivateRoute />}>
+              <Route path="/user" element={<UserPage />} />
+              <Route path="/add-pet" element={<AddPetPage />}></Route>
+            </Route>
+          </Route>
+          <Route path="*" element={<NotFoundPage />}></Route>
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
   );
 };

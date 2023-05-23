@@ -1,0 +1,56 @@
+.commonLabel {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.36;
+}
+
+.radioWrapper {
+  margin-bottom: 16px;
+}
+
+.optionsWrapper {
+  display: flex;
+}
+
+.optionsWrapper :not(:last-child) {
+  margin-right: 23px;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.buttonLabel {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+
+  color: #888888;
+  cursor: pointer;
+}
+
+.input:checked + .buttonLabel {
+  color: #00c3ad;
+}
+
+.icon {
+  margin-right: 12px;
+  width: 24px;
+  height: 24px;
+  fill: transparent;
+  stroke: #888888;
+}
+
+.input:checked + .buttonLabel > .icon {
+  stroke: var(--red);
+}
+
+.input:checked + .buttonLabel > .icon.male {
+  stroke: var(--btn-default-color);
+}

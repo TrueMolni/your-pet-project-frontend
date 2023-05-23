@@ -1,9 +1,9 @@
 import LoginForm from 'modules/AuthForm/LoginForm';
+// import Loader from 'shared/components/Loader/Loader';
 const LoginPage = () => {
   return (
     <div>
-      {/* <p>login page (temp sign)</p>
-      <h1>Login</h1> */}
+      {/* <Loader/> */}
       <LoginForm title={'Login'} />
     </div>
   );

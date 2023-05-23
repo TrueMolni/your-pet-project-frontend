@@ -9,7 +9,7 @@ const navItems = [
   {
     id: nanoid(),
     text: 'Find pet',
-    link: '/notices',
+    link: '/notices/sell',
   },
   {
     id: nanoid(),
