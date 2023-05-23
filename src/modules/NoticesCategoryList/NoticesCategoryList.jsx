@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
@@ -28,6 +29,7 @@ const NoticesCategoryList = () => {
           ({ _id, avatarURL, title, location, date, category, sex }) => (
             <NoticeCategoryItem
               key={_id}
+              id={_id}
               avatarURL={avatarURL}
               title={title}
               place={location}
@@ -42,5 +44,4 @@ const NoticesCategoryList = () => {
     </div>
   );
 };
-
 export default NoticesCategoryList;

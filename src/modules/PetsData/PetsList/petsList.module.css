@@ -1,0 +1,31 @@
+.item {
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+  margin: 0 auto;
+  padding: 20px;
+
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 22px;
+  }
+}
+
+.imgContainer {
+  text-align: center;
+  margin-top: 40px;
+
+  @media screen and (min-width: 1200px) {
+    margin-top: 60px;
+  }
+}
+
+.imgEmpty {
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    width: 500px;
+  }
+}
