@@ -67,11 +67,13 @@
   border: none;
   background: var(--btn-disabled-color);
   fill: transparent;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    scale 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 
-.btnAddFavorite:hover {
-  scale: 1.1;
-  fill: var(--btn-default-color);
+.btnAddFavorite:hover,
+.btnAddFavorite:focus {
+  scale: 1.15;
 }
 .inFavorite {
   fill: var(--btn-default-color);
@@ -90,6 +92,8 @@
   position: absolute;
   top: 52px;
   right: 0;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    scale 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .btnDelete:hover,
 .btnDelete:focus {
@@ -163,11 +167,13 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 22px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 
 .btnLearnMore:hover,
 .btnLearnMore:focus {
-  background: var(--btn-default-color);
+  background-color: var(--btn-default-color);
   color: var(--main-background-color);
 }
 
@@ -180,6 +186,7 @@
   width: 24px;
   height: 24px;
   opacity: 0;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .btnLearnMore:hover::after,
 .btnLearnMore:focus::after {
