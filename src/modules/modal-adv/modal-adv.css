@@ -17,21 +17,25 @@
 .modal-main-info{
     
 }
+.close{
+    cursor: pointer;
+}
 
 .modal-content {
     /* Стилізація контейнера модального вікна */
     background-color: white;
     padding: 32px;
     border-radius: 40px;
-    flex-direction: column;
-    position: relative;display: flex;
-        align-items: flex-start;
-        
+    
+    position: relative;
+    
+       
 }
 
 
 .modal-top-side{
     display: flex;
+    
 }
 
 .close {
@@ -69,9 +73,9 @@
 
 
 .modal-image {
-    /* ... решта стилів */
+    
     align-self: flex-start;
-        margin-right: 20px;
+      
 }
 
 .modal-title {
@@ -97,13 +101,28 @@
 }
 .modal-buttons {
     display: flex;
-  margin-left: 343px;
-  align-items: center;
+  
+  justify-content: end;
     
   
 }
 .modal-list-info{
-    margin-left: 70px;
+
+   margin-right: 92px;
+}
+.modal-list-info-email{
+    color: #FFC107;
+    text-decoration: underline;
+}
+.modal-list-info-phone{
+    color: #FFC107;
+        text-decoration: underline;
+}
+.modal-pet-info-list li {
+    display: flex;
+    justify-content: space-between;
+
+    
 }
 .modal-contact{
     margin-left: 17px;
@@ -136,7 +155,7 @@
 .modal-title{
     width: 321px;
     height: 76px;
-    margin: 0 0 0 ;
+    margin-bottom: 20px;
     font-style: normal;
         font-weight: 700;
         font-size: 28px;
@@ -154,30 +173,14 @@
     position: relative;
 }
 
-.modal-pet-price {
-  position: relative;
-}
+
 .modal-pet-info-list {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-.modal-pet-info-list li {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* Розподіл стовпців на дві рівні частини */
-    align-items: center;
-}
 
-.modal-pet-info-list li span {
-    text-align: left;
-}
-.modal-image-container {
-    display: flex;
-        align-items: center;
-        justify-content: center;
-}
 .modal-pet-price {
     position: absolute;
     top: 16px;
@@ -190,10 +193,13 @@
     font-size: 12px;
     border-top-right-radius: 40px;
         border-bottom-right-radius: 40px;
-        width: 126px;
-        align-self: center;
+        
         width: 126px;
             height: 32px;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            display: flex;
     
 
 }
@@ -201,21 +207,59 @@
     margin-bottom: 28px;
 }
 @media (max-width: 600px) {
-    .modal-content {
-        flex-direction: initial;
-        align-items: initial;
-        text-align: initial;
-    }
+        .modal-top-side {
+            display: block;
+        }
+        .modal-main-content{
+            width: 300px;
+        }
+        .modal-buttons{
+            display: flex;
+            flex-direction: column;
+        }
+        .modal-contact{
+            margin: 0px;
+            width: auto;
+        }
+        .modal-add-favs{
+            width: auto;
+            margin-bottom: 8px;
+        }
+        .modal-comment-section{
+            margin-bottom: 12px;
+        }
+        .modal-pet-info-list{
+            margin-bottom: 13px;
+        }
+        .modal-top-side{
+            margin-bottom: 0px;
+        }
+        .modal-title{
+            width: 200px;
+        font-size: 24px;
+        margin-bottom: 20px;
+        margin-top: 12px;
+        }
+        .modal-main-info{
+            margin-left: 0px;
+        }
+        .modal-image{
+        margin: 0px;
+        margin: auto;
+        
+        }
+        .modal-image-container{
+            
+            margin-bottom: 12px;
+        }
+        .modal-content{
+            padding: 20px;
+        }
+        .modal-pet-price{
+            left: 19px;
+            
+        }
 
-    .modal-main-info {
-        margin-top: initial;
-    }
-
-    .modal-pet-info-list {
-        margin-left: initial;
-        padding-left: initial;
-        text-align: initial;
-    }
 }
 .svg-icon{
 background-color: tomato;

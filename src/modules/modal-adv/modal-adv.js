@@ -49,7 +49,7 @@ const ModalWindow = () => {
               <div className="modal-top-side">
                 <div className="modal-image-container">
                   <img src={myImage} alt="My Image" className="modal-image" />
-                  <span className="modal-pet-price">Price</span>
+                  <span className="modal-pet-price">In good hands</span>
                 </div>
                 <div className="modal-main-info">
                   <h2 className="modal-title">cute dog looking for a home</h2>
