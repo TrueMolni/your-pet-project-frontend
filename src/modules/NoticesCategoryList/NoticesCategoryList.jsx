@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
@@ -8,6 +7,7 @@ import styles from './notices-category-list.module.css';
 
 import operations from '../../redux/notices/notices-operations';
 import { selectNoticesByCategory } from 'redux/notices/notices-selectors';
+import Pagination from '../../modules/Pagination/Pagination';
 
 // import { noticies } from './notices';
 
@@ -40,6 +40,8 @@ const NoticesCategoryList = () => {
           )
         )}
       </ul>
+
+      <Pagination />
     </div>
   );
 };
