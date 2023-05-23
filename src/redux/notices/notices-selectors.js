@@ -1,4 +1,5 @@
 export const selectNoticesByCategory = ({ notices }) =>
   notices.noticesByCategory;
-// export const selectNoticeById = ({ notices }) => notices.noticeById;
-export const selectFavorites = ({ notices }) => notices.favorites;
+export const selectUserNotices = ({ notices }) => notices.userNotices;
+export const selectFavorites = ({ notices }) => notices.favorite;
+export const isLoading = ({ notices }) => notices.isLoading;
