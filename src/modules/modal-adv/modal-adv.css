@@ -1,7 +1,7 @@
-/* modal-adv.css */
+
 
 .modal {
-    /* Стилізація модального вікна */
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,15 +14,13 @@
     
     
 }
-.modal-main-info{
-    
-}
+
 .close{
     cursor: pointer;
 }
 
 .modal-content {
-    /* Стилізація контейнера модального вікна */
+   
     background-color: white;
     padding: 32px;
     border-radius: 40px;
@@ -39,26 +37,26 @@
 }
 
 .close {
-    /* ... решта стилів */
+   
     position: absolute;
     top: 10px;
     right: 10px;
 }
 
 .modal-image {
-    /* Стилізація зображення */
+    
     position: relative;
     
     
 }
 
 .modal-title {
-    /* Стилізація заголовка */
+    
     text-align: right;
 }
 
 .modal-pet-info {
-    /* Стилізація списку інформації про тварину */
+    
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -79,19 +77,19 @@
 }
 
 .modal-title {
-    /* ... решта стилів */
+   
     text-align: left;
     margin-bottom: 10px;
 }
 
 .modal-pet-info {
-    /* ... решта стилів */
+    
     text-align: left;
     margin-bottom: 10px;
 }
 
 .modal-comment-section {
-    /* ... решта стилів */
+    
     margin-top: auto;
     margin-bottom: 70px;
 }
@@ -184,9 +182,7 @@
 .modal-pet-price {
     position: absolute;
     top: 16px;
-    /* Відступ зверху */
     left: 0;
-    /* Вирівнювання по лівому краю */
     background-color:#CCE4FB;
     color: black;
     border-radius: 5px;
