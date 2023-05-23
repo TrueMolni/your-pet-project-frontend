@@ -4,7 +4,6 @@ import instance from './auth-api';
 
 export const getNoticesByCategory = async category => {
   const { data } = await instance.get(`api/notices/category/${category}`);
-
   return data;
 };
 
@@ -12,14 +11,13 @@ export const getNoticesByCategory = async category => {
 
 export const getNoticeById = async id => {
   const { data } = await instance.get(`api/notices/${id}`);
-  console.log(data);
   return data;
 };
 
 //для додавання оголошення до обраних
 
-export const updateFavorite = async _id => {
-  const { data } = await instance.patch(`api/notices/favorite/${_id}`);
+export const updateFavorite = async id => {
+  const { data } = await instance.patch(`api/notices/favorite/${id}`);
   return data;
 };
 
@@ -44,5 +42,6 @@ export const getUserNotices = async () => {
 
 export const deleteUserNotice = async id => {
   const { data } = await instance.delete(`api/notices/${id}`);
+
   return data;
 };
