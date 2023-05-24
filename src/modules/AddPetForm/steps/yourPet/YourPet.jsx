@@ -5,6 +5,7 @@ import sprite from '../../../../images/icons/sprite.svg';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import styles from './YourPet.module.css';
+import ProgressBar from 'modules/AddPetForm/elements/progressBar/ProgressBar';
 
 const validationStepOneSchema = Yup.object({
   name: Yup.string()
@@ -38,13 +39,13 @@ const validationStepOneSchema = Yup.object({
 });
 
 const validationStepTwoSchema = Yup.object({
-  file: Yup.mixed()
-    .required('The "File" field is required')
-    .test('file-size', 'Maximum file size: 3 MB', value => {
-      if (!value) return true; // Якщо значення пусте, не виконуємо перевірку
-      const maxSizeInBytes = 3 * 1024 * 1024; // 3 МБ в байтах
-      return value.size <= maxSizeInBytes;
-    }),
+  // file: Yup.mixed()
+  //   .required('The "File" field is required')
+  //   .test('file-size', 'Maximum file size: 3 MB', value => {
+  //     if (!value) return true;
+  //     const maxSizeInBytes = 3 * 1024 * 1024;
+  //     return value.size <= maxSizeInBytes;
+  //   }),
   comments: Yup.string()
     .notRequired()
     .min(8, 'Please enter a value between 8 and 120 characters in length')
@@ -57,8 +58,9 @@ export const YourPet = props => {
   };
 
   return (
-    <>
+    <div className={styles.bgForm}>
       <h1 className={styles.header}>Add pet</h1>
+      <ProgressBar step={2} />
       <Formik
         initialValues={props.data}
         onSubmit={handleSubmit}
@@ -104,7 +106,7 @@ export const YourPet = props => {
           </Form>
         )}
       </Formik>
-    </>
+    </div>
   );
 };
 
@@ -113,8 +115,9 @@ export const YourPet2 = props => {
     props.next(values, true);
   };
   return (
-    <>
+    <div className={styles.bgForm}>
       <h1 className={styles.header}>Add pet</h1>
+      <ProgressBar step={3} />
       <Formik
         initialValues={props.data}
         onSubmit={handleSubmit}
@@ -124,7 +127,7 @@ export const YourPet2 = props => {
           <Form>
             <AddPetFormControl
               control="file"
-              label="Add photo"
+              label="Load the pet`s image"
               name="file"
               type="file"
             />
@@ -150,6 +153,6 @@ export const YourPet2 = props => {
           </Form>
         )}
       </Formik>
-    </>
+    </div>
   );
 };

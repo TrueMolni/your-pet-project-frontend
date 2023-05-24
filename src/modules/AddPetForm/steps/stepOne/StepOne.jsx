@@ -1,10 +1,12 @@
 import AddPetFormControl from '../../elements/AddPetFormControl';
 import ButtonNext from '../../elements/buttons/ButtonNext';
 import ButtonBack from '../../elements/buttons/ButtonBack';
+import ProgressBar from 'modules/AddPetForm/elements/progressBar/ProgressBar';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import sprite from '../../../../images/icons/sprite.svg';
 import styles from './StepOne.module.css';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const category = [
   { value: 'your pet', key: 'yourPet' },
@@ -24,9 +26,14 @@ export const StepOne = props => {
     props.next(values);
   };
 
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from || '/';
+
   return (
-    <>
+    <div className={styles.bgForm}>
       <h1 className={styles.header}>Add pet</h1>
+      <ProgressBar step={1} />
       <Formik
         initialValues={props.data}
         onSubmit={handleSubmit}
@@ -40,7 +47,6 @@ export const StepOne = props => {
               name="category"
               options={category}
             />
-
             <div className={styles.buttonContainer}>
               <ButtonNext
                 type="submit"
@@ -51,11 +57,12 @@ export const StepOne = props => {
                 type="button"
                 name="Cancel"
                 icon={sprite + '#arrow-left'}
+                onClick={() => navigate(from)}
               ></ButtonBack>
             </div>
           </Form>
         )}
       </Formik>
-    </>
+    </div>
   );
 };

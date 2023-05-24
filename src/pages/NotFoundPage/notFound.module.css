@@ -218,3 +218,6 @@
   fill: var(--main-background-color);
   vertical-align: middle;
 }
+.overlay {
+  margin-top: 20px;
+}

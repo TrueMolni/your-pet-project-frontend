@@ -30,3 +30,14 @@
   font-size: 9px;
   line-height: 1.2;
 }
+
+@media screen and (min-width: 768px) {
+  .label {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  .input::placeholder {
+    font-size: 16px;
+  }
+}

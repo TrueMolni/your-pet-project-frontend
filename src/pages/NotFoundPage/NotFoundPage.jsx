@@ -7,11 +7,11 @@ import NavContainer from 'modules/Navigation/NavContainer';
 const NotFoundPage = () => {
   const navigate = useNavigate();
   const goToMainPage = () => {
-    navigate('/main');
+    navigate('/');
   };
   return (
-    <>
-      <header>
+    <div className={styles.overlay}>
+      <header className={styles.header}>
         <NavContainer />
       </header>
       <div className={styles.container}>
@@ -36,7 +36,7 @@ const NotFoundPage = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
