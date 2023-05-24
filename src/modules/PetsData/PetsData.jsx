@@ -8,28 +8,26 @@ import ModalApprooveActions from '../ModalApprooveActions/ModalApprooveActions';
 
 // import Loader from '../../shared/components/Loader/Loader';
 
-const PetsData = ({ pets, onRemove, isLoadingPets }) => {
-  const [isModalEdit, setIsModalEdit] = useState(false);
+const PetsData = ({ pets, onRemove, onAdd, isLoadingPets }) => {
   const [postId, setPostId] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalApprooveOpen, setModalApprooveOpen] = useState(false);
 
-  const closeModal = () => setIsModalOpen(!isModalOpen);
+  const closeModal = () => setModalApprooveOpen(!isModalApprooveOpen);
 
   const removeHandler = e => {
-    setIsModalOpen(!isModalOpen);
+    isModalApprooveOpen(!isModalApprooveOpen);
     setPostId(e.currentTarget.name);
   };
 
-  const editHandler = e => {
-    setIsModalEdit(!isModalEdit);
-    setPostId(e.currentTarget.name);
+  const addHandler = e => {
+    // викликати форму додавання тваринки
   };
 
   return (
     <div className={css.containerPetsDate}>
       <div className={css.boxMessage}>
         <h3 className={css.message}>My pets:</h3>
-        <AddPetButton onPostHandler={editHandler} />
+        <AddPetButton onPostHandler={addHandler} />
       </div>
 
       {/* {isLoadingPets ? (
@@ -46,7 +44,7 @@ const PetsData = ({ pets, onRemove, isLoadingPets }) => {
         </div>
       )} */}
 
-      {isModalOpen && (
+      {isModalApprooveOpen && (
         <ModalApprooveActions
           onRemove={postId => onRemove(postId)}
           id={postId}
