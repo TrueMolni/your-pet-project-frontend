@@ -9,7 +9,7 @@ const MainPage = lazy(() => import('pages/MainPage'));
 const NotFoundPage = lazy(() => import('pages/NotFoundPage/NotFoundPage.jsx'));
 const AddPetPage = lazy(() => import('pages/AddPetPage'));
 const UserPage = lazy(() => import('pages/UserPage'));
-const NoticesPage = lazy (()=> import ('pages/NoticesPage/NoticesPage'));
+const NoticesPage = lazy(() => import('pages/NoticesPage/NoticesPage'));
 const SharedLayout = lazy(() => import('modules/SharedLayout'));
 const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
 const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
@@ -27,7 +27,7 @@ export const App = () => {
 
   return (
     <BrowserRouter basename="/your-pet-project-frontend">
-      <Suspense fallback={<Loader/>}>
+      <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<SharedLayout />}>
             <Route path="/main" element={<MainPage />}></Route>
