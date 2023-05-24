@@ -4,7 +4,7 @@ import styles from './Logo.module.css';
 
 const Logo = () => {
   return (
-    <Link to="/main" className={styles.logo}>
+    <Link to="/g" className={styles.logo}>
       <img src={logo} alt="Logo" />
     </Link>
   );
