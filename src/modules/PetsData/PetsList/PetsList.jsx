@@ -1,5 +1,5 @@
 import PetsItem from '../PetsItem/PetsItem.jsx';
-import emptyPets from '../../../images/notfound/notfound@1x.jpg';
+import emptyPets from '../../../images/notfound/cat.png';
 import css from './petsList.module.css';
 
 const Petslist = ({ pets }) => {
