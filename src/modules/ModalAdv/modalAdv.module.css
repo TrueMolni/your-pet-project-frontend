@@ -85,10 +85,10 @@
     height: 40px;
         width: 129px;
         border-radius: 40px;
-        
+        border-style: double;
         background-color: #fff;
         border-color: #54ADFF;
-        border-style: double;
+       
         color: #54ADFF;
         
         
