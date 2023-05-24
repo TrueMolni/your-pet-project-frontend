@@ -7,7 +7,7 @@ import NavContainer from 'modules/Navigation/NavContainer';
 const NotFoundPage = () => {
   const navigate = useNavigate();
   const goToMainPage = () => {
-    navigate('/main');
+    navigate('/');
   };
   return (
     <div className={styles.overlay}>
