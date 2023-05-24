@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import PetsList from './PetsList/PetsList';
 import css from './petsData.module.css';
-import AddPetButton from './AddPetButton/AddPetButton';
+import AddPetBtn from '../../shared/components/AddPetBtn/AddPetBtn';
 
 import ModalApprooveActions from '../ModalApprooveActions/ModalApprooveActions';
 
@@ -19,15 +19,15 @@ const PetsData = ({ pets, onRemove, onAdd, isLoadingPets }) => {
     setPostId(e.currentTarget.name);
   };
 
-  const addHandler = e => {
-    // викликати форму додавання тваринки
-  };
+  // const addHandler = e => {
+  //   // викликати форму додавання тваринки
+  // };
 
   return (
     <div className={css.containerPetsDate}>
       <div className={css.boxMessage}>
         <h3 className={css.message}>My pets:</h3>
-        <AddPetButton onPostHandler={addHandler} />
+        <AddPetBtn />
       </div>
 
       {/* {isLoadingPets ? (
