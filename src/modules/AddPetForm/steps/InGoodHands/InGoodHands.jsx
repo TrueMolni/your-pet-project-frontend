@@ -4,7 +4,7 @@ import ButtonBack from '../../elements/buttons/ButtonBack';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import sprite from '../../../../images/icons/sprite.svg';
-import styles from './LostFound.module.css';
+import styles from './InGoodHands.module.css';
 import ProgressBar from 'modules/AddPetForm/elements/progressBar/ProgressBar';
 
 const validationStepOneSchema = Yup.object({
@@ -69,14 +69,14 @@ const sex = [
   { value: 'male', key: 'male', icon: sprite + '#male' },
 ];
 
-export const LostFound = props => {
+export const InGoodHands = props => {
   const handleSubmit = values => {
     props.next(values);
   };
 
   return (
     <div className={styles.bgForm}>
-      <h1 className={styles.header}>Add lost pet</h1>
+      <h1 className={styles.header}>In good hands</h1>
       <ProgressBar step={2} />
       <Formik
         initialValues={props.data}
@@ -133,13 +133,13 @@ export const LostFound = props => {
   );
 };
 
-export const LostFound2 = props => {
+export const InGoodHands2 = props => {
   const handleSubmit = values => {
     props.next(values, true);
   };
   return (
     <div className={styles.bgForm + ' ' + styles.bgFormMidle}>
-      <h1 className={styles.header}>Add lost pet</h1>
+      <h1 className={styles.header}>In good hands</h1>
       <ProgressBar step={3} />
       <Formik
         initialValues={props.data}
