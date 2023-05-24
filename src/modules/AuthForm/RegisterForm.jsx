@@ -8,26 +8,27 @@ import css from './AuthForm.module.css';
 import Button from 'shared/components/Button';
 import { user } from 'services';
 import shortid from 'shortid';
-import { useDispatch} from 'react-redux'
-import { signup } from 'redux/auth/auth-operations';
+import { useDispatch, useSelector} from 'react-redux'
+import { signup, closeModal, openModal } from 'redux/auth/auth-operations';
 import ModalCongrats from 'modules/ModalCongrats/ModalCongrats'; 
 
 export const RegisterForm = props => {
+  // const navigate = useNavigate()
+  const isModalOpen = useSelector(state => state.auth.isModalOpen)
   const [passwordShow, setPasswordShow] = useState(false);
   const [passwordConfirm, setPasswordConfirm] = useState(false);
   const dispatch = useDispatch();
-  // const handlePositiveRegistration = () => {
-  //   setIsOpen(true);
-  // };
   const handleSignUp = (values, { resetForm }) => {
-    dispatch(signup(values));
-
+    dispatch(openModal())
+    dispatch(signup(values))
     resetForm();
-    // const handlePositiveRegistration = () => {
-    //   setIsOpen(true);
-    // };
-    console.log('REGISTER FORM', values);
+
   };
+
+  const handleCloseModal = () => {
+    dispatch(closeModal());
+  };
+
 
   const togglePassword = () => setPasswordShow(prevState => !prevState);
   const togglePasswordConfirm = () =>
@@ -39,6 +40,7 @@ export const RegisterForm = props => {
 
   return (
     <div className={css.container}>
+      {isModalOpen && <ModalCongrats onClose={handleCloseModal} />}
       <Formik
         onSubmit={handleSignUp}
         validationSchema={user.stepOneValidationSchema}

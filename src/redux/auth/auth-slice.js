@@ -1,12 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { login, signup, current, logout } from './auth-operations';
+import { login, signup, current, logout, closeModal, openModal } from './auth-operations';
 const initialState = {
   user: {},
   token: '',
   isLogin: false,
   isLoading: false,
   error: null,
+  isModalOpen: false,
 };
 
 const authSlice = createSlice({
@@ -23,14 +24,20 @@ const authSlice = createSlice({
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLogin = true;
+        state.isModalOpen = true;
         // console.log('payload', action.payload);
       })
       .addCase(signup.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
-
-        // console.log('payload', action.payload);
       })
+      .addCase(openModal, state => {
+        state.isModalOpen = true; // Откройте модальное окно
+      })
+      .addCase(closeModal, state => {
+        state.isModalOpen = false; // Закройте модальное окно
+      })
+
       .addCase(login.pending, state => {
         state.isLoading = true;
         state.error = null;

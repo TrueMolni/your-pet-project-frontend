@@ -2,7 +2,7 @@ import ButtonNav from "shared/components/Button/ButtonNav";
 import { useDispatch } from "react-redux";
 import { logout } from "redux/auth/auth-operations";
 import css from '../../modules/Navigation/AuthNavigation/auth-navigation.module.css';
-import ModalCongrats from "modules/ModalCongrats/ModalCongrats";
+// import ModalCongrats from "modules/ModalCongrats/ModalCongrats";
 
 const UserPage = () => {
   const dispatch = useDispatch()
@@ -19,7 +19,7 @@ const UserPage = () => {
     >
       <p>Here Supposed to be User Page</p>
 
-      <ModalCongrats />
+      {/* <ModalCongrats /> */}
 
       <ButtonNav
         customStyle={css.loginBtn}
