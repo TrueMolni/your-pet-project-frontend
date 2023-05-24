@@ -10,7 +10,7 @@ import friendsList from './friends';
 //   return data;
 // };
 const getAllFriends = async () => {
-  const  data  = friendsList.reduce((acc, obj) => [...acc, Object.values(obj).map(y => y)], []);
+  const  data  = friendsList.reduce();
   return data;
 }
 
@@ -31,7 +31,7 @@ const Friends = () => {
     <>
 
         <div className={styles.section}>
-          
+
           <MainTitle/>
 
           <CardItem items={items} />

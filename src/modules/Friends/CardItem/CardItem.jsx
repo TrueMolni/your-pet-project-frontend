@@ -7,7 +7,7 @@ import PhoneItem from './PhoneItem/PhoneItem';
 import friendsList from '../friends';
 import styles from './card-item.module.css';
 
-const CardItem = () => {
+const CardItem = ({items}) => {
   const friends = friendsList.map(
     ({
       _id,
@@ -19,7 +19,7 @@ const CardItem = () => {
       workDays,
       phone,
       email,
-    }) => (
+    })  => (
       <li key={_id} className={styles.item}>
         <div className={styles.card}>
           <CardTitle title={title} url={url} />
