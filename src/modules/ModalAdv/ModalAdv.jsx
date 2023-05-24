@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Modal from 'shared/components/Modal/Modal';
 import img from "./123.jpg"
 import styles from './modalAdv.module.css';
-
+import sprite from '../../images/icons/sprite.svg';
 const ModalAdv = () => {
   // const [isOpen, setIsOpen] = useState(false);
 
@@ -89,7 +89,9 @@ const ModalAdv = () => {
 
             <div className={styles.modalButtons}>
               <button type="button" className={styles.modalAddFavs}>
-                    <span>Add to</span>
+                  <span>Add to</span>
+                  <svg width="24" height="24" className={styles.modalHeartSvg}>
+                <use xlinkHref={`${sprite}#heart`}></use></svg>
                   </button>
               <button type="button" className={styles.modalContact}>
                     <span>Contact</span>

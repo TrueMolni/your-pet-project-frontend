@@ -19,7 +19,7 @@
 }
 
 .modalTitle {
-    
+    font-family: 'Manrope';
     text-align: right;
 }
 
@@ -28,6 +28,7 @@
 .modalPetComments {
     max-width: 618px;
     margin: 0;
+    font-family: 'Manrope'; 
 }
 
 
@@ -69,14 +70,17 @@
 .modalListInfoEmail{
     color: #FFC107;
     text-decoration: underline;
+    font-family: 'Manrope';
 }
 .modalListInfoPhone{
     color: #FFC107;
         text-decoration: underline;
+        font-family: 'Manrope';
 }
 .modalPetInfoList li {
     display: flex;
     justify-content: space-between;
+    font-family: 'Manrope';
 
     
 }
@@ -88,7 +92,7 @@
         border-style: double;
         background-color: #fff;
         border-color: #54ADFF;
-       
+    font-family: 'Manrope';
         color: #54ADFF;
         
         
@@ -102,6 +106,10 @@
     border-color:#54ADFF;
     border-style: double;
     color: white;
+   display: flex;
+   align-items: center;
+font-family: 'Manrope';
+   justify-content: center;
    
 }
 .modalPetInfoList{
@@ -136,10 +144,16 @@
     margin: 0;
 }
 
-
+.modalHeartSvg{
+    stroke: white;
+    fill: white;
+    
+    
+}
 .modalPetPrice {
     position: absolute;
-    top: 16px;
+    top: 9px;
+    font-family: 'Manrope';
     left: 0;
     background-color:#CCE4FB;
     color: black;
@@ -186,15 +200,18 @@
         .modalContact {
             margin: 0px;
             width: auto;
+            font-family: 'Manrope';
         }
     
         .modalAddFavs {
             width: auto;
             margin-bottom: 8px;
+            
         }
     
         .modalCommentSection {
             margin-bottom: 12px;
+            
         }
     
         .modalPetInfoList {
@@ -232,7 +249,7 @@
         }
     
         .modalPetPrice {
-            left: 19px;
+            left: 9px;
     
         }
 

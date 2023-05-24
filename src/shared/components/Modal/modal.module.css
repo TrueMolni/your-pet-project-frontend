@@ -25,7 +25,7 @@
 
 @media screen and (min-width: 768px) {
   .modal {
-    width: 608px;
+    min-width: 681px;
     min-height: 540px;
     border-radius: 8px;
     padding-left: 32px;
@@ -68,4 +68,5 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 99999;
 }
