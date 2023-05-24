@@ -1,0 +1,28 @@
+
+.li {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: calc(16 / 22);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+
+  cursor: pointer;
+
+  color: var(--black);
+  transition: color 250ms linear;}
+
+  @media screen and (min-width: 768px) {
+    .li
+   { font-size: 14px;
+    line-height: calc(19 / 14);}
+  }
+
+     @media screen and (min-width: 1280px){
+      .li
+   { font-size: 16px;
+    line-height: calc(22 / 16);}
+  }
+

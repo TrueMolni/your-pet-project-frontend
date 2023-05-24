@@ -1,0 +1,8 @@
+.infoItem a {
+  color: inherit;
+  transition: color 250ms linear;
+}
+
+.wrapper:hover {
+  color: var(--bluelinksActive);
+}

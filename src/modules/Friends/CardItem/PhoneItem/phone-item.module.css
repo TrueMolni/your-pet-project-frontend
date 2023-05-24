@@ -1,0 +1,12 @@
+.infoPhone a {
+  color: inherit;
+  transition: color 250ms linear;
+}
+
+.textPhone {
+  font-weight: 600;
+}
+
+.wrapper:hover {
+  color: var(--bluelinksActive);
+}
