@@ -6,7 +6,9 @@ const initialState = {
   noticesByCategory: [],
   userNotices: [],
   favorite: [],
+
   pet: [],
+  favoriteAds: [],
   isLoading: false,
   isError: null,
 };
@@ -76,7 +78,7 @@ const noticesSlice = createSlice({
         (store, { payload }) => {
           store.isLoading = false;
           store.isError = null;
-          store.favorite = payload.favorites;
+          store.favoriteAds = payload.notices;
         }
       )
       .addCase(
@@ -136,6 +138,7 @@ const noticesSlice = createSlice({
         store.isLoading = false;
         store.isError = null;
         store.userNotices = payload.data;
+
       })
       .addCase(operations.getUserNotices.rejected, (store, { payload }) => {
         store.isLoading = false;

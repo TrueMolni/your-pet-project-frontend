@@ -17,6 +17,11 @@
   width: 100%;
 }
 
+.input.error {
+  /* Стилі для інпута, коли є помилка */
+  border-color: red; /* Налаштуйте колір бордеру на червоний */
+}
+
 .input::placeholder {
   font-size: 14px;
   line-height: 1.5;
@@ -24,10 +29,23 @@
 }
 
 .inputWrapper > p {
-  margin: 0;
-  padding: 0;
+  position: absolute;
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--red);
+}
 
-  color: red;
-  font-size: 9px;
-  line-height: 1.2;
+@media screen and (min-width: 768px) {
+  .label {
+    font-size: 20px;
+    line-height: 1.32;
+  }
+
+  .input {
+    font-size: 16px;
+  }
+
+  .input::placeholder {
+    font-size: 16px;
+  }
 }

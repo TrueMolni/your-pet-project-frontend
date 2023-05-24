@@ -8,7 +8,8 @@
 }
 
 .capture {
-  margin-right: 27px;
+  max-width: 81px;
+  margin-right: 14px;
 
   font-weight: 500;
   font-size: 14px;
@@ -32,11 +33,38 @@
   background-position: center;
 }
 
-.inputWrapper > p {
-  margin: 0;
-  padding: 0;
+.thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
 
-  color: red;
-  font-size: 9px;
-  line-height: 1.2;
+.inputWrapper > p {
+  position: absolute;
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--red);
+}
+
+@media screen and (min-width: 768px) {
+  .capture {
+    max-width: 114px;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-right: 33px;
+  }
+  .labelFile {
+    width: 182px;
+    height: 182px;
+    border-radius: 40px;
+    background-size: 48px 48px;
+  }
+
+  .thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40px;
+  }
 }
