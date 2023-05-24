@@ -1,0 +1,241 @@
+
+
+
+
+
+
+
+.modalTopSide{
+    display: flex;
+    
+}
+
+
+.modalImage {
+    
+    position: relative;
+    
+    
+}
+
+.modalTitle {
+    
+    text-align: right;
+}
+
+
+
+.modalPetComments {
+    max-width: 618px;
+    margin: 0;
+}
+
+
+.modalImage {
+    width: 262px;
+    height: 298px;
+    align-self: flex-start;
+      
+}
+
+.modalTitle {
+   
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+
+
+.modalCommentSection {
+    
+    margin-top: auto;
+    margin-bottom: 70px;
+}
+
+.modalMainInfo{
+    margin-left: 24px;
+}
+.modalButtons {
+    display: flex;
+  
+  justify-content: end;
+    
+  
+}
+.modalListInfo{
+
+   margin-right: 92px;
+}
+.modalListInfoEmail{
+    color: #FFC107;
+    text-decoration: underline;
+}
+.modalListInfoPhone{
+    color: #FFC107;
+        text-decoration: underline;
+}
+.modalPetInfoList li {
+    display: flex;
+    justify-content: space-between;
+
+    
+}
+.modalContact{
+    margin-left: 17px;
+    height: 40px;
+        width: 129px;
+        border-radius: 40px;
+        
+        background-color: #fff;
+        border-color: #54ADFF;
+        border-style: double;
+        color: #54ADFF;
+        
+        
+}
+
+.modalAddFavs{
+    height:40px;
+    width: 129px;
+    border-radius: 40px;
+    background-color: #54ADFF;
+    border-color:#54ADFF;
+    border-style: double;
+    color: white;
+   
+}
+.modalPetInfoList{
+    list-style-type: none;
+    
+}
+.modalTitle{
+    width: 321px;
+    height: 76px;
+    margin-bottom: 20px;
+    font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 38px;;
+}
+
+.modalPetInfoList{
+    margin: 0;
+    padding: 0;
+   
+}
+.modalImageContainer {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+
+.modalPetInfoList{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.modalPetPrice {
+    position: absolute;
+    top: 16px;
+    left: 0;
+    background-color:#CCE4FB;
+    color: black;
+    border-radius: 5px;
+    font-size: 12px;
+    border-top-right-radius: 40px;
+        border-bottom-right-radius: 40px;
+        
+        width: 126px;
+            height: 32px;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+    
+
+}
+.modalTopSide{
+    margin-bottom: 28px;
+}
+
+.modalPetInfoList li {
+    margin-bottom: 8px;
+}
+.modalPetInfoList :last-child{
+    margin-bottom: 8px;
+}
+
+
+@media (max-width: 768px) {
+    .modalTopSide {
+            display: block;
+        }
+    
+        .modalMainContent {
+            
+        }
+    
+        .modalButtons {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .modalContact {
+            margin: 0px;
+            width: auto;
+        }
+    
+        .modalAddFavs {
+            width: auto;
+            margin-bottom: 8px;
+        }
+    
+        .modalCommentSection {
+            margin-bottom: 12px;
+        }
+    
+        .modalPetInfoList {
+            margin-bottom: 13px;
+        }
+    
+        .modalTopSide {
+            margin-bottom: 0px;
+        }
+    
+        .modalTitle {
+            width: 200px;
+            font-size: 24px;
+            margin-bottom: 20px;
+            margin-top: 12px;
+        }
+    
+        .modalMainInfo {
+            margin-left: 0px;
+        }
+    
+        .modalImage {
+            margin: 0px;
+            margin: auto;
+    
+        }
+    
+        .modalImageContainer {
+    
+            margin-bottom: 12px;
+        }
+    
+        .modalContent {
+            padding: 20px;
+        }
+    
+        .modalPetPrice {
+            left: 19px;
+    
+        }
+
+} 
+
+
