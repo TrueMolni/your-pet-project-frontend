@@ -49,7 +49,9 @@ const RadioButtonsSex = ({ label, name, options, ...props }) => {
           }}
         </Field>
       </div>
-      <ErrorMessage name={name} component="p" />
+      <div className={styles.inputWrapper}>
+        <ErrorMessage name={name} component="p" />
+      </div>
     </div>
   );
 };

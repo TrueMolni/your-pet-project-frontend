@@ -1,14 +1,14 @@
 import { Field, ErrorMessage } from 'formik';
 import styles from './Textarea.module.css';
 
-const Textarea = ({ label, name, ...props }) => {
+const Textarea = ({ label, name, style, ...props }) => {
   return (
     <div className={styles.textAreaWrapper}>
       <label className={styles.label} htmlFor={name}>
         {label}
       </label>
       <Field
-        className={styles.input}
+        className={styles.input + ' ' + style}
         as="textarea"
         id={name}
         name={name}

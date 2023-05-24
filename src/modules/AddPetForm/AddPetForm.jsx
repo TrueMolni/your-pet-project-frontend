@@ -3,7 +3,7 @@ import { StepOne } from './steps/stepOne/StepOne';
 import { YourPet, YourPet2 } from './steps/yourPet/YourPet';
 import { Sell, Sell2 } from './steps/sell/Sell';
 import { LostFound, LostFound2 } from './steps/lostFound/LostFound';
-import styles from './AddPetForm.module.css';
+import { InGoodHands, InGoodHands2 } from './steps/InGoodHands/InGoodHands';
 
 export default function AddPetForm() {
   const [data, setData] = useState({
@@ -19,6 +19,8 @@ export default function AddPetForm() {
     titleOfAdd: '',
   });
   const [currentStep, setCurrentStep] = useState(0);
+
+  console.log('form data', data);
 
   const makeRequest = formData => {
     console.log('Form submitted', formData);
@@ -62,5 +64,12 @@ export default function AddPetForm() {
     );
   }
 
-  return <div className={styles.bgForm}>{steps[currentStep]}</div>;
+  if (data.category === 'in good hands' && currentStep !== 0) {
+    steps.push(
+      <InGoodHands next={handleNextStep} prev={handlePrevStep} data={data} />,
+      <InGoodHands2 next={handleNextStep} prev={handlePrevStep} data={data} />
+    );
+  }
+
+  return <div>{steps[currentStep]}</div>;
 }
