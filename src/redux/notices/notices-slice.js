@@ -6,6 +6,7 @@ const initialState = {
   noticesByCategory: [],
   userNotices: [],
   favorite: [],
+  favoriteAds: [],
   details: null,
   isLoading: false,
   isError: null,
@@ -24,7 +25,7 @@ const noticesSlice = createSlice({
       .addCase(
         operations.getNoticesByCategory.fulfilled,
         (store, { payload }) => {
-          store.noticesByCategory = payload.result;
+          store.noticesByCategory = payload.data;
           store.isLoading = false;
           store.isError = null;
         }
@@ -75,7 +76,7 @@ const noticesSlice = createSlice({
         (store, { payload }) => {
           store.isLoading = false;
           store.isError = null;
-          store.favorite = payload.favorites;
+          store.favoriteAds = payload.notices;
         }
       )
       .addCase(
@@ -136,7 +137,7 @@ const noticesSlice = createSlice({
       .addCase(operations.getUserNotices.fulfilled, (store, { payload }) => {
         store.isLoading = false;
         store.isError = null;
-        store.UserNotices = payload.results;
+        store.userNotices = payload.notices;
       })
       .addCase(operations.getUserNotices.rejected, (store, { payload }) => {
         store.isLoading = false;

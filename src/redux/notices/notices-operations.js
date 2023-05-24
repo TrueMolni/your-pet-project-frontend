@@ -42,8 +42,7 @@ const getNoticeByFavorite = createAsyncThunk(
   'notices/getFavorites',
   async (_, { rejectWithValue }) => {
     try {
-      const { data } = await api.getNoticeByFavorite();
-
+      const data = await api.getNoticeByFavorite();
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -80,8 +79,8 @@ const getUserNotices = createAsyncThunk(
   'notices/getOwn',
   async (_, { rejectWithValue }) => {
     try {
-      const { data } = await api.getUserNotices();
-
+      const data = await api.getUserNotices();
+      console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
