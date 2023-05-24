@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getAllNews } from './newsOperations';
+import { getAllNews, getNewsByTitle } from './newsOperations';
 
 const newsInitialState = {
   items: [],
@@ -17,9 +17,20 @@ const newsSlice = createSlice({
       })
       .addCase(getAllNews.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.items = payload;
+        state.items = payload.result;
       })
       .addCase(getAllNews.rejected, (state, { payload }) => {
+        state.isLoading = false;
+        state.error = payload;
+      })
+      .addCase(getNewsByTitle.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(getNewsByTitle.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.items = payload.result;
+      })
+      .addCase(getNewsByTitle.rejected, (state, { payload }) => {
         state.isLoading = false;
         state.error = payload;
       });

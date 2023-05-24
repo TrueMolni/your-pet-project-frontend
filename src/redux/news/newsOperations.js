@@ -13,39 +13,14 @@ export const getAllNews = createAsyncThunk(
   }
 );
 
-// const getNoticeById = createAsyncThunk(
-//   'notices/getOneNotice',
-//   async (id, { rejectWithValue }) => {
-//     try {
-//       const { data } = await api.getNoticeById(id);
-
-//       return data;
-//     } catch (error) {
-//       return rejectWithValue(error.message);
-//     }
-//   }
-// );
-
-// const updateFavorite = createAsyncThunk(
-//   'notices/updateFavorite',
-//   async (id, { rejectWithValue }) => {
-//     try {
-//       const { data } = await api.updateFavorite(id);
-
-//       return data;
-//     } catch (error) {
-//       return rejectWithValue(error.message);
-//     }
-//   }
-// );
-// export const deleteUserNotice = createAsyncThunk(
-//   'notices/deleteNotice',
-//   async (id, { rejectWithValue }) => {
-//     try {
-//       const { data } = await api.deleteUserNotice(`/notices/${id}`);
-//       return data._id;
-//     } catch (error) {
-//       return rejectWithValue(error.message);
-//     }
-//   }
-// );
+export const getNewsByTitle = createAsyncThunk(
+  'news/getNewsByTitle',
+  async ({ title }, { rejectWithValue }) => {
+    try {
+      const data = await api.getNewsByTitle(title);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);

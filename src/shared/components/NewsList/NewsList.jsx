@@ -8,21 +8,25 @@ const NewsList = ({ items }) => {
 
   const elements = items.map(({ _id, title, text, imgUrl, date }) => (
     <li className={css.item} key={_id} id={_id}>
-      <img className={css.img} src={imgUrl} alt="news post" />
-      <div className={css.textPart}>
-        <h4 className={css.title}>{title}</h4>
-        <p className={css.text}>{text}</p>
-      </div>
-      <div className={css.footerCard}>
-        <p className={(css.text, { color: '#888888' })}>{date}</p>
-        <button
-          type="button"
-          className={css.button}
-          // to={`/news/${id}`}
-          // state={{ from: location }}
-        >
-          Read more
-        </button>
+      <div className={css.wrapper}>
+        <img className={css.img} src={imgUrl} alt="news post" />
+        <div className={css.textPart}>
+          <h4 className={css.title}>{title}</h4>
+          <p className={css.text}>{text}</p>
+        </div>
+        <div className={css.footerCard}>
+          <p className={(css.text, { color: '#888888' })}>
+            {date.slice(0, 10)}
+          </p>
+          <button
+            type="button"
+            className={css.button}
+            // to={`/news/${id}`}
+            // state={{ from: location }}
+          >
+            Read more
+          </button>
+        </div>
       </div>
     </li>
   ));

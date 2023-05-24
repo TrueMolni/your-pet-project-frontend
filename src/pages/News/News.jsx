@@ -1,30 +1,18 @@
-import { useEffect } from 'react';
-
-import NewsList from 'shared/components/NewsList/NewsList';
-import NoticesSearch from 'shared/components/NoticesSearch/NoticesSearch';
-import { getAllNews } from 'redux/news/newsOperations';
-import { isLoading, getError, getNews } from 'redux/news/newsSelectors';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import NewsList from 'shared/components/NewsList/NewsList';
+import CustomSearch from 'shared/components/NoticesSearch/CustomSearch';
+import { getAllNews, getNewsByTitle } from 'redux/news/newsOperations';
+import { isLoading, getError, getNews } from 'redux/news/newsSelectors';
+import Loader from '../../shared/components/Loader/Loader';
 
 const News = () => {
-  // const [items, setItems] = useState([]);
-  // const [loading, setLoading] = useState(false);
-  // const [error, setError] = useState(null);
+  const [title, setTitle] = useState('');
 
-  // useEffect(() => {
-  //   const filterNews = async () => {
-  //     try {
-  //       setLoading(true);
-  //       const data = await fetchNews();
-  //       setItems(prevItems => [...prevItems, ...data]);
-  //     } catch (error) {
-  //       setError(error.message);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-  //   filterNews();
-  // }, [setLoading, setItems, setError, setLoading, getAllNews]);
+  const onSearch = ({ search }) => {
+    setTitle(search);
+  };
+
   const dispatch = useDispatch();
   const loading = useSelector(isLoading);
   const error = useSelector(getError);
@@ -32,13 +20,13 @@ const News = () => {
 
   useEffect(() => {
     dispatch(getAllNews());
-  }, [dispatch]);
+    // dispatch(getNewsByTitle(title));
+  }, [dispatch, title]);
 
   return (
     <>
-      <h2>News</h2>
-      <NoticesSearch />
-      {loading && !error && <b>Request in progress...</b>}
+      <CustomSearch title={'News'} onChange={onSearch} />
+      {loading && !error && <Loader />}
       <NewsList items={items} />
     </>
   );
