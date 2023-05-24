@@ -4,6 +4,7 @@ import ButtonBack from '../../elements/buttons/ButtonBack';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import styles from './Sell.module.css';
+import ProgressBar from 'modules/AddPetForm/elements/progressBar/ProgressBar';
 
 import sprite from '../../../../images/icons/sprite.svg';
 
@@ -80,8 +81,9 @@ export const Sell = props => {
   };
 
   return (
-    <>
+    <div className={styles.bgForm}>
       <h1 className={styles.header}>Add pet for sale</h1>
+      <ProgressBar step={2} />
       <Formik
         initialValues={props.data}
         onSubmit={handleSubmit}
@@ -133,7 +135,7 @@ export const Sell = props => {
           </Form>
         )}
       </Formik>
-    </>
+    </div>
   );
 };
 
@@ -142,8 +144,9 @@ export const Sell2 = props => {
     props.next(values, true);
   };
   return (
-    <>
+    <div className={styles.bgForm + ' ' + styles.bgFormMidle}>
       <h1 className={styles.header}>Add pet for sale</h1>
+      <ProgressBar step={3} />
       <Formik
         initialValues={props.data}
         onSubmit={handleSubmit}
@@ -151,36 +154,45 @@ export const Sell2 = props => {
       >
         {({ values }) => (
           <Form>
-            <AddPetFormControl
-              control="sex"
-              label="The sex"
-              name="sex"
-              options={sex}
-            />
-            <AddPetFormControl
-              control="file"
-              label="Add photo"
-              name="file"
-              type="file"
-            />
-            <AddPetFormControl
-              control="input"
-              label="Location"
-              name="location"
-              placeholder="Type location"
-            />
-            <AddPetFormControl
-              control="input"
-              label="Price"
-              name="price"
-              placeholder="Type price"
-            />
-            <AddPetFormControl
-              control="textarea"
-              label="Comments"
-              name="comments"
-              placeholder="Type comments"
-            />
+            <div className={styles.formContainer}>
+              <div className={styles.firstChild}>
+                <AddPetFormControl
+                  control="sex"
+                  label="The sex"
+                  name="sex"
+                  options={sex}
+                />
+                <AddPetFormControl
+                  style={styles.addPhoto}
+                  control="file"
+                  label="Load the pet`s image"
+                  name="file"
+                  type="file"
+                />
+              </div>
+
+              <div className={styles.secondChild}>
+                <AddPetFormControl
+                  control="input"
+                  label="Location"
+                  name="location"
+                  placeholder="Type location"
+                />
+                <AddPetFormControl
+                  control="input"
+                  label="Price"
+                  name="price"
+                  placeholder="Type price"
+                />
+                <AddPetFormControl
+                  style={styles.comments}
+                  control="textarea"
+                  label="Comments"
+                  name="comments"
+                  placeholder="Type comments"
+                />
+              </div>
+            </div>
 
             <div className={styles.buttonContainer}>
               <ButtonNext
@@ -198,6 +210,6 @@ export const Sell2 = props => {
           </Form>
         )}
       </Formik>
-    </>
+    </div>
   );
 };

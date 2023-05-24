@@ -1,13 +1,13 @@
+.radioWrapper {
+  margin-bottom: 16px;
+}
+
 .commonLabel {
   display: block;
   margin-bottom: 4px;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.36;
-}
-
-.radioWrapper {
-  margin-bottom: 16px;
 }
 
 .optionsWrapper {
@@ -53,4 +53,17 @@
 
 .input:checked + .buttonLabel > .icon.male {
   stroke: var(--btn-default-color);
+}
+
+.inputWrapper > p {
+  position: absolute;
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--red);
+}
+
+@media screen and (min-width: 768px) {
+  .commonLabel {
+    font-size: 20px;
+  }
 }
