@@ -1,11 +1,12 @@
-import ButtonNav from "shared/components/Button/ButtonNav";
-import { useDispatch } from "react-redux";
-import { logout } from "redux/auth/auth-operations";
+import ButtonNav from 'shared/components/Button/ButtonNav';
+import PetsData from 'modules/PetsData/PetsData';
+import { useDispatch } from 'react-redux';
+import { logout } from 'redux/auth/auth-operations';
 import css from '../../modules/Navigation/AuthNavigation/auth-navigation.module.css';
 // import ModalCongrats from "modules/ModalCongrats/ModalCongrats";
 
 const UserPage = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   return (
     <div
       style={{
@@ -27,6 +28,7 @@ const UserPage = () => {
         type="button"
         onClick={() => dispatch(logout())}
       />
+      <PetsData />
     </div>
   );
 };
