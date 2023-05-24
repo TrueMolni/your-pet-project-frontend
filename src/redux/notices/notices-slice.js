@@ -24,7 +24,7 @@ const noticesSlice = createSlice({
       .addCase(
         operations.getNoticesByCategory.fulfilled,
         (store, { payload }) => {
-          store.noticesByCategory = payload.result;
+          store.noticesByCategory = payload.data;
           store.isLoading = false;
           store.isError = null;
         }
