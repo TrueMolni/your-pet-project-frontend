@@ -1,0 +1,43 @@
+
+
+.friendList {
+  display: flex;
+  flex-direction: column;
+}
+  @media screen and (min-width: 768px) {
+    .friendList
+    {flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;}
+  }
+
+     @media screen and (min-width: 1280px) {
+      .friendList
+   { flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;}
+  }
+
+
+.item {
+  background: #ffffff;
+  box-shadow: 3px 8px 14px rgba(136, 198, 253, 0.19);
+  border-radius: 40px;
+  padding: 16px;}
+
+  @media screen and (min-width: 768px) {
+    .item
+   { flex-basis: calc((100% - 32px) / 2);}
+  }
+
+  @media screen and (min-width: 1280px) {
+.item
+    {flex-basis: calc((100% - 64px) / 3);}
+  }
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  column-gap: 12px;
+}

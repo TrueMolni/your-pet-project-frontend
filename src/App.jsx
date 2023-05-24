@@ -16,6 +16,7 @@ const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
 const FindPetPage = lazy(() => import('pages/FindPetPage/FindPetPage'));
 const PrivateRoute = lazy(() => import('modules/PrivatRoutes/PrivatRoutes'));
 const PublicRoute = lazy(() => import('modules/PublicRoutes/PublicRoutes'));
+const OurFriends = lazy(() => import('pages/FriendsPage'))
 export const App = () => {
   const dispatch = useDispatch();
   const { isLogin } = useSelector(getAuth);
@@ -32,6 +33,7 @@ export const App = () => {
           <Route path="/" element={<SharedLayout />}>
             <Route path="/main" element={<MainPage />}></Route>
             <Route path="/notices" element={<FindPetPage />}></Route>
+<Route path="/friends" element={<OurFriends/>}></Route>
             <Route
               path="/notices/:categoryName"
               element={<NoticesPage />}
