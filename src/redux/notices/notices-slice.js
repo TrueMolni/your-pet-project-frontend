@@ -6,7 +6,7 @@ const initialState = {
   noticesByCategory: [],
   userNotices: [],
   favorite: [],
-  // details: null,
+  pet: [],
   isLoading: false,
   isError: null,
 };
@@ -24,7 +24,7 @@ const noticesSlice = createSlice({
       .addCase(
         operations.getNoticesByCategory.fulfilled,
         (store, { payload }) => {
-          store.noticesByCategory = payload.result;
+          store.noticesByCategory = payload.data;
           store.isLoading = false;
           store.isError = null;
         }
@@ -43,7 +43,7 @@ const noticesSlice = createSlice({
         store.isError = null;
       })
       .addCase(operations.getNoticeById.fulfilled, (store, { payload }) => {
-        store.userNotices = payload.result;
+        store.userNotices = payload.data;
         store.isLoading = false;
         store.isError = null;
       })
@@ -135,9 +135,23 @@ const noticesSlice = createSlice({
       .addCase(operations.getUserNotices.fulfilled, (store, { payload }) => {
         store.isLoading = false;
         store.isError = null;
-        store.userNotices = payload.results;
+        store.userNotices = payload.data;
       })
       .addCase(operations.getUserNotices.rejected, (store, { payload }) => {
+        store.isLoading = false;
+        store.isError = payload;
+      })
+      //для додавання оголошень вpet
+      .addCase(operations.addPet.pending, store => {
+        store.isLoading = true;
+        store.isError = null;
+      })
+      .addCase(operations.addPet.fulfilled, (store, { payload }) => {
+        store.isLoading = false;
+        store.isError = null;
+        store.pet = payload;
+      })
+      .addCase(operations.addPet.rejected, (store, { payload }) => {
         store.isLoading = false;
         store.isError = payload;
       });
