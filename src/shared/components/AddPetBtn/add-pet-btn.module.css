@@ -15,7 +15,6 @@
 
   border-radius: 50%;
   box-shadow: 3px 8px 14px rgba(136, 198, 253, 0.19);
-  transition: all 250ms ease-out;
 
   text-decoration: none;
   background: var(--btn-default-color);
@@ -38,10 +37,20 @@
 
   &:hover,
   &:focus {
-    scale: 1.1;
+    box-shadow: 3px 8px 14px rgba(136, 198, 253, 0.19);
     background: linear-gradient(290.46deg, #419ef1 0%, #9bd0ff 107.89%);
   }
 }
+
+@media screen and (max-width: 768px) {
+  .Btn {
+    position: fixed;
+    margin-top: 200px;
+    left: 63%;
+    z-index: 5;
+  }
+}
+
 .icon {
   stroke: var(--secondary-text-color);
   align-self: center;
