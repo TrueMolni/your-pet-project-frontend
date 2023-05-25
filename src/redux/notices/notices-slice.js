@@ -137,7 +137,7 @@ const noticesSlice = createSlice({
       .addCase(operations.getUserNotices.fulfilled, (store, { payload }) => {
         store.isLoading = false;
         store.isError = null;
-        store.userNotices = payload.data;
+        store.userNotices = payload.notices;
       })
       .addCase(operations.getUserNotices.rejected, (store, { payload }) => {
         store.isLoading = false;
