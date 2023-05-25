@@ -6,8 +6,9 @@ const initialState = {
   noticesByCategory: [],
   userNotices: [],
   favorite: [],
+
+  pet: [],
   favoriteAds: [],
-  details: null,
   isLoading: false,
   isError: null,
 };
@@ -44,11 +45,12 @@ const noticesSlice = createSlice({
         store.isError = null;
       })
       .addCase(operations.getNoticeById.fulfilled, (store, { payload }) => {
+        store.userNotices = payload.data;
         store.isLoading = false;
         store.isError = null;
-        store.details = payload;
       })
       .addCase(operations.getNoticeById.rejected, (store, { payload }) => {
+        store.userNotices = null;
         store.isLoading = false;
         store.isError = payload;
       })
@@ -94,12 +96,10 @@ const noticesSlice = createSlice({
       .addCase(operations.deleteUserNotice.fulfilled, (store, { payload }) => {
         store.isLoading = false;
         store.isError = null;
-        store.noticesByCategory = store.noticesByCategory.filter(
-          notice => notice._id !== payload
+        const index = store.noticesByCategory.findIndex(
+          item => item._id === payload.result
         );
-        store.userNotices = store.userNotices.filter(
-          notice => notice._id !== payload
-        );
+        store.noticesByCategory.splice(index, 1);
       })
       .addCase(operations.deleteUserNotice.rejected, (store, { payload }) => {
         store.isLoading = false;
@@ -119,7 +119,7 @@ const noticesSlice = createSlice({
             store.category === payload.notice.category
               ? [payload.notice, ...store.noticesByCategory]
               : store.allNotices;
-          store.userNotices = [payload.notice, ...store.own];
+          store.userNotices = [payload.notice, ...store.userNotices];
         }
       )
       .addCase(

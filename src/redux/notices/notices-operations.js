@@ -87,6 +87,18 @@ const getUserNotices = createAsyncThunk(
     }
   }
 );
+const addPet = createAsyncThunk(
+  'notices/addPet',
+  async (pet, { rejectWithValue }) => {
+    try {
+      const { data } = await api.addPet(pet);
+
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
 
 const addPet = createAsyncThunk(
   'notices/addPet',
@@ -124,6 +136,7 @@ const operations = {
   deleteUserNotice,
   addPet,
   getUserPet,
+
 };
 
 export default operations;
