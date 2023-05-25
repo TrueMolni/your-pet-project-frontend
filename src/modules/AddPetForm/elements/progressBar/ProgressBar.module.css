@@ -1,0 +1,64 @@
+.barWrapper {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.barOption {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.barList {
+  display: flex;
+  justify-content: space-around;
+}
+
+.barItem {
+  color: #888888;
+}
+
+.barItem::after {
+  content: '';
+  margin-top: 12px;
+  display: block;
+  width: 80px;
+  height: 8px;
+  background-color: #888888;
+  border-radius: 4px;
+}
+
+.current {
+  color: var(--btn-default-color);
+}
+
+.barItem.current::after {
+  background-color: var(--btn-default-color);
+}
+
+.passed {
+  color: #00c3ad;
+}
+
+.barItem.passed::after {
+  background-color: #00c3ad;
+}
+
+@media screen and (min-width: 768px) {
+  .barWrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 394px;
+    margin-bottom: 16px;
+  }
+
+  .barOption {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.66;
+  }
+
+  .barItem::after {
+    width: 120px;
+  }
+}

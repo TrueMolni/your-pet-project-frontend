@@ -52,7 +52,7 @@ const NoticeCategoryItem = props => {
   };
   useEffect(() => {}, []);
   return (
-    <li>
+    <li className={styles.li}>
       <div className={styles.mainWrapper}>
         <div className={styles.positionWrapper}>
           <img src={avatarURL} alt="" className={styles.petImage} />

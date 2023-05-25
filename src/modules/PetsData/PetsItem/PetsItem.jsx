@@ -1,25 +1,16 @@
-// import { removePet } from 'redux/auth/operations';
-// import { useDispatch } from 'react-redux';
+// імпортувати операцію з видалення тваринки та вказати правильну назву операції
+// наприклад
+// import { removePet } from 'redux/pet/operations';
+//
 
-import defImage from '../../../images/defaultImg/defaultImg.jpeg';
+// import { useDispatch } from 'react-redux';             //розкоментувати після
+
+import defImage from '../../../images/defaultImg/defaultImg.png';
 import BtnDeletePet from '../BtnDeletePet/BtnDeletePet';
 import css from './petsItem.module.css';
 
-const PostItem = ({ pet }) => {
-  const {
-    // _id,
-    name,
-    date,
-    breed,
-    avatarURL,
-    comments,
-  } = pet;
-
-  // const dispatch = useDispatch();
-
-  // const handleDelete = () => {
-  //   dispatch(removePet(_id));
-  // };
+const PetsItem = ({ pet }) => {
+  const { name, date, breed, avatarURL, comments } = pet;
 
   return (
     <div className={css.box}>
@@ -28,7 +19,11 @@ const PostItem = ({ pet }) => {
       </div>
       <div className={css.description}>
         <BtnDeletePet
-        // onClick={handleDelete}
+          style={{
+            position: 'absolute',
+            right: '0',
+          }}
+          // onClick={handleDelete}      //розкоментувати після
         />
         <div className={css.infoPet}>
           <b> Name:</b> {name ? name : 'No Info'}
@@ -46,4 +41,4 @@ const PostItem = ({ pet }) => {
     </div>
   );
 };
-export default PostItem;
+export default PetsItem;
