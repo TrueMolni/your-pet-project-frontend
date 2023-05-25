@@ -9,10 +9,10 @@ import styles from './StepOne.module.css';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const category = [
-  { value: 'your pet', key: 'yourPet' },
-  { value: 'sell', key: 'sell' },
-  { value: 'lost/found', key: 'lostFound' },
-  { value: 'in good hands', key: 'inGoodHands' },
+  { value: 'your-pet', key: 'yourPet', show: 'your pet' },
+  { value: 'sell', key: 'sell', show: 'sell' },
+  { value: 'lost-found', key: 'lostFound', show: 'lost/found' },
+  { value: 'for-free', key: 'inGoodHands', show: 'in good hands' },
 ];
 
 const validationSchema = Yup.object({

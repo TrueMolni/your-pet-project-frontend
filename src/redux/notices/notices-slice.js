@@ -10,6 +10,7 @@ const initialState = {
   details: null,
   isLoading: false,
   isError: null,
+  pet: [],
 };
 
 const noticesSlice = createSlice({
@@ -115,11 +116,13 @@ const noticesSlice = createSlice({
         (store, { payload }) => {
           store.isLoading = false;
           store.isError = null;
-          store.noticesByCategory =
-            store.category === payload.notice.category
-              ? [payload.notice, ...store.noticesByCategory]
-              : store.allNotices;
-          store.userNotices = [payload.notice, ...store.own];
+          store.userNotices.push(payload);
+
+          // store.noticesByCategory =
+          //   store.category === payload.notice.category
+          //     ? [payload.notice, ...store.noticesByCategory]
+          //     : store.allNotices;
+          // store.userNotices = [payload.notice, ...store.own];
         }
       )
       .addCase(
