@@ -9,7 +9,8 @@
 }
 
 .link {
-  color: var(--bluelinksActive);
+  text-decoration: none;
+  color:#54ADFF;
 }
 
 .infoItem {

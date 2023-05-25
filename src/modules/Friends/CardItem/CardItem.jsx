@@ -10,7 +10,6 @@ import styles from './card-item.module.css';
 const CardItem = ({items}) => {
   const friends = friendsList.map(
     ({
-      _id,
       title,
       url,
       addressUrl,
@@ -20,7 +19,7 @@ const CardItem = ({items}) => {
       phone,
       email,
     })  => (
-      <li key={_id} className={styles.item}>
+      <li key={title} className={styles.item}>
         <div className={styles.card}>
           <CardTitle title={title} url={url} />
           <div className={styles.content}>

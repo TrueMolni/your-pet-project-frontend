@@ -1,6 +1,7 @@
 
 
 .friendList {
+
   display: flex;
   flex-direction: column;
 }
@@ -11,15 +12,15 @@
     gap: 32px;}
   }
 
-     @media screen and (min-width: 1280px) {
-      .friendList
-   { flex-direction: row;
-    flex-wrap: wrap;
-    gap: 32px;}
-  }
+
+
 
 
 .item {
+  width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
   background: #ffffff;
   box-shadow: 3px 8px 14px rgba(136, 198, 253, 0.19);
   border-radius: 40px;
@@ -27,12 +28,14 @@
 
   @media screen and (min-width: 768px) {
     .item
-   { flex-basis: calc((100% - 32px) / 2);}
+   {width: 336px;
+     flex-basis: calc((768px- 32px) / 2);}
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1279px) {
 .item
-    {flex-basis: calc((100% - 64px) / 3);}
+    {width: 395px;
+      flex-basis: calc((1279px - 64px) / 3);}
   }
 
 .content {
