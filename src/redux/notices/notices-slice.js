@@ -4,6 +4,7 @@ import operations from './notices-operations';
 
 const initialState = {
   noticesByCategory: [],
+  adDetails: null,
   userNotices: [],
   favorite: [],
 
@@ -45,12 +46,12 @@ const noticesSlice = createSlice({
         store.isError = null;
       })
       .addCase(operations.getNoticeById.fulfilled, (store, { payload }) => {
-        store.userNotices = payload.data;
+        store.adDetails = payload;
         store.isLoading = false;
         store.isError = null;
       })
       .addCase(operations.getNoticeById.rejected, (store, { payload }) => {
-        store.userNotices = null;
+        store.adDetails = null;
         store.isLoading = false;
         store.isError = payload;
       })
@@ -97,9 +98,11 @@ const noticesSlice = createSlice({
         store.isLoading = false;
         store.isError = null;
         const index = store.noticesByCategory.findIndex(
-          item => item._id === payload.result
+          item => item._id === payload._id
         );
         store.noticesByCategory.splice(index, 1);
+        store.userNotices.splice(index, 1);
+        store.favoriteAds.splice(index, 1);
       })
       .addCase(operations.deleteUserNotice.rejected, (store, { payload }) => {
         store.isLoading = false;
