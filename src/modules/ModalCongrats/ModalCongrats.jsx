@@ -10,7 +10,7 @@ import css from './modalCongrats.module.css';
 //   setIsOpen(true);
 // };
 
-const ModalCongrats = (onClose) => {
+const ModalCongrats = () => {
   const [isOpen, setIsOpen] = useState(true);
 
   const handleCloseModal = () => {

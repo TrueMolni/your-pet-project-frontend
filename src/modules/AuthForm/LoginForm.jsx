@@ -16,7 +16,7 @@ const initialValues = {
 
 const LoginForm = props => {
   const navigate = useNavigate()
-  const [isError, setIsError] = useState(null); //! setIsError
+  const [isError, setIsError] = useState(null); 
   const [passwordShow, setPasswordShow] = useState(false);
 
   const dispatch = useDispatch();
@@ -30,8 +30,8 @@ const LoginForm = props => {
       });
       resetForm();
     } else {
-      navigate('/user');
-      console.log('navigate to ...');
+      navigate('/notices');
+      // console.log('navigate to ...');
     }
   };
 

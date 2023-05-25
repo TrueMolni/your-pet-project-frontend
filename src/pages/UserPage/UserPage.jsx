@@ -1,7 +1,7 @@
 // import ButtonNav from "shared/components/Button/ButtonNav";
 // import { useDispatch } from "react-redux";
 // import { logout } from "redux/auth/auth-operations";
-import React from 'react';
+import React, { useEffect} from 'react';
 // import { addUserInfo } from '../../redux/userInfo/user-operations';
 // import Button from 'shared/components/Button';
 import styles from './UserPage.module.css';
@@ -10,40 +10,71 @@ import Logout from '../../modules/Logout/Logout.jsx';
 // import axios from 'axios';
 import ButtonNav from 'shared/components/Button/ButtonNav';
 import PetsData from 'modules/PetsData/PetsData';
-import { useDispatch } from 'react-redux';
-import { logout } from 'redux/auth/auth-operations';
+import { useDispatch , useSelector} from 'react-redux';
+import { logout , openModal} from 'redux/auth/auth-operations';
 import css from '../../modules/Navigation/AuthNavigation/auth-navigation.module.css';
-// import ModalCongrats from "modules/ModalCongrats/ModalCongrats";
+import ModalCongrats from "modules/ModalCongrats/ModalCongrats";
+import { isModalOpen } from 'redux/auth/auth-selectors';
 
 const UserPage = () => {
+  const showModal = useSelector(isModalOpen);
   const dispatch = useDispatch();
-  return (
-    <section className={styles.container}>
-      <div
-        style={{
-          fontWeight: 800,
-          fontSize: 20,
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '100vh',
-        }}
-      >
-        <UserData />
-        {/* <Logout /> */}
+  
 
-        <ButtonNav
-          customStyle={css.loginBtn}
-          buttonName={'Logout'}
-          type="button"
-          onClick={() => dispatch(logout())}
-        />
-        <PetsData />
-      </div>
-    </section>
+  useEffect(() => {
+    if (!showModal) {
+    const timer = setTimeout(() => {
+      dispatch(openModal());
+    }, );
+    return () => {
+      clearTimeout(timer);
+    };
+  }
+  
+}, [dispatch, showModal]);
+
+  
+  return (
+    <>
+      {showModal && <ModalCongrats />}
+      <section className={styles.container}>
+        <div
+          style={{
+            fontWeight: 800,
+            fontSize: 20,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100vh',
+          }}
+        >
+          <UserData />
+          <Logout onClick={() => dispatch(logout())} />
+
+          <ButtonNav
+            customStyle={css.loginBtn}
+            buttonName={'Logout'}
+            type="button"
+            onClick={() => dispatch(logout())}
+          />
+          <PetsData />
+        </div>
+      </section>
+    </>
   );
 };
 export default UserPage;
+
+
+
+
+
+
+
+
+
+
+
 
 // const UserPages = () => {
 

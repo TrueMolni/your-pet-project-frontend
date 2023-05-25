@@ -8,29 +8,20 @@ import css from './AuthForm.module.css';
 import Button from 'shared/components/Button';
 import { user } from 'services';
 import shortid from 'shortid';
-import { useDispatch, useSelector} from 'react-redux'
-import { signup, closeModal, openModal } from 'redux/auth/auth-operations';
-import ModalCongrats from 'modules/ModalCongrats/ModalCongrats'; 
+import { useDispatch} from 'react-redux'
+import { signup } from 'redux/auth/auth-operations';; 
 
 export const RegisterForm = props => {
-  const [isCongratsModalShown, setIsCongratsModalShown] = useState(false);
-  const isModalOpen = useSelector(state => state.auth.isModalOpen)
+
   const [passwordShow, setPasswordShow] = useState(false);
   const [passwordConfirm, setPasswordConfirm] = useState(false);
   const dispatch = useDispatch();
   const handleSignUp = (values, { resetForm }) => {
-    if (!isCongratsModalShown) {
-      dispatch(openModal());
-      setIsCongratsModalShown(true);
-    }
+
     dispatch(signup(values));
     resetForm();
   };
 
-
-  const handleCloseModal = () => {
-    dispatch(closeModal());
-  };
 
 
   const togglePassword = () => setPasswordShow(prevState => !prevState);
@@ -43,9 +34,7 @@ export const RegisterForm = props => {
 
   return (
     <div className={css.container}>
-      {isModalOpen && !isCongratsModalShown && (
-        <ModalCongrats onClose={handleCloseModal} />
-      )}
+
       <Formik
         onSubmit={handleSignUp}
         validationSchema={user.stepOneValidationSchema}
@@ -55,7 +44,7 @@ export const RegisterForm = props => {
           <h2 className={css.title}>{props.title}</h2>
           <div className={css.input__wrapper}>
             <InputForm
-              //   htmlFor={emailInputId}
+
 
               autofocus="autofocus"
               name="email"
@@ -67,7 +56,7 @@ export const RegisterForm = props => {
           </div>
           <div className={css.input__wrapper}>
             <InputForm
-              //   htmlFor={passwordInputId}
+
               name="password"
               type={passwordShow ? 'text' : 'password'}
               id={passwordInputId}

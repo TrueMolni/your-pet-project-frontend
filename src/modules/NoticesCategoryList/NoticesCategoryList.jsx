@@ -25,7 +25,6 @@ const NoticesCategoryList = () => {
   const favorites = useSelector(selectFavorites);
   const userNotices = useSelector(selectUserNotices);
 
-  console.log(userNotices);
   const notices = useSelector(selectNoticesByCategory);
   const category = location.pathname.split('/')[2];
 
@@ -50,11 +49,11 @@ const NoticesCategoryList = () => {
           dispatch(operations.getNoticeByFavorite());
         }
         break;
-      // case '/notices/own':
-      //   if (userID && userNotices.length !== 0) {
-      //     dispatch(operations.getUserNotices());
-      //   }
-      //   break;
+      case '/notices/own':
+        if (userID) {
+          dispatch(operations.getUserNotices());
+        }
+        break;
       default:
         dispatch(operations.getNoticesByCategory({ category: category }));
     }
