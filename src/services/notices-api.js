@@ -21,7 +21,7 @@ export const getNoticeByFavorite = async id => {
 };
 
 export const addNoticeByCategory = async notice => {
-  const { data } = await instance.post('/notices', notice);
+  const { data } = await instance.post('/notice', notice);
   return data;
 };
 
@@ -31,7 +31,7 @@ export const addPet = async pet => {
 };
 
 export const getUserNotices = async () => {
-  const { data } = await instance.get(`/notices/own`);
+  const { data } = await instance.get(`api/notices/own`);
   return data;
 };
 
