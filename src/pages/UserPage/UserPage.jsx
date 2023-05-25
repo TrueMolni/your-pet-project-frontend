@@ -1,5 +1,4 @@
-
-    // import ButtonNav from "shared/components/Button/ButtonNav";
+// import ButtonNav from "shared/components/Button/ButtonNav";
 // import { useDispatch } from "react-redux";
 // import { logout } from "redux/auth/auth-operations";
 import React from 'react';
@@ -18,36 +17,35 @@ import css from '../../modules/Navigation/AuthNavigation/auth-navigation.module.
 const UserPage = () => {
   const dispatch = useDispatch();
   return (
-    
-      <UserData />
-      <Logout />
-
     <section className={styles.container}>
-    <div
-      style={{
-        fontWeight: 800,
-        fontSize: 20,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-      }}
-    >
-      <ButtonNav
-        customStyle={css.loginBtn}
-        buttonName={'Logout'}
-        type="button"
-        onClick={() => dispatch(logout())}
-      />
-      <PetsData />
-    </div>
-</section>
+      <div
+        style={{
+          fontWeight: 800,
+          fontSize: 20,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100vh',
+        }}
+      >
+        <UserData />
+        <Logout />
+
+        <ButtonNav
+          customStyle={css.loginBtn}
+          buttonName={'Logout'}
+          type="button"
+          onClick={() => dispatch(logout())}
+        />
+        <PetsData />
+      </div>
+    </section>
   );
 };
 export default UserPage;
 
 // const UserPages = () => {
-  
+
 // // const initState = {photo:'',name:'',email:'',phone:'',birthday:'',city:''}
 // const dispatch = useDispatch();
 // // const [userData, setUserData] = useState(initState);
@@ -61,8 +59,6 @@ export default UserPage;
 // dispatch(addUserInfo(userData))
 // reset();
 // };
-
-
 
 // const changedValueInput = e => {
 
@@ -135,7 +131,7 @@ export default UserPage;
 //       </label>
 //       <label>
 //         City:
-//         <input 
+//         <input
 //         className={css.input}
 //           variant="filled"
 //           onChange={changedValueInput}
