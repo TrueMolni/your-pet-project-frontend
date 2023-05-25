@@ -1,0 +1,35 @@
+.logoutBtn {
+  position: relative;
+  padding-left: 10px;
+  border: none;
+  width: 120px;
+  align-items: center;
+  height: 20px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #888888;
+}
+
+.logout-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  background: url(../../images/Logout.svg) no-repeat center;
+}
+
+.logoutBtn::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: url(../../images/Logout.svg) no-repeat center;
+}
