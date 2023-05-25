@@ -8,6 +8,8 @@ import cn from 'classnames';
 const ClearIcon = <ClearBtnIcon />;
 const SearchIcon = <SearchBtnIcon />;
 
+
+
 const CustomSearch = ({ title, onChange, onSearch }) => {
 
   const [searchActive, setSearchActive] = useState(false);
