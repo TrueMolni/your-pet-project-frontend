@@ -54,8 +54,9 @@ export const deleteUserNotice = createAsyncThunk(
   'notices/deleteNotice',
   async (id, { rejectWithValue }) => {
     try {
-      const { data } = await api.deleteUserNotice(`/notices/${id}`);
-      return data;
+      const { deletedNotice } = await api.deleteUserNotice(id);
+      console.log(deletedNotice);
+      return deletedNotice;
     } catch (error) {
       return rejectWithValue(error.message);
     }
@@ -80,7 +81,6 @@ const getUserNotices = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const data = await api.getUserNotices();
-      console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
