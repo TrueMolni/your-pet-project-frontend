@@ -7,7 +7,7 @@
 /* overlay */
 
 .overlay {
-  height: 100vh;
+  height: calc(601px - 55px);
   width: 100%;
 
   background-image: url('../../images/background/pawprint5.svg'),
@@ -29,6 +29,7 @@
 
 @media screen and (min-width: 768px) {
   .overlay {
+    height: 1193px;
     background-size: 77px 77px, 71px 71px, 76px 76px, 77px 77px, 215px 215px,
       215px 215px, 77px 77px, 215px 215px;
     background-position: top 19% left 4.7%, top 16% left 101%, top 33% left 67%,
@@ -39,6 +40,7 @@
 
 @media screen and (min-width: 1280px) {
   .overlay {
+    height: 768px;
     background-size: 77px 77px, 71px 71px, 2px 2px, 77px 77px, 215px 215px,
       215px 215px, 77px 77px, 215px 215px;
     background-position: top 30.5% left 2.7%, top 25% left 50.5%,
@@ -51,7 +53,9 @@
 
 .imgContainer {
   height: 100%;
-  width: 100%;
+  width: 320px;
+  margin-left: auto;
+  margin-right: auto;
   background-image: url('../../images/background/bg-image-mob.png');
   background-size: 100%;
   background-position: bottom 0 left 0;
@@ -75,29 +79,11 @@
     background-image: url('../../images/background/bg-image-mob@3x.png');
   }
 }
-@media screen and (min-width: 483px) {
-  .imgContainer {
-    height: 100%;
-    width: 483px;
-    margin-left: auto;
-  }
-}
-
-@media screen and (min-width: 540px) and (max-width: 550px) {
-  .imgContainer {
-    height: 100%;
-    width: 100%;
-    background-position: top 50% right 0;
-    background-size: contain;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
 
 @media screen and (min-width: 768px) {
   .imgContainer {
     height: 100%;
-    width: 100%;
+    width: 768px;
     background-image: url('../../images/background/bg-image-tab.png');
     background-size: 100%;
     background-position: bottom 0 left 0;
@@ -119,15 +105,6 @@
   screen and (min-width: 768px) and (min-resolution: 3dppx) {
   .imgContainer {
     background-image: url('../../images/background/bg-image-tab@3x.png');
-  }
-}
-
-@media screen and (min-width: 850px) {
-  .imgContainer {
-    background-position: top 50% right 0;
-    background-size: contain;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
@@ -198,7 +175,7 @@
 }
 
 .heroTitle {
-  margin-top: 60px;
+  margin-top: 35px;
   margin-right: 0;
 
   font-weight: 700;
@@ -226,11 +203,3 @@
     line-height: 1.3;
   }
 }
-
-/* @media screen and (min-width: 483px) {
-  .imgContainer {
-    width: 483px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-} */
