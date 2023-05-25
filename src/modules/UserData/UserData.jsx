@@ -65,18 +65,33 @@ const UserData = ({ data }) => {
 //     console.log(userData);
 //     dispatch(addUserInfo(userData));
 //      };
+
+    // document.getElementById('uploadButton').addEventListener('click', function() {
+    //   document.getElementById('fileInput').click();
+    // });
+
+    // document.getElementById('fileInput').addEventListener('change', function(event) {
+    //   const selectedFile = event.target.files[0];
+    //   // req add file
+    //   console.log('Selected file:', selectedFile);
+    // });
   return (
     <>
       <h1>My Information:</h1>
 
       <div className={css.divreverse}>
+       <div className={css.avatarDiv}>
         <img
-          className={css.img}
+          className={css.imgUser}
           src={userPhoto}
-          alt="User"
+          alt=""
           onClick={addUserPhoto}
         />
-        <input className={css.inputImg} type="file" accept="image/*" onChange={handlePhotoUpload} />
+<button id="uploadButton" className = {css.btnEditPhoto}>
+    <span className="css.camera-icon"></span>
+    Edit photo
+  </button>      
+    <input className={css.inputImg} id="fileInput" type="file" accept="image/*" onChange={handlePhotoUpload} /></div> 
         <form
           className={css.formStyle}
         //   onSubmit={onSubmitForm}

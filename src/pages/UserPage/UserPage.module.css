@@ -1,5 +1,5 @@
-@media screen and (min-width: 1200px) {}
-.container{max-width:320px;
+.container{
+    max-width:280px;
     padding:20px;
     margin:auto;
     font-family: 'Manrope';
@@ -16,4 +16,5 @@
 }
 
     }
-   
+    @media screen and (min-width: 1200px) {}
+ 

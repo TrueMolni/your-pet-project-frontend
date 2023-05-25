@@ -4,13 +4,12 @@ import css from './UserDataItem.module.css';
 
 const UserDataItem = ({
   label,
-//   value,
+  //   value,
   isEditing,
   //   onInputChange,
   onEditClick,
   onSaveClick,
 }) => {
-    
   const initState = {
     photo: '',
     name: '',
@@ -20,28 +19,27 @@ const UserDataItem = ({
     city: '',
   };
   const [userData, setUserData] = useState(initState);
-//   const { name, phone, photo, city, email, birthday } = userData;
-//   useEffect(() => {
-//     // fn for request info user
-//     axios.get().then(data => {
-//       if (data) {
-//         const { name, phone, photo, city, email, birthday } = data;
-//             setUserData(name, phone, photo, city, email, birthday);
-//          return   console.log(userData);
-        
-//       }
-//       return;
-//     });
-//   }, [setUserData, userData]);
+  //   const { name, phone, photo, city, email, birthday } = userData;
+  //   useEffect(() => {
+  //     // fn for request info user
+  //     axios.get().then(data => {
+  //       if (data) {
+  //         const { name, phone, photo, city, email, birthday } = data;
+  //             setUserData(name, phone, photo, city, email, birthday);
+  //          return   console.log(userData);
+
+  //       }
+  //       return;
+  //     });
+  //   }, [setUserData, userData]);
 
   const onInputChange = e => {
-  
     const value = e.currentTarget.value;
     const nameValue = e.currentTarget.name;
-    setUserData( {[nameValue]: value} );
+    setUserData({ [nameValue]: value });
     console.table(userData);
   };
- 
+
   if (isEditing) {
     return (
       <div>
@@ -56,7 +54,10 @@ const UserDataItem = ({
             type={label}
             name={label}
           />
-          <button className = {css.btnES} onClick={onSaveClick}>Save</button>
+          <button className={css.btnSave} onClick={onSaveClick}>
+            <span className="css.confirm-icon"></span>
+            Save
+          </button>
         </label>
       </div>
     );
@@ -75,7 +76,10 @@ const UserDataItem = ({
             readOnly="readonly"
             // disabled="disabled"
           />{' '}
-          <button className = {css.btnES} onClick={onEditClick}>Edit</button>
+          <button className={css.btnEdit} onClick={onEditClick}>
+            <span className="css.pencle-icon"></span>
+            Edit
+          </button>
         </label>
       </div>
     );

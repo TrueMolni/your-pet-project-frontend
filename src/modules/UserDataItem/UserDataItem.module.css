@@ -1,5 +1,4 @@
-@media screen and (min-width: 768px) {}
-@media screen and (min-width: 1200px) {}
+
     
     .input{border: 1px solid #54ADFF;
         border-radius: 20px;
@@ -13,21 +12,72 @@
     
     }
     
-    button{
+    /* button{
         width:90px;
         height:30px;
     align-items:center;
     border: 1px solid #54ADFF;
     border-radius: 20px;
     background-color:orange;
-    }
+    } */
   
     
- .btnES{
-    width:40px;
+ .btnSave{
+    position: relative;
+    padding-left: 10px;
+    width:60px;
     height:25px;
     position: absolute;
     top:5px;
     right:5px;
  } 
- .inputLable{position: relative;}
+ .btnEdit{
+    position: relative;
+    padding-left: 10px;
+    width:60px;
+    height:25px;
+    position: absolute;
+    top:5px;
+    right:5px;
+ } 
+ /* .confirm-icon{
+
+ }
+
+ .pencle-icon{
+
+ } */
+ .btnSave::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: url(../../images/confirmicon.svg) no-repeat center;
+  }
+  .btnEdit::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: url(../../images/pencle.svg) no-repeat center;
+  }
+ .inputLable{position: relative;
+
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.04em;
+    color: #111111;
+}
+ @media screen and (min-width: 768px) {}
+ @media screen and (min-width: 1200px) {}
