@@ -32,10 +32,10 @@ const authSlice = createSlice({
         state.error = action.payload;
       })
       .addCase(openModal, state => {
-        state.isModalOpen = true; // Откройте модальное окно
+        state.isModalOpen = true; 
       })
       .addCase(closeModal, state => {
-        state.isModalOpen = false; // Закройте модальное окно
+        state.isModalOpen = false; 
       })
 
       .addCase(login.pending, state => {

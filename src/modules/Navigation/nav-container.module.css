@@ -9,7 +9,7 @@
     padding: 8px 32px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .headerContainer {
     padding: 10px 16px;
   }
@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: flex-end;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .navContainer {
     justify-content: space-between;
     margin-left: 159px;
@@ -32,12 +32,12 @@
   gap: 40px;
   list-style: none;
 }
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1280px) {
   .navList {
     display: none;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .navList {
     display: flex;
     justify-self: flex-start;
@@ -90,7 +90,7 @@
     margin-right: 38px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .userIconContainer,
   .authNavList {
     margin-right: 0;
@@ -114,7 +114,7 @@
 .burgerMenu {
   border: none;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .burgerMenu {
     display: none;
   }

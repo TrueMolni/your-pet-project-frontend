@@ -13,17 +13,20 @@ import { signup, closeModal, openModal } from 'redux/auth/auth-operations';
 import ModalCongrats from 'modules/ModalCongrats/ModalCongrats'; 
 
 export const RegisterForm = props => {
-  // const navigate = useNavigate()
+  const [isCongratsModalShown, setIsCongratsModalShown] = useState(false);
   const isModalOpen = useSelector(state => state.auth.isModalOpen)
   const [passwordShow, setPasswordShow] = useState(false);
   const [passwordConfirm, setPasswordConfirm] = useState(false);
   const dispatch = useDispatch();
   const handleSignUp = (values, { resetForm }) => {
-    dispatch(openModal())
-    dispatch(signup(values))
+    if (!isCongratsModalShown) {
+      dispatch(openModal());
+      setIsCongratsModalShown(true);
+    }
+    dispatch(signup(values));
     resetForm();
-
   };
+
 
   const handleCloseModal = () => {
     dispatch(closeModal());
@@ -40,7 +43,9 @@ export const RegisterForm = props => {
 
   return (
     <div className={css.container}>
-      {isModalOpen && <ModalCongrats onClose={handleCloseModal} />}
+      {isModalOpen && !isCongratsModalShown && (
+        <ModalCongrats onClose={handleCloseModal} />
+      )}
       <Formik
         onSubmit={handleSignUp}
         validationSchema={user.stepOneValidationSchema}

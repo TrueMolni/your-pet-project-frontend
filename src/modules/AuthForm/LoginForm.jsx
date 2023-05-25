@@ -30,7 +30,7 @@ const LoginForm = props => {
       });
       resetForm();
     } else {
-      navigate('/main');
+      navigate('/user');
       console.log('navigate to ...');
     }
   };

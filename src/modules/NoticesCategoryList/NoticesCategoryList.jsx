@@ -10,7 +10,9 @@ import {
   selectFavoriteAds,
   selectFavorites,
   selectNoticesByCategory,
+  selectUserNotices,
 } from 'redux/notices/notices-selectors';
+import { getUserID } from 'redux/auth/auth-selectors';
 import Pagination from '../../modules/Pagination/Pagination';
 
 // import { noticies } from './notices';
@@ -21,16 +23,49 @@ const NoticesCategoryList = () => {
 
   const favoriteAds = useSelector(selectFavoriteAds);
   const favorites = useSelector(selectFavorites);
+  const userNotices = useSelector(selectUserNotices);
+
+  console.log(userNotices);
   const notices = useSelector(selectNoticesByCategory);
   const category = location.pathname.split('/')[2];
 
-  const list =
-    location.pathname === '/notices/favorites' ? favoriteAds : notices;
+  const userID = useSelector(getUserID);
 
-  useEffect(() => {
-    dispatch(operations.getNoticesByCategory({ category: category }));
-    dispatch(operations.getNoticeByFavorite());
-  }, [dispatch, category, favorites]);
+  let list;
+  switch (location.pathname) {
+    case '/notices/favorites':
+      list = favoriteAds;
+      break;
+    case '/notices/own':
+      list = userNotices;
+      break;
+    default:
+      list = notices;
+  }
+
+  const request = () => {
+    switch (location.pathname) {
+      case '/notices/favorites':
+        if (userID && favorites) {
+          dispatch(operations.getNoticeByFavorite());
+        }
+        break;
+      // case '/notices/own':
+      //   if (userID && userNotices.length !== 0) {
+      //     dispatch(operations.getUserNotices());
+      //   }
+      //   break;
+      default:
+        dispatch(operations.getNoticesByCategory({ category: category }));
+    }
+  };
+  useEffect(request, [
+    dispatch,
+    category,
+    favorites,
+    userID,
+    location.pathname,
+  ]);
 
   return (
     <div className={styles.section}>
