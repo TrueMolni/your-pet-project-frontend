@@ -17,9 +17,8 @@ const getNoticeById = createAsyncThunk(
   'notices/getOneNotice',
   async (id, { rejectWithValue }) => {
     try {
-      const { data } = await api.getNoticeById(id);
-
-      return data;
+      const { result } = await api.getNoticeById(id);
+      return result;
     } catch (error) {
       return rejectWithValue(error.message);
     }
