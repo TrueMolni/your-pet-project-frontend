@@ -3,7 +3,7 @@ import ButtonNext from '../../elements/buttons/ButtonNext';
 import ButtonBack from '../../elements/buttons/ButtonBack';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import styles from './Sell.module.css';
+import styles from './InGoodHands.module.css';
 import ProgressBar from 'modules/AddPetForm/elements/progressBar/ProgressBar';
 
 import sprite from '../../../../images/icons/sprite.svg';
