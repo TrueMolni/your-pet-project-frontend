@@ -1,4 +1,4 @@
-/* .modalTopSide {
+.modalTopSide {
   display: flex;
 }
 
@@ -145,9 +145,9 @@
 }
 .modalPetInfoList :last-child {
   margin-bottom: 8px;
-} */
+}
 
-/* @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .modalTopSide {
     display: block;
   }
@@ -155,7 +155,7 @@
   /* .modalMainContent {
   } */
 
-/* .modalButtons {
+  .modalButtons {
     display: flex;
     flex-direction: column;
   }
@@ -205,5 +205,5 @@
 
   .modalContent {
     padding: 20px;
-  } */
-/* }  */
+  }
+}
