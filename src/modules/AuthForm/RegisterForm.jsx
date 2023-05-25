@@ -9,28 +9,20 @@ import Button from 'shared/components/Button';
 import { user } from 'services';
 import shortid from 'shortid';
 import { useDispatch} from 'react-redux'
-import { signup } from 'redux/auth/auth-operations';
-import ModalCongrats from 'modules/ModalCongrats/ModalCongrats'; 
+import { signup } from 'redux/auth/auth-operations';; 
 
 export const RegisterForm = props => {
+
   const [passwordShow, setPasswordShow] = useState(false);
   const [passwordConfirm, setPasswordConfirm] = useState(false);
-const [modalOpen, setModalOpen] = useState(false);
   const dispatch = useDispatch();
-
   const handleSignUp = (values, { resetForm }) => {
 
     dispatch(signup(values));
-    
     resetForm();
-    setModalOpen(true);
-    console.log('REGISTER FORM', values);
   };
 
 
-const handleCloseModal = () => {
-  setModalOpen(false); 
-};
 
   const togglePassword = () => setPasswordShow(prevState => !prevState);
   const togglePasswordConfirm = () =>
@@ -39,10 +31,10 @@ const handleCloseModal = () => {
   const emailInputId = shortid.generate();
   const passwordInputId = shortid.generate();
   const confirmPasswordInputId = shortid.generate();
-  
+
   return (
     <div className={css.container}>
-      <ModalCongrats isOpen={modalOpen} onClose={handleCloseModal} />
+
       <Formik
         onSubmit={handleSignUp}
         validationSchema={user.stepOneValidationSchema}
@@ -52,7 +44,7 @@ const handleCloseModal = () => {
           <h2 className={css.title}>{props.title}</h2>
           <div className={css.input__wrapper}>
             <InputForm
-              //   htmlFor={emailInputId}
+
 
               autofocus="autofocus"
               name="email"
@@ -64,7 +56,7 @@ const handleCloseModal = () => {
           </div>
           <div className={css.input__wrapper}>
             <InputForm
-              //   htmlFor={passwordInputId}
+
               name="password"
               type={passwordShow ? 'text' : 'password'}
               id={passwordInputId}
