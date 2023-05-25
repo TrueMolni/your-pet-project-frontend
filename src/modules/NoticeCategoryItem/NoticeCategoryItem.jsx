@@ -8,6 +8,7 @@ import {
 import operations from 'redux/notices/notices-operations';
 import { selectFavorites } from 'redux/notices/notices-selectors';
 import ModalDeleteNotice from 'modules/ModalDeleteNotice/ModalDeleteNotice';
+import ModalAdv from 'modules/ModalAdv/ModalAdv';
 import {
   countFullYears,
   notification,
@@ -33,6 +34,7 @@ const NoticeCategoryItem = props => {
     }
   };
   const [isModalDeleteNoticeOpen, setModalDeleteNoticeOpen] = useState(false);
+  const [isModalAdvOpen, setModalAdvOpen] = useState(false);
   const isLogin = useSelector(isUserLogin);
   const dispatch = useDispatch();
 
@@ -49,6 +51,13 @@ const NoticeCategoryItem = props => {
   };
   const closeModalDeleteNotice = () => {
     setModalDeleteNoticeOpen(false);
+  };
+  const openModalAdv = () => {
+    dispatch(operations.getNoticeById(id));
+    setModalAdvOpen(true);
+  };
+  const closeModalAdv = () => {
+    setModalAdvOpen(false);
   };
   useEffect(() => {}, []);
   return (
@@ -110,7 +119,9 @@ const NoticeCategoryItem = props => {
           <p className={styles.text}>
             {title.length > 28 ? `${title.slice(0, 28)}...` : title}
           </p>
-          <button className={styles.btnLearnMore}>Learn more</button>
+          <button className={styles.btnLearnMore} onClick={openModalAdv}>
+            Learn more
+          </button>
         </div>
       </div>
       <ModalDeleteNotice
@@ -119,6 +130,7 @@ const NoticeCategoryItem = props => {
         title={title}
         id={id}
       />
+      <ModalAdv isOpen={isModalAdvOpen} onClose={closeModalAdv} id={id} />
     </li>
   );
 };

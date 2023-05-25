@@ -4,6 +4,7 @@ import operations from './notices-operations';
 
 const initialState = {
   noticesByCategory: [],
+  adDetails: null,
   userNotices: [],
   favorite: [],
 
@@ -45,12 +46,12 @@ const noticesSlice = createSlice({
         store.isError = null;
       })
       .addCase(operations.getNoticeById.fulfilled, (store, { payload }) => {
-        store.userNotices = payload.data;
+        store.adDetails = payload;
         store.isLoading = false;
         store.isError = null;
       })
       .addCase(operations.getNoticeById.rejected, (store, { payload }) => {
-        store.userNotices = null;
+        store.adDetails = null;
         store.isLoading = false;
         store.isError = payload;
       })
