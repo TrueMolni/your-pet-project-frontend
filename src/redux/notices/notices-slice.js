@@ -97,9 +97,11 @@ const noticesSlice = createSlice({
         store.isLoading = false;
         store.isError = null;
         const index = store.noticesByCategory.findIndex(
-          item => item._id === payload.result
+          item => item._id === payload._id
         );
         store.noticesByCategory.splice(index, 1);
+        store.userNotices.splice(index, 1);
+        store.favoriteAds.splice(index, 1);
       })
       .addCase(operations.deleteUserNotice.rejected, (store, { payload }) => {
         store.isLoading = false;
