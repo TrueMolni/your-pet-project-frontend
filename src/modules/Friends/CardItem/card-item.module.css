@@ -2,15 +2,24 @@
 
 .friendList {
 
-  display: flex;
+  display:flex ;
   flex-direction: column;
 }
-  @media screen and (min-width: 768px) {
-    .friendList
-    {flex-direction: row;
-    flex-wrap: wrap;
-    gap: 32px;}
-  }
+    @media screen and (min-width: 768px) {
+      .friendList {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 32px;
+      }
+    }
+         @media screen and (min-width: 1280px) {
+           .friendList {
+             flex-direction: row;
+             flex-wrap: wrap;
+             gap: 32px;
+
+           }
+         }
 
 
 
@@ -24,20 +33,21 @@
   background: #ffffff;
   box-shadow: 3px 8px 14px rgba(136, 198, 253, 0.19);
   border-radius: 40px;
-  padding: 16px;}
+  padding: 16px;
+  display: flex;}
 
   @media screen and (min-width: 768px) {
     .item
    {width: 336px;
-     flex-basis: calc((768px- 32px) / 2);}
+    flex-basis: calc((768px- 32px) / 2);
+     }
   }
-
-  @media screen and (min-width: 1279px) {
-.item
-    {
-      width: 395px;
-      flex-basis: calc((1279px - 64px) / 3);}
-  }
+     @media screen and (max-width: 1279px) {
+       .item {
+         width: 336px;
+         flex-basis: calc((768px- 32px) / 2);
+       }
+     }
 
 .content {
   display: flex;

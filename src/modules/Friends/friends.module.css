@@ -1,7 +1,23 @@
+
 .section_wrapper {
- align-items: center;
+  display: flex;
+  justify-content: center;
+ margin-left: auto;
+ margin-right: auto;
 
 }
+ @media screen and (min-width: 768px) {
+   .section_wrapper {
+     max-width: 768px;
+   }
+ }
+
+ @media screen and (min-width: 1280px) {
+   .section_wrapper {
+     max-width: 1280px;
+    flex-basis: calc((1280px - 64px) / 3)
+   }
+ }
 
 .section {
 
