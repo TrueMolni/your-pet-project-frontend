@@ -18,8 +18,8 @@
 }
 
 .modalImage {
-  width: 262px;
-  height: 298px;
+  max-width: 262px;
+  max-height: 298px;
   align-self: flex-start;
 }
 
@@ -111,7 +111,7 @@
 
 .modalImageContainer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   position: relative;
 }
 
@@ -215,4 +215,7 @@
   .modalContent {
     padding: 20px;
   }
+    .modalPetPrice{
+      right: 9px;
+    }
 }
