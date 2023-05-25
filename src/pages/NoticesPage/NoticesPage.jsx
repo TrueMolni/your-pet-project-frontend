@@ -6,7 +6,7 @@ import NoticesCategoriesNav from '../../modules/NoticesCategoriesNav/NoticesCate
 // import NoticesFilters from '../../modules/NoticesFilters/NoticesFilters';
 import NoticesCategoriesList from '../../modules/NoticesCategoryList/NoticesCategoryList';
 // import AddPetBtn from 'shared/components/AddPetBtn';
-
+import ModalAdv from 'modules/ModalAdv/ModalAdv';
 const NoticesPage = () => {
   const navigate = useNavigate();
   const { categoryName } = useParams();
@@ -23,6 +23,7 @@ const NoticesPage = () => {
       <NoticesCategoriesNav />
       {/* <AddPetBtn /> */}
       <NoticesCategoriesList />
+      <ModalAdv/>
       {/* <NoticesFilters /> */}
     </div>
   );
