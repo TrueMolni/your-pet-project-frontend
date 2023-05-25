@@ -17,7 +17,6 @@ const UserPage = () => {
         height: '100vh',
       }}
     >
-      <p>Here Supposed to be User Page</p>
       <ButtonNav
         customStyle={css.loginBtn}
         buttonName={'Logout'}

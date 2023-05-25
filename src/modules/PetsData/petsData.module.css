@@ -5,7 +5,7 @@
   @media screen and (min-width: 1200px) {
     display: flex;
     flex-direction: column;
-    margin-top: 0;
+    margin-top: 62px;
   }
 }
 
@@ -28,21 +28,5 @@
   @media screen and (min-width: 1200px) {
     padding: 0;
     font-size: 28px;
-  }
-}
-
-.box404 {
-  width: 100%;
-  height: 100%;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: cener;
-}
-.notFound {
-  font-size: 16px;
-
-  @media screen and (min-width: 768px) {
-    font-size: 24px;
   }
 }

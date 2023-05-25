@@ -138,7 +138,6 @@ const noticesSlice = createSlice({
         store.isLoading = false;
         store.isError = null;
         store.userNotices = payload.data;
-
       })
       .addCase(operations.getUserNotices.rejected, (store, { payload }) => {
         store.isLoading = false;
@@ -156,6 +155,21 @@ const noticesSlice = createSlice({
       })
       .addCase(operations.addPet.rejected, (store, { payload }) => {
         store.isLoading = false;
+        store.isError = payload;
+      })
+      //для отримання коллекції UserPet
+      .addCase(operations.getUserPet.pending, store => {
+        store.isLoading = true;
+        store.isError = null;
+      })
+      .addCase(operations.getUserPet.fulfilled, (store, { payload }) => {
+        store.isLoading = false;
+        store.isError = null;
+        store.pet = payload;
+      })
+      .addCase(operations.getUserPet.rejected, (store, { payload }) => {
+        store.isLoading = false;
+        store.pet = [];
         store.isError = payload;
       });
   },

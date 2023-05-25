@@ -10,20 +10,7 @@ import BtnDeletePet from '../BtnDeletePet/BtnDeletePet';
 import css from './petsItem.module.css';
 
 const PetsItem = ({ pet }) => {
-  const {
-    // _id,    // розкоментувати після
-    name,
-    date,
-    breed,
-    avatarURL,
-    comments,
-  } = pet;
-
-  // const dispatch = useDispatch();     //розкоментувати після
-
-  // const handleDelete = () => {        //розкоментувати після
-  //   dispatch(removePet(_id));
-  // };
+  const { name, date, breed, avatarURL, comments } = pet;
 
   return (
     <div className={css.box}>
@@ -32,7 +19,11 @@ const PetsItem = ({ pet }) => {
       </div>
       <div className={css.description}>
         <BtnDeletePet
-        // onClick={handleDelete}      //розкоментувати після
+          style={{
+            position: 'absolute',
+            right: '0',
+          }}
+          // onClick={handleDelete}      //розкоментувати після
         />
         <div className={css.infoPet}>
           <b> Name:</b> {name ? name : 'No Info'}
