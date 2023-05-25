@@ -137,10 +137,39 @@ const noticesSlice = createSlice({
       .addCase(operations.getUserNotices.fulfilled, (store, { payload }) => {
         store.isLoading = false;
         store.isError = null;
-        store.userNotices = payload.notices;
+        store.userNotices = payload.data;
       })
       .addCase(operations.getUserNotices.rejected, (store, { payload }) => {
         store.isLoading = false;
+        store.isError = payload;
+      })
+      //для додавання оголошень вpet
+      .addCase(operations.addPet.pending, store => {
+        store.isLoading = true;
+        store.isError = null;
+      })
+      .addCase(operations.addPet.fulfilled, (store, { payload }) => {
+        store.isLoading = false;
+        store.isError = null;
+        store.pet = payload;
+      })
+      .addCase(operations.addPet.rejected, (store, { payload }) => {
+        store.isLoading = false;
+        store.isError = payload;
+      })
+      //для отримання коллекції UserPet
+      .addCase(operations.getUserPet.pending, store => {
+        store.isLoading = true;
+        store.isError = null;
+      })
+      .addCase(operations.getUserPet.fulfilled, (store, { payload }) => {
+        store.isLoading = false;
+        store.isError = null;
+        store.pet = payload;
+      })
+      .addCase(operations.getUserPet.rejected, (store, { payload }) => {
+        store.isLoading = false;
+        store.pet = [];
         store.isError = payload;
       });
   },
