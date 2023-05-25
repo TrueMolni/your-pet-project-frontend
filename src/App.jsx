@@ -15,6 +15,8 @@ const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
 const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
 const FindPetPage = lazy(() => import('pages/FindPetPage/FindPetPage'));
 const NewsPage = lazy(() => import('pages/NewsPage/NewsPage'));
+const FriendsPage = lazy(() => import('pages/OurFriendsPage/OurFriendsPage'));
+
 const PrivateRoute = lazy(() => import('modules/PrivatRoutes/PrivatRoutes'));
 const PublicRoute = lazy(() => import('modules/PublicRoutes/PublicRoutes'));
 export const App = () => {
@@ -34,6 +36,7 @@ export const App = () => {
             <Route index element={<MainPage />} />
             <Route path="/news" element={<NewsPage />} />
             <Route path="/notices" element={<FindPetPage />} />
+<Route path="/friends" element={<FriendsPage/>} />
             <Route path="/notices/:categoryName" element={<NoticesPage />} />
 
             <Route element={<PublicRoute />}>
