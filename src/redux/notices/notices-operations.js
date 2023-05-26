@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as api from '../../services/notices-api';
 
+
 const getNoticesByCategory = createAsyncThunk(
   'notices/getByCategory',
   async ({ category }, { rejectWithValue }) => {
@@ -112,6 +113,19 @@ const getUserPet = createAsyncThunk(
   }
 );
 
+
+
+const getNoticesByTitle = createAsyncThunk(
+  'notices/getNoticesByTitle',
+  async (title, { rejectWithValue }) => {
+    try {
+      const data = await api.getNoticesByTitle(title);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
 const operations = {
   getNoticesByCategory,
   getNoticeById,
@@ -122,6 +136,8 @@ const operations = {
   deleteUserNotice,
   addPet,
   getUserPet,
+  getNoticesByTitle,
+
 };
 
 export default operations;

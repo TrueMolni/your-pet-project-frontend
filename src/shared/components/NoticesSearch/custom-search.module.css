@@ -85,16 +85,18 @@
     height: 24px !important;
     border: transparent;
     transition: transform 0.4s ease-out;
+    background-color: #FFFF !important;
 
 
     &:hover {
-      .ant-btn-primary
-     { background-color: #FFFF !important;}
+      :global(.ant-btn-primary)
+     { background-color:#FFFF!important;}
     }
 
     .svg {
       width: 24px;
       height: 24px;
+      background-color: #FFFF !important;
     }
   }
 

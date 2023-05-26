@@ -45,3 +45,11 @@ export const getUserPet = async () => {
   const { data } = await instance.get('api/pet');
   return data;
 };
+
+
+export const getNoticesByTitle = async () => {
+  const { data } = await instance.get(`api/notices/title`);
+  return data;
+};
+
+
