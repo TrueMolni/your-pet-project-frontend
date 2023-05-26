@@ -20,14 +20,11 @@ export const getNoticeByFavorite = async id => {
   return data;
 };
 
-export const addNoticeByCategory = async notice => {
-  const { data } = await instance.post('/notice', notice);
-  return data;
-};
-
-export const addPet = async pet => {
-  const { data } = await instance.post('api/pet', pet);
-  return data;
+export const addNoticeByCategory = async data => {
+  const result = await instance.post('api/notices/notice', data, {
+    headers: { 'Content-Type': 'multipart/form-data' },
+  });
+  return result;
 };
 
 export const getUserNotices = async () => {
@@ -47,9 +44,14 @@ export const getUserPet = async () => {
 };
 
 
+export const addPet = async pet => {
+  const { data } = await instance.post('api/pet', pet);
+  return data;
+};
+
+
 export const getNoticesByTitle = async () => {
   const { data } = await instance.get(`api/notices/title`);
   return data;
 };
-
 
