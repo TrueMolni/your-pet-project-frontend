@@ -6,19 +6,18 @@
   line-height: 27px;
   text-align: center;
   margin-bottom: 16px;
-
 }
 
 .link {
   text-decoration: none;
-  color:#54ADFF;
+  color: #54adff;
 }
 
-.title:hover{
-  color: #FFC107;
+.title:hover {
+  color: #ffc107;
 }
 .title:focus {
-  color: #FFC107;
+  color: #ffc107;
 }
 .infoItem {
   background-color: red;

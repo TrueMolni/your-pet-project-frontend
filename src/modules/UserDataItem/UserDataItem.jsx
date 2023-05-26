@@ -28,16 +28,13 @@ const UserDataItem = ({
   const [isEditing, setIsEditing] = useState('edit');
   // edit,editing,edited
   const handleEditClick = () => {
-    console.log("edit click")
     setIsEditing('editing');
   };
 
   const handleSaveClick = () => {
-    console.log("editing click")
-    setIsEditing("edited");
+    setIsEditing('edited');
     addUserInfo(userData, token);
-    setIsEditing("edit");
-
+    setIsEditing('edit');
   };
   //   const { name, phone, photo, city, email, birthday } = userData;
   //   useEffect(() => {
@@ -61,7 +58,7 @@ const UserDataItem = ({
 
   return (
     <>
-      {isEditing === "edit" && 
+      {isEditing === 'edit' && (
         <div>
           <label className={css.inputLable}>
             {label}
@@ -81,8 +78,8 @@ const UserDataItem = ({
             </button>
           </label>
         </div>
-      }
-      {isEditing === 'editing'&&
+      )}
+      {isEditing === 'editing' && (
         <div>
           <label className={css.inputLable}>
             {label}
@@ -95,14 +92,14 @@ const UserDataItem = ({
               type={label}
               name={label}
             />
-             <button className={css.btnSaved}>
+            <button className={css.btnSaved}>
               <span className="css.confirm-icon"></span>
               Save
             </button>
           </label>
         </div>
-      }
-      { isEditing === 'edited'&&
+      )}
+      {isEditing === 'edited' && (
         <div>
           <label className={css.inputLable}>
             {label}
@@ -115,12 +112,13 @@ const UserDataItem = ({
               type={label}
               name={label}
             />
-             <button className={css.btnSave} onClick={handleSaveClick}>
-                <span className="css.confirm-icon"></span>
-                Save
-              </button>
-                        </label>
-        </div>}
+            <button className={css.btnSave} onClick={handleSaveClick}>
+              <span className="css.confirm-icon"></span>
+              Save
+            </button>
+          </label>
+        </div>
+      )}
     </>
   );
 };

@@ -1,13 +1,10 @@
 import React from 'react';
 
-// import React, { useEffect, useState } from 'react';
-// import ReactDOM from 'react-dom';
 import ReactPaginate from 'react-paginate';
 
 import styles from './Pagination.module.css';
 
 let pageCount = 3;
-// handlePageClick;
 
 const Pagination = () => {
   return (

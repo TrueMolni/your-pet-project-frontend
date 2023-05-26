@@ -15,8 +15,6 @@ import {
 import { getUserID } from 'redux/auth/auth-selectors';
 import Pagination from '../../modules/Pagination/Pagination';
 
-// import { noticies } from './notices';
-
 const NoticesCategoryList = () => {
   const dispatch = useDispatch();
   const location = useLocation();
