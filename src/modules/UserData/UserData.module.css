@@ -6,6 +6,9 @@
   height: 30px;
   margin: 0 auto;
 }
+.loading{
+text-align: center;
+}
 
 .imgUser {
   display: block;
@@ -52,7 +55,39 @@
   width: 20px;
   height: 20px;
   background: url(../../images/photoaparat.svg) no-repeat center;
-  /* Замініть 'camera-icon.png' на шлях до вашого зображення іконки фотоапарата */
+}
+.btnIsConfirmPhoto{
+  border-radius: 40px;
+  border: 1px solid #54adff;
+    width: 120px;
+  align-items: center;
+  height: 20px;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 30px;
+
+}
+
+.btnConfirmPhoto{
+  position: relative;
+  padding-left: 10px;
+  border: none;
+  width: 120px;
+  align-items: center;
+  height: 20px;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+.btnConfirmPhoto::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: url(../../images/confirmicon.svg) no-repeat center;
 }
 h1 {
   text-align: center;

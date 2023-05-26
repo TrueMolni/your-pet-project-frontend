@@ -43,7 +43,15 @@ export const getUserPet = async () => {
   return data;
 };
 
+
 export const addPet = async pet => {
   const { data } = await instance.post('api/pet', pet);
   return data;
 };
+
+
+export const getNoticesByTitle = async () => {
+  const { data } = await instance.get(`api/notices/title`);
+  return data;
+};
+
