@@ -20,8 +20,10 @@ const File = ({ label, name, style, ...props }) => {
       setThumbnail(null);
     }
   };
+  if (selectedFile) {
+    console.log(selectedFile);
+  }
 
-  console.log(selectedFile);
   return (
     <div className={styles.fileWrapper}>
       <div className={styles.fileContainer + ' ' + style}>
