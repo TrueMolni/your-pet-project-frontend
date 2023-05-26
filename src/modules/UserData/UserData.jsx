@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import UserDataItem from '../UserDataItem/UserDataItem.jsx';
 import css from './UserData.module.css';
-// import axios from 'axios'
-// import { useDispatch } from "react-redux";
 import { useSelector } from 'react-redux';
 import {getAuth} from '../../redux/auth/auth-selectors';
 
-import { addUserInfo } from '../../redux/userInfo/user-operations.js';
+import { addUserPhoto ,getUserInfo} from '../../redux/userInfo/user-operations.js';
 
 
 const UserData = ({ data }) => {
@@ -17,17 +15,11 @@ const {token}=useSelector(getAuth);
 const [userDataPhoto,setUserDataPhoto]=useState('');
 const [isLoading,setIsLoading]=useState(false);
 
+useEffect(() => {
+  getUserInfo(token).then(res=>setUserData(res))
+ console.log(userData)
+}, [])
 
-
-  // const handleEditClick = field => {
-  //   setEditingField(field);
-  // };
-
-  // const handleSaveClick = () => {
-  //   setEditingField('');
-  //   addUserInfo(userData,token);
-
-  // };
 
 const onClickEditBtn=(e)=>{
   setIsUpdate("confirm");
@@ -41,7 +33,7 @@ const onClickEditBtn=(e)=>{
 const onClickConfirmBtn=async ()=>{
   setIsLoading(true);
   setIsUpdate("updated");
-  await addUserInfo(userData,token).then(res=>setUserDataPhoto(res.avatar));
+  await addUserPhoto(userData,token).then(res=>setUserDataPhoto(res.avatar));
   setIsLoading(false);
   setIsUpdate("save");
 
@@ -86,44 +78,19 @@ const onClickConfirmBtn=async ()=>{
         >
           {' '}
           <UserDataItem
-            label="Name:"
-            // value={userData.name}
-            // isEditing={editingField === 'name'}
-            // onInputChange={changedValueInput}
-            // onEditClick={() => handleEditClick('name')}
-            // onSaveClick={handleSaveClick}
+            label="Name"
           />
           <UserDataItem
-            label="Email:"
-            // value={userData.email}
-            // isEditing={editingField === 'email'}
-            // onInputChange={changedValueInput}
-            // onEditClick={() => handleEditClick('email')}
-            // onSaveClick={handleSaveClick}
+            label="Email"
           />
           <UserDataItem
-            label="Phone:"
-            // value={userData.phone}
-            // isEditing={editingField === 'phone'}
-            // onInputChange={changedValueInput}
-            // onEditClick={() => handleEditClick('phone')}
-            // onSaveClick={handleSaveClick}
+            label="Phone"
           />
           <UserDataItem
-            label="Birthday:"
-            // value={userData.birthday}
-            // isEditing={editingField === 'birthday'}
-            // onInputChange={changedValueInput}
-            // onEditClick={() => handleEditClick('birthday')}
-            // onSaveClick={handleSaveClick}
+            label="Birthday"
           />
           <UserDataItem
             label="City"
-            // value={userData.city}
-            // isEditing={editingField === 'city'}
-            // onInputChange={changedValueInput}
-            // onEditClick={() => handleEditClick('city')}
-            // onSaveClick={handleSaveClick}
           />
         </form>
       </div>

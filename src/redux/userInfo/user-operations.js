@@ -4,31 +4,44 @@ axios.defaults.baseURL ='http://localhost:3030';
 
 // baseURL: 'https://connections-api.herokuapp.com',
 
-export const addUserInfo = async(selectedFile,token) => {
+export const addUserPhoto = async(selectedFile,token) => {
       axios.defaults.headers.common.Authorization = `Bearer ${token}`;
     
       const formData = new FormData();
       formData.append('photo', selectedFile);
-    
+      console.log(formData);
+
+      try {
       const response = await axios.post('/api/users/user', formData);
-      return response.data;
+      return response.data;}catch(e){
+
+      }
     };
      
-// export const addUserInfo = createAsyncThunk(
-//     '/userInfo',
-//     async (data, thunkAPI) => {
-//       try {
-//         const response = await axios.post('/api/users/:id', {
-           
-//           name: data.name,
-//           email: data.email,
-//           birthday:data.birthday,
-//           phone:data.phone,
-//           city:data.city
-//         });
-//         return response.data;
-//       } catch (e) {
-//         return thunkAPI.rejectWithValue(e.message);
-//       }
-//     }
-//   );
+export const addUserInfoString = async (name,value, token) => {
+  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+ 
+        try {
+        const response = await axios.patch('/api/users/user',{
+          [name]:value
+        }
+        );
+        return response.data;
+      } catch (e) {
+        return console.log(e.message);
+      }
+    };
+
+    export const getUserInfo = async (token) => {
+      axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+     
+            try {
+            const response = await axios.get('/api/users/user');
+            return response.data;
+          } catch (e) {
+            return console.log(e.message);
+          }
+        };
+
+
+ 
