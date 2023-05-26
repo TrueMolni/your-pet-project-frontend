@@ -1,6 +1,6 @@
 import css from './Logout.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { logout, openModal } from 'redux/auth/auth-operations';
+import { useDispatch } from 'react-redux';
+import { logout } from 'redux/auth/auth-operations';
 
 const Logout = () => {
   const dispatch = useDispatch();
