@@ -11,16 +11,7 @@ label {
   align-items: center;
 }
 
-/* button{
-        width:90px;
-        height:30px;
-    align-items:center;
-    border: 1px solid #54ADFF;
-    border-radius: 20px;
-    background-color:orange;
-    } */
-
-.btnSave {
+    .btnSaved,.btnSave,.btnEdit {
   position: relative;
   padding-left: 10px;
   width: 60px;
@@ -28,23 +19,7 @@ label {
   position: absolute;
   top: 5px;
   right: 5px;
-}
-.btnEdit {
-  position: relative;
-  padding-left: 10px;
-  width: 60px;
-  height: 25px;
-  position: absolute;
-  top: 5px;
-  right: 5px;
-}
-/* .confirm-icon{
-
- }
-
- .pencle-icon{
-
- } */
+};
 .btnSave::before {
   content: '';
   position: absolute;
