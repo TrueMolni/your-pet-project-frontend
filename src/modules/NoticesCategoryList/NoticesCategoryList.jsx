@@ -11,7 +11,6 @@ import {
   selectFavorites,
   selectNoticesByCategory,
 } from 'redux/notices/notices-selectors';
-import Pagination from '../../modules/Pagination/Pagination';
 
 // import { noticies } from './notices';
 
@@ -52,8 +51,6 @@ const NoticesCategoryList = () => {
           )
         )}
       </ul>
-
-      <Pagination />
     </div>
   );
 };

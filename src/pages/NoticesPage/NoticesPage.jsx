@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import Pagination from '../../modules/Pagination/Pagination';
 
 import NoticesSearch from '../../shared/components/NoticesSearch/NoticesSearch';
 import NoticesCategoriesNav from '../../modules/NoticesCategoriesNav/NoticesCategoriesNav';
@@ -24,6 +25,7 @@ const NoticesPage = () => {
       {/* <AddPetBtn /> */}
       <NoticesCategoriesList />
       {/* <NoticesFilters /> */}
+      <Pagination />
     </div>
   );
 };
