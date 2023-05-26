@@ -5,7 +5,6 @@ import { getAuth } from 'redux/auth/auth-selectors';
 const PublicRoute = () => {
   const { isLogin } = useSelector(getAuth);
 
-
   if (isLogin) {
     return <Navigate to="/user" />;
   }

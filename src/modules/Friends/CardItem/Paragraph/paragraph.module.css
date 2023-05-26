@@ -1,9 +1,7 @@
 .Paragraph {
   font-weight: 400;
- 
 }
 
 .Paragraph > a {
-
   transition: color 250ms linear;
 }

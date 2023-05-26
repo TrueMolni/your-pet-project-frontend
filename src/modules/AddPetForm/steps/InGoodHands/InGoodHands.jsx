@@ -3,9 +3,10 @@ import ButtonNext from '../../elements/buttons/ButtonNext';
 import ButtonBack from '../../elements/buttons/ButtonBack';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import sprite from '../../../../images/icons/sprite.svg';
 import styles from './InGoodHands.module.css';
 import ProgressBar from 'modules/AddPetForm/elements/progressBar/ProgressBar';
+
+import sprite from '../../../../images/icons/sprite.svg';
 
 const validationStepOneSchema = Yup.object({
   name: Yup.string()
@@ -13,7 +14,7 @@ const validationStepOneSchema = Yup.object({
     .min(2, 'Please enter a value between 2 and 16 characters in length')
     .max(16, 'Please enter a value between 2 and 16 characters in length')
     .matches(
-      /^[A-Za-z]+$/,
+      /^[A-Za-zА-Яа-яЁё\s]+$/,
       'Please enter only letters (no numbers or special characters) in this field'
     ),
   date: Yup.string()
@@ -33,7 +34,7 @@ const validationStepOneSchema = Yup.object({
     .min(2, 'Please enter a value between 2 and 16 characters in length')
     .max(16, 'Please enter a value between 2 and 16 characters in length')
     .matches(
-      /^[A-Za-z]+$/,
+      /^[A-Za-zА-Яа-яЁё\s]+$/,
       'Please enter only letters (no numbers or special characters) in this field'
     ),
 });
@@ -45,19 +46,15 @@ const validationStepTwoSchema = Yup.object({
       ['male', 'female'],
       'Please choose one of the valid types: male or female'
     ),
-  file: Yup.mixed()
-    .required('The "Photo" field is required')
-    .test('file-size', 'Maximum file size: 3 MB', value => {
-      if (!value) return true; // Якщо значення пусте, не виконуємо перевірку
-      const maxSizeInBytes = 3 * 1024 * 1024; // 3 МБ в байтах
-      return value.size <= maxSizeInBytes;
-    }),
+  image: Yup.mixed().required('The "Photo" field is required'),
+
   location: Yup.string()
     .required('The "Location" field is required')
     .matches(
-      /^[A-Za-z\s]+$/,
+      /^[A-Za-zА-Яа-яЁё\s]+$/,
       'Please enter a string in the format "City". For example: Brovary, Kyiv, Akhtyrka, Sumy'
     ),
+
   comments: Yup.string()
     .notRequired()
     .min(8, 'Please enter a value between 8 and 120 characters in length')
@@ -76,7 +73,7 @@ export const InGoodHands = props => {
 
   return (
     <div className={styles.bgForm}>
-      <h1 className={styles.header}>In good hands</h1>
+      <h1 className={styles.header}>Add pet for sale</h1>
       <ProgressBar step={2} />
       <Formik
         initialValues={props.data}
@@ -89,8 +86,9 @@ export const InGoodHands = props => {
               control="input"
               label="Title of add"
               name="title"
-              placeholder="Title of add"
+              placeholder="Type title to add"
             />
+
             <AddPetFormControl
               control="input"
               label="Pet's name"
@@ -139,7 +137,7 @@ export const InGoodHands2 = props => {
   };
   return (
     <div className={styles.bgForm + ' ' + styles.bgFormMidle}>
-      <h1 className={styles.header}>In good hands</h1>
+      <h1 className={styles.header}>Add pet for sale</h1>
       <ProgressBar step={3} />
       <Formik
         initialValues={props.data}
@@ -156,12 +154,11 @@ export const InGoodHands2 = props => {
                   name="sex"
                   options={sex}
                 />
-
                 <AddPetFormControl
                   style={styles.addPhoto}
                   control="file"
                   label="Load the pet`s image"
-                  name="file"
+                  name="image"
                   type="file"
                 />
               </div>

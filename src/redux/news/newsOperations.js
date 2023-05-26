@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as api from '../../services/newsApi';
+import { Notify } from 'notiflix';
 
 export const getAllNews = createAsyncThunk(
   'news/getAllNews',
@@ -20,6 +21,11 @@ export const getNewsByTitle = createAsyncThunk(
       const data = await api.getNewsByTitle(title);
       return data;
     } catch (error) {
+      Notify.failure('Sorry, news not found', {
+        timeout: 2000,
+        clickToClose: true,
+        position: 'center-center',
+      });
       return rejectWithValue(error.message);
     }
   }

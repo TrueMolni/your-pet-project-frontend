@@ -1,31 +1,21 @@
-
-
 .friendList {
-
-  display:flex ;
+  display: flex;
   flex-direction: column;
-  
-
 }
-    @media screen and (min-width: 768px) {
-      .friendList {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 32px;
-      }
-    }
-         @media screen and (min-width: 1280px) {
-           .friendList {
-             flex-direction: row;
-             flex-wrap: wrap;
-             gap: 32px;
-
-           }
-         }
-
-
-
-
+@media screen and (min-width: 768px) {
+  .friendList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .friendList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+}
 
 .item {
   width: 280px;
@@ -39,18 +29,18 @@
   display: flex;
 }
 
-  @media screen and (min-width: 768px) {
-    .item
-   {width: 336px;
+@media screen and (min-width: 768px) {
+  .item {
+    width: 336px;
     flex-basis: calc((768px- 32px) / 2);
-     }
   }
-     @media screen and (max-width: 1279px) {
-       .item {
-         width: 336px;
-         flex-basis: calc((768px- 32px) / 2);
-       }
-     }
+}
+@media screen and (max-width: 1279px) {
+  .item {
+    width: 336px;
+    flex-basis: calc((768px- 32px) / 2);
+  }
+}
 
 .content {
   display: flex;

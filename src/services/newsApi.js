@@ -2,7 +2,7 @@ import instance from './auth-api';
 
 const query = {
   page: 1,
-  perPage: 10,
+  perPage: 12,
 };
 
 export const getAllNews = async () => {
