@@ -1,13 +1,12 @@
-import NoticesCategoryList from '../../modules/NoticesCategoryList/NoticesCategoryList'
+import NoticesCategoryList from '../../modules/NoticesCategoryList/NoticesCategoryList';
 
-import NoticesSearch from '../../shared/components/NoticesSearch/NoticesSearch'
+import NoticesSearch from '../../shared/components/NoticesSearch/NoticesSearch';
 const FindPetPage = () => {
   return (
     <div>
-      <NoticesSearch/>
+      <NoticesSearch />
 
       <NoticesCategoryList title={'Find Pet'} />
-
     </div>
   );
 };

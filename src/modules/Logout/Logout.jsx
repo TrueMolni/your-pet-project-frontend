@@ -1,8 +1,12 @@
 import css from './Logout.module.css';
+import { useDispatch } from 'react-redux';
+import { logout } from 'redux/auth/auth-operations';
 
 const Logout = () => {
+  const dispatch = useDispatch();
   const handleLogout = () => {
     // Логіка для виходу користувача з облікового запису
+    dispatch(logout());
   };
 
   return (

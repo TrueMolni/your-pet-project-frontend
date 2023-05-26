@@ -1,7 +1,7 @@
 .infoPhone a {
   color: inherit;
   transition: color 250ms linear;
-  text-decoration: none
+  text-decoration: none;
 }
 
 .textPhone {
@@ -9,5 +9,5 @@
 }
 
 .wrapper:hover {
-  color:#54ADFF;
+  color: #54adff;
 }

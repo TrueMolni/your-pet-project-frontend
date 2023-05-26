@@ -11,7 +11,11 @@ import Logout from '../../modules/Logout/Logout.jsx';
 
 import PetsData from 'modules/PetsData/PetsData';
 import { useDispatch, useSelector } from 'react-redux';
-import { logout, openModal } from 'redux/auth/auth-operations';
+
+import {
+  // logout,
+  openModal,
+} from 'redux/auth/auth-operations';
 
 import ModalCongrats from 'modules/ModalCongrats/ModalCongrats';
 import { isModalOpen } from 'redux/auth/auth-selectors';
@@ -38,7 +42,7 @@ const UserPage = () => {
         <div className={styles.userWrap}>
           <div className={styles.userDataBox}>
             <UserData />
-            <Logout onClick={() => dispatch(logout())} />
+            <Logout />
           </div>
           <div className={styles.petsDataBox}>
             <PetsData />
