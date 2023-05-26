@@ -1,8 +1,16 @@
 import css from './Logout.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout, openModal } from 'redux/auth/auth-operations';
 
-const Logout = ({ onClick }) => {
+const Logout = () => {
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    // Логіка для виходу користувача з облікового запису
+    dispatch(logout());
+  };
+
   return (
-    <button className={css.logoutBtn} onClick={onClick}>
+    <button className={css.logoutBtn} onClick={handleLogout}>
       <span className="css.logout-icon"></span>
       Logout
     </button>
