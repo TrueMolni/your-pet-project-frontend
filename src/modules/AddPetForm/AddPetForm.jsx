@@ -6,6 +6,7 @@ import { LostFound, LostFound2 } from './steps/lostFound/LostFound';
 import { InGoodHands, InGoodHands2 } from './steps/InGoodHands/InGoodHands';
 import { useDispatch } from 'react-redux';
 import operations from '../../redux/notices/notices-operations';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function AddPetForm() {
   const dispatch = useDispatch();
@@ -22,6 +23,10 @@ export default function AddPetForm() {
     title: '',
   });
   const [currentStep, setCurrentStep] = useState(0);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from || '/';
 
   const resetForm = () => {
     setData({
@@ -40,6 +45,7 @@ export default function AddPetForm() {
 
   const makeRequest = formData => {
     dispatch(operations.addNoticeByCategory(formData));
+    navigate(from);
     // dispatch(operations.getUserPet(formData));
   };
 
