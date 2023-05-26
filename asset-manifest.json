@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/your-pet-project-frontend/static/css/main.8cd4621d.css",
-    "main.js": "/your-pet-project-frontend/static/js/main.dd16603e.js",
+    "main.js": "/your-pet-project-frontend/static/js/main.69b7301b.js",
     "static/css/118.632a852a.chunk.css": "/your-pet-project-frontend/static/css/118.632a852a.chunk.css",
     "static/js/118.a7112dfc.chunk.js": "/your-pet-project-frontend/static/js/118.a7112dfc.chunk.js",
     "static/css/198.800ca460.chunk.css": "/your-pet-project-frontend/static/css/198.800ca460.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/385.b3f14806.chunk.js": "/your-pet-project-frontend/static/js/385.b3f14806.chunk.js",
     "static/css/452.2c544614.chunk.css": "/your-pet-project-frontend/static/css/452.2c544614.chunk.css",
     "static/js/452.ad805062.chunk.js": "/your-pet-project-frontend/static/js/452.ad805062.chunk.js",
-    "static/css/185.8db2f2ef.chunk.css": "/your-pet-project-frontend/static/css/185.8db2f2ef.chunk.css",
+    "static/css/185.6736c95e.chunk.css": "/your-pet-project-frontend/static/css/185.6736c95e.chunk.css",
     "static/js/185.aa759877.chunk.js": "/your-pet-project-frontend/static/js/185.aa759877.chunk.js",
     "static/css/291.d240877d.chunk.css": "/your-pet-project-frontend/static/css/291.d240877d.chunk.css",
     "static/js/291.56021f04.chunk.js": "/your-pet-project-frontend/static/js/291.56021f04.chunk.js",
@@ -18,11 +18,11 @@
     "static/js/927.69223fcc.chunk.js": "/your-pet-project-frontend/static/js/927.69223fcc.chunk.js",
     "static/css/17.168ceed3.chunk.css": "/your-pet-project-frontend/static/css/17.168ceed3.chunk.css",
     "static/js/17.ae0685ae.chunk.js": "/your-pet-project-frontend/static/js/17.ae0685ae.chunk.js",
-    "static/css/932.87bfa9df.chunk.css": "/your-pet-project-frontend/static/css/932.87bfa9df.chunk.css",
+    "static/css/932.fec8a43f.chunk.css": "/your-pet-project-frontend/static/css/932.fec8a43f.chunk.css",
     "static/js/932.531d52be.chunk.js": "/your-pet-project-frontend/static/js/932.531d52be.chunk.js",
-    "static/css/354.00d61e92.chunk.css": "/your-pet-project-frontend/static/css/354.00d61e92.chunk.css",
+    "static/css/354.d5bbb973.chunk.css": "/your-pet-project-frontend/static/css/354.d5bbb973.chunk.css",
     "static/js/354.1bd1c53c.chunk.js": "/your-pet-project-frontend/static/js/354.1bd1c53c.chunk.js",
-    "static/css/380.2e97a047.chunk.css": "/your-pet-project-frontend/static/css/380.2e97a047.chunk.css",
+    "static/css/380.fe171888.chunk.css": "/your-pet-project-frontend/static/css/380.fe171888.chunk.css",
     "static/js/380.4103c5dc.chunk.js": "/your-pet-project-frontend/static/js/380.4103c5dc.chunk.js",
     "static/js/827.e79c0d28.chunk.js": "/your-pet-project-frontend/static/js/827.e79c0d28.chunk.js",
     "static/js/61.eb333d7e.chunk.js": "/your-pet-project-frontend/static/js/61.eb333d7e.chunk.js",
@@ -66,7 +66,7 @@
     "static/media/cross-small (1).svg": "/your-pet-project-frontend/static/media/cross-small (1).1166adf076ef516f7a1e4dd89d226f31.svg",
     "static/media/confirmicon.svg": "/your-pet-project-frontend/static/media/confirmicon.5275231f2d83fc75311f.svg",
     "main.8cd4621d.css.map": "/your-pet-project-frontend/static/css/main.8cd4621d.css.map",
-    "main.dd16603e.js.map": "/your-pet-project-frontend/static/js/main.dd16603e.js.map",
+    "main.69b7301b.js.map": "/your-pet-project-frontend/static/js/main.69b7301b.js.map",
     "118.632a852a.chunk.css.map": "/your-pet-project-frontend/static/css/118.632a852a.chunk.css.map",
     "118.a7112dfc.chunk.js.map": "/your-pet-project-frontend/static/js/118.a7112dfc.chunk.js.map",
     "198.800ca460.chunk.css.map": "/your-pet-project-frontend/static/css/198.800ca460.chunk.css.map",
@@ -75,7 +75,7 @@
     "385.b3f14806.chunk.js.map": "/your-pet-project-frontend/static/js/385.b3f14806.chunk.js.map",
     "452.2c544614.chunk.css.map": "/your-pet-project-frontend/static/css/452.2c544614.chunk.css.map",
     "452.ad805062.chunk.js.map": "/your-pet-project-frontend/static/js/452.ad805062.chunk.js.map",
-    "185.8db2f2ef.chunk.css.map": "/your-pet-project-frontend/static/css/185.8db2f2ef.chunk.css.map",
+    "185.6736c95e.chunk.css.map": "/your-pet-project-frontend/static/css/185.6736c95e.chunk.css.map",
     "185.aa759877.chunk.js.map": "/your-pet-project-frontend/static/js/185.aa759877.chunk.js.map",
     "291.d240877d.chunk.css.map": "/your-pet-project-frontend/static/css/291.d240877d.chunk.css.map",
     "291.56021f04.chunk.js.map": "/your-pet-project-frontend/static/js/291.56021f04.chunk.js.map",
@@ -83,11 +83,11 @@
     "927.69223fcc.chunk.js.map": "/your-pet-project-frontend/static/js/927.69223fcc.chunk.js.map",
     "17.168ceed3.chunk.css.map": "/your-pet-project-frontend/static/css/17.168ceed3.chunk.css.map",
     "17.ae0685ae.chunk.js.map": "/your-pet-project-frontend/static/js/17.ae0685ae.chunk.js.map",
-    "932.87bfa9df.chunk.css.map": "/your-pet-project-frontend/static/css/932.87bfa9df.chunk.css.map",
+    "932.fec8a43f.chunk.css.map": "/your-pet-project-frontend/static/css/932.fec8a43f.chunk.css.map",
     "932.531d52be.chunk.js.map": "/your-pet-project-frontend/static/js/932.531d52be.chunk.js.map",
-    "354.00d61e92.chunk.css.map": "/your-pet-project-frontend/static/css/354.00d61e92.chunk.css.map",
+    "354.d5bbb973.chunk.css.map": "/your-pet-project-frontend/static/css/354.d5bbb973.chunk.css.map",
     "354.1bd1c53c.chunk.js.map": "/your-pet-project-frontend/static/js/354.1bd1c53c.chunk.js.map",
-    "380.2e97a047.chunk.css.map": "/your-pet-project-frontend/static/css/380.2e97a047.chunk.css.map",
+    "380.fe171888.chunk.css.map": "/your-pet-project-frontend/static/css/380.fe171888.chunk.css.map",
     "380.4103c5dc.chunk.js.map": "/your-pet-project-frontend/static/js/380.4103c5dc.chunk.js.map",
     "827.e79c0d28.chunk.js.map": "/your-pet-project-frontend/static/js/827.e79c0d28.chunk.js.map",
     "61.eb333d7e.chunk.js.map": "/your-pet-project-frontend/static/js/61.eb333d7e.chunk.js.map",
@@ -100,6 +100,6 @@
   },
   "entrypoints": [
     "static/css/main.8cd4621d.css",
-    "static/js/main.dd16603e.js"
+    "static/js/main.69b7301b.js"
   ]
 }
