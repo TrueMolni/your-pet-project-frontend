@@ -47,7 +47,7 @@
   flex: 1;
 }
 .title {
-  font-family: var(--Manrope);
+  font-family: var(--font-family);
   font-weight: 700;
   font-size: 24px;
   line-height: 1.38;
@@ -57,7 +57,7 @@
 }
 
 .text {
-  font-family: var(--Manrope);
+  font-family: var(--font-family);
   font-weight: 400;
   font-size: 16px;
   line-height: 1.38;
@@ -72,7 +72,7 @@
 }
 .button {
   border: 0;
-  font-family: var(--Manrope);
+  font-family: var(--font-family);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.38;

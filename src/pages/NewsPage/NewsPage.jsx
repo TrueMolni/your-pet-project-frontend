@@ -5,6 +5,7 @@ import CustomSearch from 'shared/components/NoticesSearch/CustomSearch';
 import { getAllNews, getNewsByTitle } from 'redux/news/newsOperations';
 import { isLoading, getError, getNews } from 'redux/news/newsSelectors';
 import Loader from '../../shared/components/Loader/Loader';
+import Weather from '../../shared/components/Weather/Weather';
 import css from './news-page.module.css';
 
 const NewsPage = () => {
@@ -31,6 +32,7 @@ const NewsPage = () => {
   return (
     <div className={css.newsPageWrapper}>
       <CustomSearch title={'News'} onSearch={onSearch} />
+      <Weather />
       {loading && !error && <Loader />}
       <NewsList items={items} />
     </div>
