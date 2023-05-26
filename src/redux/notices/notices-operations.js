@@ -65,11 +65,11 @@ export const deleteUserNotice = createAsyncThunk(
 
 const addNoticeByCategory = createAsyncThunk(
   'notices/addNoticeByCategory',
-  async (notice, { rejectWithValue }) => {
+  async (data, { rejectWithValue }) => {
     try {
-      const { data } = await api.addNoticeByCategory(notice);
+      const result = await api.addNoticeByCategory(data);
 
-      return data;
+      return result;
     } catch (error) {
       return rejectWithValue(error.message);
     }

@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, ErrorMessage } from 'formik';
 import styles from './RadioButtonsOption.module.css';
 
-const RadioButtons = ({ label, name, options, ...props }) => {
+const RadioButtons = ({ label, name, options, show, ...props }) => {
   return (
     <div className={styles.radioWrapper}>
       <label htmlFor={name} name={name}>
@@ -26,7 +26,7 @@ const RadioButtons = ({ label, name, options, ...props }) => {
                 />
 
                 <label className={styles.buttonLabel} htmlFor={option.value}>
-                  {option.value}
+                  {option.show}
                 </label>
               </React.Fragment>
             );

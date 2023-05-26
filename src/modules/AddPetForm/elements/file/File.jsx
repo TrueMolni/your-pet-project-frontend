@@ -1,8 +1,9 @@
-import { Field, ErrorMessage } from 'formik';
+import { ErrorMessage, useFormikContext } from 'formik';
 import styles from './File.module.css';
 import { useState } from 'react';
 
-const File = ({ label, name, style, ...props }) => {
+const File = ({ label, name, type, style, ...props }) => {
+  const { setFieldValue } = useFormikContext();
   const [selectedFile, setSelectedFile] = useState(null);
   const [thumbnail, setThumbnail] = useState(null);
 
@@ -14,6 +15,7 @@ const File = ({ label, name, style, ...props }) => {
       const reader = new FileReader();
       reader.onload = () => {
         setThumbnail(reader.result);
+        setFieldValue(name, file);
       };
       reader.readAsDataURL(file);
     } else {
@@ -35,11 +37,12 @@ const File = ({ label, name, style, ...props }) => {
         </label>
       </div>
       <div className={styles.inputWrapper}>
-        <Field
+        <input
           onChange={handleFileChange}
           className={styles.input}
-          id={name}
           name={name}
+          id={name}
+          type={type}
           {...props}
         />
         <ErrorMessage name={name} component="p" />

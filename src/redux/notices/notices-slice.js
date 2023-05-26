@@ -7,7 +7,6 @@ const initialState = {
   adDetails: null,
   userNotices: [],
   favorite: [],
-
   pet: [],
   favoriteAds: [],
   isLoading: false,
@@ -118,11 +117,7 @@ const noticesSlice = createSlice({
         (store, { payload }) => {
           store.isLoading = false;
           store.isError = null;
-          store.noticesByCategory =
-            store.category === payload.notice.category
-              ? [payload.notice, ...store.noticesByCategory]
-              : store.allNotices;
-          store.userNotices = [payload.notice, ...store.userNotices];
+          store.userNotices.push(payload);
         }
       )
       .addCase(
