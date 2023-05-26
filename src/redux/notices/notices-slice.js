@@ -4,10 +4,12 @@ import operations from './notices-operations';
 
 const initialState = {
   noticesByCategory: [],
+  adDetails: null,
   userNotices: [],
   favorite: [],
+
+  pet: [],
   favoriteAds: [],
-  details: null,
   isLoading: false,
   isError: null,
   pet: [],
@@ -45,11 +47,12 @@ const noticesSlice = createSlice({
         store.isError = null;
       })
       .addCase(operations.getNoticeById.fulfilled, (store, { payload }) => {
+        store.adDetails = payload;
         store.isLoading = false;
         store.isError = null;
-        store.details = payload;
       })
       .addCase(operations.getNoticeById.rejected, (store, { payload }) => {
+        store.adDetails = null;
         store.isLoading = false;
         store.isError = payload;
       })
@@ -95,12 +98,12 @@ const noticesSlice = createSlice({
       .addCase(operations.deleteUserNotice.fulfilled, (store, { payload }) => {
         store.isLoading = false;
         store.isError = null;
-        store.noticesByCategory = store.noticesByCategory.filter(
-          notice => notice._id !== payload
+        const index = store.noticesByCategory.findIndex(
+          item => item._id === payload._id
         );
-        store.userNotices = store.userNotices.filter(
-          notice => notice._id !== payload
-        );
+        store.noticesByCategory.splice(index, 1);
+        store.userNotices.splice(index, 1);
+        store.favoriteAds.splice(index, 1);
       })
       .addCase(operations.deleteUserNotice.rejected, (store, { payload }) => {
         store.isLoading = false;
@@ -122,7 +125,7 @@ const noticesSlice = createSlice({
           //   store.category === payload.notice.category
           //     ? [payload.notice, ...store.noticesByCategory]
           //     : store.allNotices;
-          // store.userNotices = [payload.notice, ...store.own];
+          // store.userNotices = [payload.notice, ...store.userNotices];
         }
       )
       .addCase(
@@ -144,6 +147,35 @@ const noticesSlice = createSlice({
       })
       .addCase(operations.getUserNotices.rejected, (store, { payload }) => {
         store.isLoading = false;
+        store.isError = payload;
+      })
+      //для додавання оголошень вpet
+      .addCase(operations.addPet.pending, store => {
+        store.isLoading = true;
+        store.isError = null;
+      })
+      .addCase(operations.addPet.fulfilled, (store, { payload }) => {
+        store.isLoading = false;
+        store.isError = null;
+        store.pet = payload;
+      })
+      .addCase(operations.addPet.rejected, (store, { payload }) => {
+        store.isLoading = false;
+        store.isError = payload;
+      })
+      //для отримання коллекції UserPet
+      .addCase(operations.getUserPet.pending, store => {
+        store.isLoading = true;
+        store.isError = null;
+      })
+      .addCase(operations.getUserPet.fulfilled, (store, { payload }) => {
+        store.isLoading = false;
+        store.isError = null;
+        store.pet = payload;
+      })
+      .addCase(operations.getUserPet.rejected, (store, { payload }) => {
+        store.isLoading = false;
+        store.pet = [];
         store.isError = payload;
       });
   },

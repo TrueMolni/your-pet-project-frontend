@@ -16,40 +16,51 @@
   @media screen and (min-width: 768px) {
     display: flex;
     width: 703px;
+    padding: 20px;
   }
 
   @media screen and (min-width: 1200px) {
     width: 821px;
-    margin-bottom: 24px;
   }
 }
 
 .wrapperPicDiv {
-  margin-bottom: 20px;
+  margin: auto;
   width: 240px;
   height: 240px;
   border-radius: 40px;
   background-color: var(--secondary-text-color);
 
-  margin-right: 32px;
-  margin-bottom: 0;
-  width: 161px;
-  height: 161px;
-
   & > img {
     object-fit: cover;
     border-radius: inherit;
   }
+
+  @media screen and (min-width: 768px) {
+    width: 128px;
+    height: 128px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 161px;
+    height: 161px;
+  }
 }
 
 .description {
+  margin: auto;
   position: relative;
-
+  margin-top: 20px;
+  width: 250px;
   @media screen and (min-width: 768px) {
-    width: 515px;
+    margin-left: 20px;
+    margin-top: 8px;
+    width: 571px;
   }
+
   @media screen and (min-width: 1200px) {
-    width: 580px;
+    margin-left: 20px;
+    width: 680px;
   }
 }
 
@@ -59,8 +70,17 @@
   }
   font-size: 14px;
   font-weight: 400;
+  font-family: var(--Manrope);
+
   @media screen and (min-width: 768px) {
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
     font-size: 16px;
-    font-weight: 500;
   }
 }

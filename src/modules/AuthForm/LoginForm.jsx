@@ -6,7 +6,7 @@ import css from './AuthForm.module.css';
 import { ErrorMessage, Formik, Form } from 'formik';
 import { user } from 'services';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch,   } from 'react-redux';
 import { login } from 'redux/auth/auth-operations';
 const initialValues = {
@@ -15,7 +15,8 @@ const initialValues = {
 };
 
 const LoginForm = props => {
-  const [isError, setIsError] = useState(null); //! setIsError
+  const navigate = useNavigate()
+  const [isError, setIsError] = useState(null); 
   const [passwordShow, setPasswordShow] = useState(false);
 
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ const LoginForm = props => {
       });
       resetForm();
     } else {
-      // navigate('/user');
+      navigate('/notices');
       // console.log('navigate to ...');
     }
   };

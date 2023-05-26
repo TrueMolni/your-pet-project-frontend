@@ -17,9 +17,8 @@ const getNoticeById = createAsyncThunk(
   'notices/getOneNotice',
   async (id, { rejectWithValue }) => {
     try {
-      const { data } = await api.getNoticeById(id);
-
-      return data;
+      const { result } = await api.getNoticeById(id);
+      return result;
     } catch (error) {
       return rejectWithValue(error.message);
     }
@@ -54,8 +53,9 @@ export const deleteUserNotice = createAsyncThunk(
   'notices/deleteNotice',
   async (id, { rejectWithValue }) => {
     try {
-      const { data } = await api.deleteUserNotice(`/notices/${id}`);
-      return data;
+      const { deletedNotice } = await api.deleteUserNotice(id);
+      console.log(deletedNotice);
+      return deletedNotice;
     } catch (error) {
       return rejectWithValue(error.message);
     }
@@ -80,7 +80,31 @@ const getUserNotices = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const data = await api.getUserNotices();
-      console.log(data);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+const addPet = createAsyncThunk(
+  'notices/addPet',
+  async (pet, { rejectWithValue }) => {
+    try {
+      const { data } = await api.addPet(pet);
+
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+const getUserPet = createAsyncThunk(
+  'notices/getUserPet',
+  async (_, { rejectWithValue }) => {
+    try {
+      const { data } = await api.getUserPet();
+
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -96,6 +120,8 @@ const operations = {
   addNoticeByCategory,
   getUserNotices,
   deleteUserNotice,
+  addPet,
+  getUserPet,
 };
 
 export default operations;

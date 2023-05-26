@@ -28,12 +28,17 @@ export const addNoticeByCategory = async data => {
 };
 
 export const getUserNotices = async () => {
-  const { data } = await instance.get(`/notices/own`);
+  const { data } = await instance.get(`api/notices/own`);
   return data;
 };
 
 export const deleteUserNotice = async id => {
   const { data } = await instance.delete(`api/notices/${id}`);
 
+  return data;
+};
+
+export const getUserPet = async () => {
+  const { data } = await instance.get('api/pet');
   return data;
 };

@@ -1,0 +1,92 @@
+.inputImg {
+  display: none;
+  border-radius: 20px;
+  margin-left: auto;
+  width: 70px;
+  height: 30px;
+  margin: 0 auto;
+}
+
+.imgUser {
+  display: block;
+  margin: auto;
+  height: 180px;
+  width: 180px;
+  margin-top: 20px;
+  background-image: url('../../images/Intersect.jpg');
+  background-repeat: no-repeat;
+  background-color: #54adff;
+  background-size: cover;
+  border-radius: 40px;
+  border: 1px solid #54adff;
+}
+
+.formStyle {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.avatarDiv {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.btnEditPhoto {
+  position: relative;
+  padding-left: 10px;
+  border: none;
+  width: 120px;
+  align-items: center;
+  height: 20px;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+.btnEditPhoto::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: url(../../images/photoaparat.svg) no-repeat center;
+  /* Замініть 'camera-icon.png' на шлях до вашого зображення іконки фотоапарата */
+}
+h1 {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .divreverse {
+    margin-top: 24px;
+    padding-top: 24px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+
+  .avatarDiv {
+    margin-left: 80px;
+  }
+
+  h1 {
+    text-align: start;
+
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .divreverse {
+    flex-direction: column;
+  }
+  h1 {
+    text-align: center;
+  }
+
+  
+  .avatarDiv {
+    margin-left: 0px;
+  }
+}

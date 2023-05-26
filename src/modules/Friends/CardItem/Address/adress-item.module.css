@@ -1,0 +1,14 @@
+.infoItem a {
+  color: inherit;
+  transition: color 300ms linear;
+  text-decoration: none;
+}
+
+.addressLink {
+  font-weight: 400;
+}
+
+.wrapper:hover {
+  color: #54ADFF;
+
+}

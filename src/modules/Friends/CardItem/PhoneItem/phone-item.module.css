@@ -1,0 +1,13 @@
+.infoPhone a {
+  color: inherit;
+  transition: color 250ms linear;
+  text-decoration: none
+}
+
+.textPhone {
+  font-weight: 600;
+}
+
+.wrapper:hover {
+  color:#54ADFF;
+}
