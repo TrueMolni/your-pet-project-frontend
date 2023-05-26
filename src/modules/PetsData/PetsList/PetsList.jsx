@@ -1,11 +1,29 @@
-import PetsItem from '../PetsItem/PetsItem.jsx';
-import emptyPets from '../../../images/notfound/notfound@1x.jpg';
-import css from './petsList.module.css';
+// import { useDispatch, useSelector } from 'react-redux';
+// import React, { useEffect } from 'react';
 
-const Petslist = ({ pets }) => {
+import PetsItem from '../PetsItem/PetsItem.jsx';
+import emptyPets from '../../../images/notfound/cat.png';
+import css from './petsList.module.css';
+import catalog from './catalog.json';
+
+// import { selectPet } from 'redux/notices/notices-selectors';
+
+// import operations from '../../../redux/notices/notices-operations.js';
+
+const Petslist = () => {
+  // const pets = useSelector(selectPet);
+
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   dispatch(operations.getUserPet());
+  // }, [dispatch]);
+
+  const pets = catalog;
+
   const card = pets?.map(pet => {
     return (
-      <li className={css.item} key={pet._id}>
+      <li className={css.item} key={pet._id} id={pet._id}>
         <PetsItem pet={pet} />
       </li>
     );
@@ -20,6 +38,7 @@ const Petslist = ({ pets }) => {
             src={emptyPets}
             alt="No pets were added"
           />
+          <h3>No pets were added</h3>
         </div>
       )}
       <ul className={css.list}>{card}</ul>

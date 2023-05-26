@@ -9,11 +9,14 @@ const MainPage = lazy(() => import('pages/MainPage'));
 const NotFoundPage = lazy(() => import('pages/NotFoundPage/NotFoundPage.jsx'));
 const AddPetPage = lazy(() => import('pages/AddPetPage'));
 const UserPage = lazy(() => import('pages/UserPage'));
-const NoticesPage = lazy (()=> import ('pages/NoticesPage/NoticesPage'));
+const NoticesPage = lazy(() => import('pages/NoticesPage/NoticesPage'));
 const SharedLayout = lazy(() => import('modules/SharedLayout'));
 const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
 const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
 const FindPetPage = lazy(() => import('pages/FindPetPage/FindPetPage'));
+const NewsPage = lazy(() => import('pages/NewsPage/NewsPage'));
+const FriendsPage = lazy(() => import('pages/OurFriendsPage/OurFriendsPage'));
+
 const PrivateRoute = lazy(() => import('modules/PrivatRoutes/PrivatRoutes'));
 const PublicRoute = lazy(() => import('modules/PublicRoutes/PublicRoutes'));
 export const App = () => {
@@ -27,15 +30,14 @@ export const App = () => {
 
   return (
     <BrowserRouter basename="/your-pet-project-frontend">
-      <Suspense fallback={<Loader/>}>
+      <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<SharedLayout />}>
-            <Route path="/main" element={<MainPage />}></Route>
-            <Route path="/notices" element={<FindPetPage />}></Route>
-            <Route
-              path="/notices/:categoryName"
-              element={<NoticesPage />}
-            ></Route>
+            <Route index element={<MainPage />} />
+            <Route path="/news" element={<NewsPage />} />
+            <Route path="/notices" element={<FindPetPage />} />
+<Route path="/friends" element={<FriendsPage/>} />
+            <Route path="/notices/:categoryName" element={<NoticesPage />} />
 
             <Route element={<PublicRoute />}>
               <Route path="/register" element={<RegisterPage />} />
@@ -43,10 +45,10 @@ export const App = () => {
             </Route>
             <Route element={<PrivateRoute />}>
               <Route path="/user" element={<UserPage />} />
-              <Route path="/add-pet" element={<AddPetPage />}></Route>
+              <Route path="/add-pet" element={<AddPetPage />} />
             </Route>
           </Route>
-          <Route path="*" element={<NotFoundPage />}></Route>
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

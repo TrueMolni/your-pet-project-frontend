@@ -5,6 +5,7 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import sprite from '../../../../images/icons/sprite.svg';
 import styles from './LostFound.module.css';
+import ProgressBar from 'modules/AddPetForm/elements/progressBar/ProgressBar';
 
 const validationStepOneSchema = Yup.object({
   name: Yup.string()
@@ -74,8 +75,9 @@ export const LostFound = props => {
   };
 
   return (
-    <>
+    <div className={styles.bgForm}>
       <h1 className={styles.header}>Add lost pet</h1>
+      <ProgressBar step={2} />
       <Formik
         initialValues={props.data}
         onSubmit={handleSubmit}
@@ -127,7 +129,7 @@ export const LostFound = props => {
           </Form>
         )}
       </Formik>
-    </>
+    </div>
   );
 };
 
@@ -136,8 +138,9 @@ export const LostFound2 = props => {
     props.next(values, true);
   };
   return (
-    <>
+    <div className={styles.bgForm + ' ' + styles.bgFormMidle}>
       <h1 className={styles.header}>Add lost pet</h1>
+      <ProgressBar step={3} />
       <Formik
         initialValues={props.data}
         onSubmit={handleSubmit}
@@ -145,33 +148,41 @@ export const LostFound2 = props => {
       >
         {({ values }) => (
           <Form>
-            <AddPetFormControl
-              control="sex"
-              label="The sex"
-              name="sex"
-              options={sex}
-            />
+            <div className={styles.formContainer}>
+              <div className={styles.firstChild}>
+                <AddPetFormControl
+                  control="sex"
+                  label="The sex"
+                  name="sex"
+                  options={sex}
+                />
 
-            <AddPetFormControl
-              control="file"
-              label="Add photo"
-              name="file"
-              type="file"
-            />
+                <AddPetFormControl
+                  style={styles.addPhoto}
+                  control="file"
+                  label="Load the pet`s image"
+                  name="file"
+                  type="file"
+                />
+              </div>
 
-            <AddPetFormControl
-              control="input"
-              label="Location"
-              name="location"
-              placeholder="Type location"
-            />
+              <div className={styles.secondChild}>
+                <AddPetFormControl
+                  control="input"
+                  label="Location"
+                  name="location"
+                  placeholder="Type location"
+                />
 
-            <AddPetFormControl
-              control="textarea"
-              label="Comments"
-              name="comments"
-              placeholder="Type comments"
-            />
+                <AddPetFormControl
+                  style={styles.comments}
+                  control="textarea"
+                  label="Comments"
+                  name="comments"
+                  placeholder="Type comments"
+                />
+              </div>
+            </div>
 
             <div className={styles.buttonContainer}>
               <ButtonNext
@@ -189,6 +200,6 @@ export const LostFound2 = props => {
           </Form>
         )}
       </Formik>
-    </>
+    </div>
   );
 };
