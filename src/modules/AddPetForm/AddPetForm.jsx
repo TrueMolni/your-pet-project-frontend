@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { StepOne } from './steps/stepOne/StepOne';
 import { YourPet, YourPet2 } from './steps/yourPet/YourPet';
 import { Sell, Sell2 } from './steps/sell/Sell';

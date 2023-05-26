@@ -7,12 +7,10 @@ const initialState = {
   adDetails: null,
   userNotices: [],
   favorite: [],
-
   pet: [],
   favoriteAds: [],
   isLoading: false,
   isError: null,
-  pet: [],
 };
 
 const noticesSlice = createSlice({
@@ -120,12 +118,6 @@ const noticesSlice = createSlice({
           store.isLoading = false;
           store.isError = null;
           store.userNotices.push(payload);
-
-          // store.noticesByCategory =
-          //   store.category === payload.notice.category
-          //     ? [payload.notice, ...store.noticesByCategory]
-          //     : store.allNotices;
-          // store.userNotices = [payload.notice, ...store.userNotices];
         }
       )
       .addCase(

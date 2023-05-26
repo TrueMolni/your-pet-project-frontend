@@ -42,3 +42,8 @@ export const getUserPet = async () => {
   const { data } = await instance.get('api/pet');
   return data;
 };
+
+export const addPet = async pet => {
+  const { data } = await instance.post('api/pet', pet);
+  return data;
+};
