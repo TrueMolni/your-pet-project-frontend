@@ -1,34 +1,24 @@
 import CustomSearch from './CustomSearch';
-import { useSearchParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import operations from 'redux/notices/notices-operations';
 
 const NoticesSearch = () => {
+  const [title, setTitle] = useState('');
+  const dispatch = useDispatch();
 
-  const [searchParams, setSearchParams] = useSearchParams();
-
-  const onSearch = (value) => {
-
-    let updatedSearchParams = { ...searchParams };
-
-    if (value) {
-      updatedSearchParams = { ...updatedSearchParams, search: value.trim() };
-    } else {
-      delete updatedSearchParams.search;
-    }
-
-    setSearchParams(updatedSearchParams);
-
-    // const updatedFilter = {
-    //   ...filterValue,
-    //   search: {
-    //     searchParams: value.trim()
-    //   }
-    // };
-
-    // dispatch(setFilter(updatedFilter));
+  const onSearch = value => {
+    setTitle(value);
   };
 
-  return <CustomSearch title={"Find your favorite pet"} onSearch={onSearch}/>
+  useEffect(() => {
+    const notices = () => {
+      if (!!title) return dispatch(operations.getNoticesByTitle(title));
+      setTitle('');
+    };
+    notices();
+  }, [dispatch, title]);
+  return <CustomSearch title={'Find your favorite pet'} onSearch={onSearch} />;
+};
 
-}
-
-export default NoticesSearch
+export default NoticesSearch;

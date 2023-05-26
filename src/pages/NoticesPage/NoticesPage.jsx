@@ -23,7 +23,7 @@ const NoticesPage = () => {
       <NoticesCategoriesNav />
       {/* <AddPetBtn /> */}
       <NoticesCategoriesList />
-      <ModalAdv/>
+      <ModalAdv />
       {/* <NoticesFilters /> */}
     </div>
   );
