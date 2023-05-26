@@ -5,7 +5,6 @@ import CustomSearch from 'shared/components/NoticesSearch/CustomSearch';
 import { getAllNews, getNewsByTitle } from 'redux/news/newsOperations';
 import { isLoading, getError, getNews } from 'redux/news/newsSelectors';
 import Loader from '../../shared/components/Loader/Loader';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import css from './news-page.module.css';
 
 const NewsPage = () => {
@@ -33,12 +32,6 @@ const NewsPage = () => {
     <div className={css.newsPageWrapper}>
       <CustomSearch title={'News'} onSearch={onSearch} />
       {loading && !error && <Loader />}
-      {!!error &&
-        Notify.failure('Sorry, news not found', {
-          timeout: 2000,
-          clickToClose: true,
-          position: 'center-center',
-        })}
       <NewsList items={items} />
     </div>
   );
