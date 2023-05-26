@@ -8,11 +8,12 @@ import cn from 'classnames';
 const ClearIcon = <ClearBtnIcon />;
 const SearchIcon = <SearchBtnIcon />;
 
-const CustomSearch = ({ title, onChange, onSearch }) => {
 
+
+const CustomSearch = ({ title, onChange, onSearch }) => {
   const [searchActive, setSearchActive] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     if (onChange) {
       onChange(e);
     }
@@ -22,17 +23,18 @@ const CustomSearch = ({ title, onChange, onSearch }) => {
     setSearchActive(false);
   };
 
-  const handleSearch = (value) => {
+  const handleSearch = value => {
     if (onSearch) {
       onSearch(value);
     }
   };
 
-  return (<div className={styled.wrapper}>
+  return (
+    <div className={styled.wrapper}>
       {title && <h1 className={styled.title}>{title}</h1>}
       <Search
         className={cn(styled.search, { [styled.activeSearch]: searchActive })}
-        placeholder='Search'
+        placeholder="Search"
         enterButton={SearchIcon}
         allowClear={{ clearIcon: ClearIcon }}
         bordered={false}
@@ -43,6 +45,5 @@ const CustomSearch = ({ title, onChange, onSearch }) => {
     </div>
   );
 };
-
 
 export default CustomSearch;

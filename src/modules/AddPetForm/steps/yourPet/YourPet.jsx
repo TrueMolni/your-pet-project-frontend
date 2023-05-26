@@ -1,11 +1,12 @@
 import AddPetFormControl from 'modules/AddPetForm/elements/AddPetFormControl';
 import ButtonNext from '../../elements/buttons/ButtonNext';
 import ButtonBack from '../../elements/buttons/ButtonBack';
-import sprite from '../../../../images/icons/sprite.svg';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import styles from './YourPet.module.css';
 import ProgressBar from 'modules/AddPetForm/elements/progressBar/ProgressBar';
+
+import sprite from '../../../../images/icons/sprite.svg';
 
 const validationStepOneSchema = Yup.object({
   name: Yup.string()
@@ -13,7 +14,7 @@ const validationStepOneSchema = Yup.object({
     .min(2, 'Please enter a value between 2 and 16 characters in length')
     .max(16, 'Please enter a value between 2 and 16 characters in length')
     .matches(
-      /^[A-Za-z]+$/,
+      /^[A-Za-zА-Яа-яЁё\s]+$/,
       'Please enter only letters (no numbers or special characters) in this field'
     ),
   date: Yup.string()
@@ -33,19 +34,14 @@ const validationStepOneSchema = Yup.object({
     .min(2, 'Please enter a value between 2 and 16 characters in length')
     .max(16, 'Please enter a value between 2 and 16 characters in length')
     .matches(
-      /^[A-Za-z]+$/,
+      /^[A-Za-zА-Яа-яЁё\s]+$/,
       'Please enter only letters (no numbers or special characters) in this field'
     ),
 });
 
 const validationStepTwoSchema = Yup.object({
-  // file: Yup.mixed()
-  //   .required('The "File" field is required')
-  //   .test('file-size', 'Maximum file size: 3 MB', value => {
-  //     if (!value) return true;
-  //     const maxSizeInBytes = 3 * 1024 * 1024;
-  //     return value.size <= maxSizeInBytes;
-  //   }),
+  image: Yup.mixed().required('The "Photo" field is required'),
+
   comments: Yup.string()
     .notRequired()
     .min(8, 'Please enter a value between 8 and 120 characters in length')
@@ -59,7 +55,7 @@ export const YourPet = props => {
 
   return (
     <div className={styles.bgForm}>
-      <h1 className={styles.header}>Add pet</h1>
+      <h1 className={styles.header}>Add pet for sale</h1>
       <ProgressBar step={2} />
       <Formik
         initialValues={props.data}
@@ -115,8 +111,8 @@ export const YourPet2 = props => {
     props.next(values, true);
   };
   return (
-    <div className={styles.bgForm}>
-      <h1 className={styles.header}>Add pet</h1>
+    <div className={styles.bgForm + ' ' + styles.bgFormMidle}>
+      <h1 className={styles.header}>Add pet for sale</h1>
       <ProgressBar step={3} />
       <Formik
         initialValues={props.data}
@@ -125,19 +121,27 @@ export const YourPet2 = props => {
       >
         {({ values }) => (
           <Form>
-            <AddPetFormControl
-              control="file"
-              label="Load the pet`s image"
-              name="file"
-              type="file"
-            />
-            <AddPetFormControl
-              control="textarea"
-              label="Comments"
-              name="comments"
-              placeholder="Type comments"
-            />
-            <div className={styles.buttonContainerSecond}>
+            <div className={styles.formContainer}>
+              <div className={styles.firstChild}>
+                <AddPetFormControl
+                  style={styles.addPhoto}
+                  control="file"
+                  label="Load the pet`s image"
+                  name="image"
+                  type="file"
+                />
+              </div>
+
+              <AddPetFormControl
+                style={styles.comments}
+                control="textarea"
+                label="Comments"
+                name="comments"
+                placeholder="Type comments"
+              />
+            </div>
+
+            <div className={styles.buttonContainer}>
               <ButtonNext
                 type="submit"
                 name="Done"

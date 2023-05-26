@@ -86,7 +86,7 @@
     margin-top: 92px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .navList {
     display: none;
   }

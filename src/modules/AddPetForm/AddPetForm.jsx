@@ -4,26 +4,46 @@ import { YourPet, YourPet2 } from './steps/yourPet/YourPet';
 import { Sell, Sell2 } from './steps/sell/Sell';
 import { LostFound, LostFound2 } from './steps/lostFound/LostFound';
 import { InGoodHands, InGoodHands2 } from './steps/InGoodHands/InGoodHands';
+import { useDispatch } from 'react-redux';
+import operations from '../../redux/notices/notices-operations';
+import { useNavigate } from 'react-router-dom';
 
 export default function AddPetForm() {
+  const dispatch = useDispatch();
   const [data, setData] = useState({
-    category: 'your pet',
+    category: 'your-pet',
     name: '',
     date: '',
     breed: '',
-    file: '',
+    image: '',
     sex: '',
     location: '',
     price: '',
     comments: '',
-    titleOfAdd: '',
+    title: '',
   });
   const [currentStep, setCurrentStep] = useState(0);
 
-  console.log('form data', data);
+  const navigate = useNavigate();
+
+  const resetForm = () => {
+    setData({
+      category: 'your-pet',
+      name: '',
+      date: '',
+      breed: '',
+      image: '',
+      sex: '',
+      location: '',
+      price: '',
+      comments: '',
+      title: '',
+    });
+  };
 
   const makeRequest = formData => {
-    console.log('Form submitted', formData);
+    dispatch(operations.addNoticeByCategory(formData));
+    navigate('/notices/sell');
   };
 
   const handleNextStep = (newData, final = false) => {
@@ -31,6 +51,7 @@ export default function AddPetForm() {
 
     if (final) {
       makeRequest(newData);
+      resetForm();
       return;
     }
     setCurrentStep(prevStep => prevStep + 1);
@@ -43,7 +64,7 @@ export default function AddPetForm() {
 
   const steps = [<StepOne next={handleNextStep} data={data} />];
 
-  if (data.category === 'your pet' && currentStep !== 0) {
+  if (data.category === 'your-pet' && currentStep !== 0) {
     steps.push(
       <YourPet next={handleNextStep} prev={handlePrevStep} data={data} />,
       <YourPet2 next={handleNextStep} prev={handlePrevStep} data={data} />
@@ -57,14 +78,14 @@ export default function AddPetForm() {
     );
   }
 
-  if (data.category === 'lost/found' && currentStep !== 0) {
+  if (data.category === 'lost-found' && currentStep !== 0) {
     steps.push(
       <LostFound next={handleNextStep} prev={handlePrevStep} data={data} />,
       <LostFound2 next={handleNextStep} prev={handlePrevStep} data={data} />
     );
   }
 
-  if (data.category === 'in good hands' && currentStep !== 0) {
+  if (data.category === 'for-free' && currentStep !== 0) {
     steps.push(
       <InGoodHands next={handleNextStep} prev={handlePrevStep} data={data} />,
       <InGoodHands2 next={handleNextStep} prev={handlePrevStep} data={data} />

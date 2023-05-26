@@ -2,7 +2,7 @@
 import * as api from '../../services/auth-api'
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-
+import { createAction } from '@reduxjs/toolkit';
 export const signup = createAsyncThunk(
   'auth/signup',
   async (data, thunkAPI) => {
@@ -84,3 +84,8 @@ export const logout = createAsyncThunk(
   }
 );
 
+
+// auth-operations.js
+
+export const openModal = createAction('auth/openModal');
+export const closeModal = createAction('auth/closeModal');

@@ -14,6 +14,9 @@ const SharedLayout = lazy(() => import('modules/SharedLayout'));
 const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
 const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
 const FindPetPage = lazy(() => import('pages/FindPetPage/FindPetPage'));
+const NewsPage = lazy(() => import('pages/NewsPage/NewsPage'));
+const FriendsPage = lazy(() => import('pages/OurFriendsPage/OurFriendsPage'));
+
 const PrivateRoute = lazy(() => import('modules/PrivatRoutes/PrivatRoutes'));
 const PublicRoute = lazy(() => import('modules/PublicRoutes/PublicRoutes'));
 export const App = () => {
@@ -30,12 +33,20 @@ export const App = () => {
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<SharedLayout />}>
+<<<<<<< HEAD
             <Route index element={<MainPage />}></Route>
             <Route path="/notices" element={<FindPetPage />}></Route>
             <Route
               path="/notices/:categoryName"
               element={<NoticesPage />}
             ></Route>
+=======
+            <Route index element={<MainPage />} />
+            <Route path="/news" element={<NewsPage />} />
+            <Route path="/notices" element={<FindPetPage />} />
+<Route path="/friends" element={<FriendsPage/>} />
+            <Route path="/notices/:categoryName" element={<NoticesPage />} />
+>>>>>>> bc9ccd6bfcb74663ee9e6a342f1b82ab52c0070c
 
             <Route element={<PublicRoute />}>
               <Route path="/register" element={<RegisterPage />} />
@@ -46,7 +57,7 @@ export const App = () => {
               <Route path="/add-pet" element={<AddPetPage />}></Route>
             </Route>
           </Route>
-          <Route path="*" element={<NotFoundPage />}></Route>
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

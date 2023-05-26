@@ -1,0 +1,25 @@
+.title {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  text-align: center;
+  margin-bottom: 16px;
+
+}
+
+.link {
+  text-decoration: none;
+  color:#54ADFF;
+}
+
+.title:hover{
+  color: #FFC107;
+}
+.title:focus {
+  color: #FFC107;
+}
+.infoItem {
+  background-color: red;
+}

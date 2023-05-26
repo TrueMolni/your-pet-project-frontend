@@ -17,7 +17,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 280px;
-  height: 287px;
   padding: 10px 16px;
 
   border-radius: 20px;
@@ -25,8 +24,7 @@
 
 @media screen and (min-width: 768px) {
   .modal {
-    width: 608px;
-    height: 354px;
+    min-width: 681px;
     border-radius: 8px;
     padding-left: 32px;
     padding-right: 32px;
@@ -39,7 +37,6 @@
 @media screen and (min-width: 1200px) {
   .modal {
     top: 50%;
-    width: 608px;
   }
 }
 
@@ -68,4 +65,5 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 99999;
 }

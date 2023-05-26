@@ -14,7 +14,7 @@ const validationStepOneSchema = Yup.object({
     .min(2, 'Please enter a value between 2 and 16 characters in length')
     .max(16, 'Please enter a value between 2 and 16 characters in length')
     .matches(
-      /^[A-Za-z]+$/,
+      /^[A-Za-zА-Яа-яЁё\s]+$/,
       'Please enter only letters (no numbers or special characters) in this field'
     ),
   date: Yup.string()
@@ -34,7 +34,7 @@ const validationStepOneSchema = Yup.object({
     .min(2, 'Please enter a value between 2 and 16 characters in length')
     .max(16, 'Please enter a value between 2 and 16 characters in length')
     .matches(
-      /^[A-Za-z]+$/,
+      /^[A-Za-zА-Яа-яЁё\s]+$/,
       'Please enter only letters (no numbers or special characters) in this field'
     ),
 });
@@ -46,17 +46,12 @@ const validationStepTwoSchema = Yup.object({
       ['male', 'female'],
       'Please choose one of the valid types: male or female'
     ),
-  file: Yup.mixed()
-    .required('The "Photo" field is required')
-    .test('file-size', 'Maximum file size: 3 MB', value => {
-      if (!value) return true; // Якщо значення пусте, не виконуємо перевірку
-      const maxSizeInBytes = 3 * 1024 * 1024; // 3 МБ в байтах
-      return value.size <= maxSizeInBytes;
-    }),
+  image: Yup.mixed().required('The "Photo" field is required'),
+
   location: Yup.string()
     .required('The "Location" field is required')
     .matches(
-      /^[A-Za-z\s]+$/,
+      /^[A-Za-zА-Яа-яЁё\s]+$/,
       'Please enter a string in the format "City". For example: Brovary, Kyiv, Akhtyrka, Sumy'
     ),
   price: Yup.number()
@@ -95,8 +90,9 @@ export const Sell = props => {
               control="input"
               label="Title of add"
               name="title"
-              placeholder="Title of add"
+              placeholder="Type title to add"
             />
+
             <AddPetFormControl
               control="input"
               label="Pet's name"
@@ -166,7 +162,7 @@ export const Sell2 = props => {
                   style={styles.addPhoto}
                   control="file"
                   label="Load the pet`s image"
-                  name="file"
+                  name="image"
                   type="file"
                 />
               </div>

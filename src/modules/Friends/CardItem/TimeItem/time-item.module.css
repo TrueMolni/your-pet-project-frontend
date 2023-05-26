@@ -1,0 +1,67 @@
+.infoDesc {
+  font-weight: 400;
+}
+.wrapper {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  column-gap: 12px;
+  border-radius: 8px;
+}
+
+.popup {
+  position: absolute;
+  top: 44px;
+  left: 0;
+
+  width: 130px;
+  padding: 12px;
+
+  background: #ffffff;
+
+  border: 1px solid #54adff;
+
+  box-shadow: 3px 8px 14px rgba(136, 198, 253, 0.19);
+  border-radius: 8px;
+}
+
+.popupItem {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+
+  &:not(:last-child) {
+    margin-bottom: 4px;
+  }
+}
+
+.popupDay {
+  display: block;
+  width: 19px;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.timePopup {
+  display: block;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+
+  color: #111111;
+}
+
+.closed {
+  color: red;
+}
+
+.wrapperHover:hover {
+  color: #54ADFF;
+}
