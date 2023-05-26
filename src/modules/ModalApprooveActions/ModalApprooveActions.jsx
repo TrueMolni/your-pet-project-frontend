@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-// import { useDispatch } from 'react-redux';
 import Modal from '../../shared/components/Modal/Modal';
 import Button from '../../shared/components/Button/Button';
-
-// import { removePet } from 'redux/pet/operations';
-
 import sprite from '../../images/icons/sprite.svg';
 import css from './modalApprooveActions.module.css';
 
@@ -14,12 +10,6 @@ const ModalApprooveActions = () => {
   const handleCloseModal = () => {
     setIsOpen(false);
   };
-
-  // const dispatch = useDispatch();
-
-  // const handleDelete = ({_id}) => {
-  //   dispatch(removePet(_id));
-  // };
 
   return (
     <div className={css.backdrop}>

@@ -74,6 +74,7 @@
 }
 
 @keyframes pulsing {
+
   80% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
@@ -81,6 +82,7 @@
   100% {
     -webkit-transform: translateX(-20%);
     transform: translateX(-10%);
+
   }
 }
 

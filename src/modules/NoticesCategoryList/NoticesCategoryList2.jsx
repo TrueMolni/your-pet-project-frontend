@@ -9,8 +9,6 @@ import operations from '../../redux/notices/notices-operations';
 import { selectNoticesByCategory } from 'redux/notices/notices-selectors';
 import Pagination from '../../modules/Pagination/Pagination';
 
-// import { noticies } from './notices';
-
 const NoticesCategoryList = () => {
   const dispatch = useDispatch();
   const location = useLocation();

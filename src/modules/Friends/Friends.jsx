@@ -4,16 +4,13 @@ import MainTitle from './MainTitle/MainTitle';
 import CardItem from './CardItem/CardItem';
 import friendsList from './friends';
 
-// const getAllFriends = async () => {
-//   const { data } = await friendsList();
-
-//   return data;
-// };
 const getAllFriends = async () => {
-  const  data  = friendsList.reduce((acc, obj) => [...acc, Object.values(obj).map(y => y)], []);
+  const data = friendsList.reduce(
+    (acc, obj) => [...acc, Object.values(obj).map(y => y)],
+    []
+  );
   return data;
-}
-
+};
 
 const Friends = () => {
   const [items, setItems] = useState([]);
@@ -26,19 +23,14 @@ const Friends = () => {
     fetchFriends();
   }, []);
 
-
   return (
     <>
-
-        <div className={styles.section}>
-
+      <div className={styles.section}>
         <MainTitle />
         <div className={styles.section_wrapper}>
-
           <CardItem items={items} />
         </div>
-        </div>
-
+      </div>
     </>
   );
 };

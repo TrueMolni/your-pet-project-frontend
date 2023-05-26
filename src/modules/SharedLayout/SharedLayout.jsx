@@ -6,10 +6,7 @@ import { useSelector } from 'react-redux';
 import Loader from 'shared/components/Loader/Loader';
 
 const SharedLayout = () => {
-
-  const { isLoading,  } = useSelector(getAuth)
-  // console.log('isLogin', isLogin);
-
+  const { isLoading } = useSelector(getAuth);
 
   return (
     <div className={css.container}>
