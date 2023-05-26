@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkyour_pet_project_frontend=self.webpackChunkyour_pet_project_frontend||[]).push([[114],{1210:function(e,t,n){n.r(t),n.d(t,{default:function(){return o}});var r=n(675),u=n(3317),c=n(184),o=function(){return(0,c.jsxs)("div",{children:[(0,c.jsx)(u.Z,{}),(0,c.jsx)(r.Z,{title:"Find Pet"})]})}}}]);
+//# sourceMappingURL=114.ec5df210.chunk.js.map

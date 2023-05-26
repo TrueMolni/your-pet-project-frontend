@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkyour_pet_project_frontend=self.webpackChunkyour_pet_project_frontend||[]).push([[809],{5809:function(n,t,e){e.r(t),e.d(t,{default:function(){return f}});var r=e(7689),o=e(9434),u=e(9869),c=e(184),f=function(){var n=(0,o.v9)(u.v0),t=n.isLogin,e=n.token;return t||e?(0,c.jsx)(r.j3,{}):(0,c.jsx)(r.Fg,{to:"/login"})}}}]);
+//# sourceMappingURL=809.eddeaefb.chunk.js.map
