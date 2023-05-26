@@ -1,10 +1,3 @@
-// імпортувати операцію з видалення тваринки та вказати правильну назву операції
-// наприклад
-// import { removePet } from 'redux/pet/operations';
-//
-
-// import { useDispatch } from 'react-redux';             //розкоментувати після
-
 import defImage from '../../../images/defaultImg/defaultImg.png';
 import BtnDeletePet from '../BtnDeletePet/BtnDeletePet';
 import css from './petsItem.module.css';
@@ -23,7 +16,7 @@ const PetsItem = ({ pet }) => {
             position: 'absolute',
             right: '0',
           }}
-          // onClick={handleDelete}      //розкоментувати після
+          // onClick={handleDelete} //розкоментувати після
         />
         <div className={css.infoPet}>
           <b> Name:</b> {name ? name : 'No Info'}

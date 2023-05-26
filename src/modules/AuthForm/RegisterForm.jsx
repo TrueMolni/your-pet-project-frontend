@@ -8,21 +8,17 @@ import css from './AuthForm.module.css';
 import Button from 'shared/components/Button';
 import { user } from 'services';
 import shortid from 'shortid';
-import { useDispatch} from 'react-redux'
-import { signup } from 'redux/auth/auth-operations';; 
+import { useDispatch } from 'react-redux';
+import { signup } from 'redux/auth/auth-operations';
 
 export const RegisterForm = props => {
-
   const [passwordShow, setPasswordShow] = useState(false);
   const [passwordConfirm, setPasswordConfirm] = useState(false);
   const dispatch = useDispatch();
   const handleSignUp = (values, { resetForm }) => {
-
     dispatch(signup(values));
     resetForm();
   };
-
-
 
   const togglePassword = () => setPasswordShow(prevState => !prevState);
   const togglePasswordConfirm = () =>
@@ -34,7 +30,6 @@ export const RegisterForm = props => {
 
   return (
     <div className={css.container}>
-
       <Formik
         onSubmit={handleSignUp}
         validationSchema={user.stepOneValidationSchema}
@@ -44,8 +39,6 @@ export const RegisterForm = props => {
           <h2 className={css.title}>{props.title}</h2>
           <div className={css.input__wrapper}>
             <InputForm
-
-
               autofocus="autofocus"
               name="email"
               type="email"
@@ -56,7 +49,6 @@ export const RegisterForm = props => {
           </div>
           <div className={css.input__wrapper}>
             <InputForm
-
               name="password"
               type={passwordShow ? 'text' : 'password'}
               id={passwordInputId}

@@ -6,19 +6,19 @@ import { getAuth } from 'redux/auth/auth-selectors';
 import { current } from 'redux/auth/auth-operations';
 
 const MainPage = lazy(() => import('pages/MainPage'));
-const NotFoundPage = lazy(() => import('pages/NotFoundPage/NotFoundPage.jsx'));
+const NotFoundPage = lazy(() => import('pages/NotFoundPage'));
 const AddPetPage = lazy(() => import('pages/AddPetPage'));
 const UserPage = lazy(() => import('pages/UserPage'));
-const NoticesPage = lazy(() => import('pages/NoticesPage/NoticesPage'));
+const NoticesPage = lazy(() => import('pages/NoticesPage'));
 const SharedLayout = lazy(() => import('modules/SharedLayout'));
-const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
-const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
-const FindPetPage = lazy(() => import('pages/FindPetPage/FindPetPage'));
-const NewsPage = lazy(() => import('pages/NewsPage/NewsPage'));
-const FriendsPage = lazy(() => import('pages/OurFriendsPage/OurFriendsPage'));
+const RegisterPage = lazy(() => import('pages/RegisterPage'));
+const LoginPage = lazy(() => import('pages/LoginPage'));
+const FindPetPage = lazy(() => import('pages/FindPetPage'));
+const NewsPage = lazy(() => import('pages/NewsPage'));
+const FriendsPage = lazy(() => import('pages/OurFriendsPage'));
 
-const PrivateRoute = lazy(() => import('modules/PrivatRoutes/PrivatRoutes'));
-const PublicRoute = lazy(() => import('modules/PublicRoutes/PublicRoutes'));
+const PrivateRoute = lazy(() => import('modules/PrivatRoutes'));
+const PublicRoute = lazy(() => import('modules/PublicRoutes'));
 export const App = () => {
   const dispatch = useDispatch();
   const { isLogin } = useSelector(getAuth);
@@ -36,7 +36,7 @@ export const App = () => {
             <Route index element={<MainPage />} />
             <Route path="/news" element={<NewsPage />} />
             <Route path="/notices" element={<FindPetPage />} />
-<Route path="/friends" element={<FriendsPage/>} />
+            <Route path="/friends" element={<FriendsPage />} />
             <Route path="/notices/:categoryName" element={<NoticesPage />} />
 
             <Route element={<PublicRoute />}>
