@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-// import axios from 'axios';
 import css from './UserDataItem.module.css';
-import { addUserInfo } from '../../redux/userInfo/user-operations.js';
 import { useSelector } from 'react-redux';
 import { getAuth } from '../../redux/auth/auth-selectors';
-
+import {addUserInfoString} from '../../redux/userInfo/user-operations.js'
 const UserDataItem = ({
   label,
   //   value,
@@ -15,50 +13,40 @@ const UserDataItem = ({
 }) => {
   const { token } = useSelector(getAuth);
 
-  const initState = {
+  const [userData, setUserData] = useState({
     photo: '',
     name: '',
     email: '',
     phone: '',
     birthday: '',
     city: '',
-  };
-
-  const [userData, setUserData] = useState(initState);
+  });
   const [isEditing, setIsEditing] = useState('edit');
-  // edit,editing,edited
+  const [curentChangingName, setCurentChangingName] = useState("");
+  const [curentChangingValue, setCurentChangingValue] = useState("");
+  
   const handleEditClick = () => {
     setIsEditing('editing');
   };
 
-  const handleSaveClick = () => {
-    setIsEditing('edited');
-    addUserInfo(userData, token);
-    setIsEditing('edit');
+  const handleSaveClick = (e) => {
+    e.preventDefault();
+    setIsEditing("edited");
+    addUserInfoString(curentChangingName,curentChangingValue, token).then(res=>setUserData(p=>({...p,res})));
+    setIsEditing("edit");
+
   };
-  //   const { name, phone, photo, city, email, birthday } = userData;
-  //   useEffect(() => {
-  //     // fn for request info user
-  //     axios.get().then(data => {
-  //       if (data) {
-  //         const { name, phone, photo, city, email, birthday } = data;
-  //             setUserData(name, phone, photo, city, email, birthday);
-  //          return   console.log(userData);
-
-  //       }
-  //       return;
-  //     });
-  //   }, [setUserData, userData]);
-
   const onInputChange = e => {
     const value = e.currentTarget.value;
     const nameValue = e.currentTarget.name;
-    setUserData({ [nameValue]: value });
-  };
+    setUserData(prev=> ({...prev,nameValue: value }));
+    setCurentChangingName(nameValue);
+    setCurentChangingValue(value) ;
+   };
 
   return (
     <>
-      {isEditing === 'edit' && (
+      {isEditing === "edit" && 
         <div>
           <label className={css.inputLable}>
             {label}
@@ -68,7 +56,7 @@ const UserDataItem = ({
               value={userData.label}
               placeholder={label}
               type={label}
-              name={label}
+              name={label.toLowerCase()}
               readOnly="readonly"
               // disabled="disabled"
             />{' '}
@@ -78,8 +66,28 @@ const UserDataItem = ({
             </button>
           </label>
         </div>
-      )}
-      {isEditing === 'editing' && (
+      }
+      {isEditing === 'editing'&&
+        <div>
+          <label className={css.inputLable}>
+            {label}
+            <input
+              className={css.input}
+              variant="filled"
+              onChange={onInputChange}
+              value={userData.label}
+              placeholder={label}
+              type={label}
+              name={label.toLowerCase()}
+            />
+             <button className={css.btnSaved} onClick={handleSaveClick}>
+              <span className="css.confirm-icon"></span>
+              Save
+            </button>
+          </label>
+        </div>
+      }
+      { isEditing === 'edited'&&
         <div>
           <label className={css.inputLable}>
             {label}
@@ -92,33 +100,12 @@ const UserDataItem = ({
               type={label}
               name={label}
             />
-            <button className={css.btnSaved}>
-              <span className="css.confirm-icon"></span>
-              Save
-            </button>
-          </label>
-        </div>
-      )}
-      {isEditing === 'edited' && (
-        <div>
-          <label className={css.inputLable}>
-            {label}
-            <input
-              className={css.input}
-              variant="filled"
-              onChange={onInputChange}
-              value={userData.label}
-              placeholder={label}
-              type={label}
-              name={label}
-            />
-            <button className={css.btnSave} onClick={handleSaveClick}>
-              <span className="css.confirm-icon"></span>
-              Save
-            </button>
-          </label>
-        </div>
-      )}
+             <button className={css.btnSave} >
+                <span className="css.confirm-icon"></span>
+                Save
+              </button>
+                        </label>
+        </div>}
     </>
   );
 };
