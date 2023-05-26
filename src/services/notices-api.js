@@ -1,5 +1,10 @@
 import instance from './auth-api';
 
+const query = {
+  page: 1,
+  perPage: 10,
+};
+
 export const getNoticesByCategory = async category => {
   const { data } = await instance.get(`api/notices/category/${category}`);
   return data;
@@ -46,10 +51,21 @@ export const getUserPet = async () => {
   return data;
 };
 
-
-export const getNoticesByTitle = async () => {
-  const { data } = await instance.get(`api/notices/title`);
+export const getNoticesByTitle = async search => {
+  const { data } = await instance.get(`api/notices/search`, {
+    params: {
+      ...query,
+      title: search,
+    },
+  });
   return data;
 };
 
-
+export const getAllNotices = async () => {
+  const { data } = await instance.get(`api/notices/`, {
+    params: {
+      ...query,
+    },
+  });
+  return data;
+};

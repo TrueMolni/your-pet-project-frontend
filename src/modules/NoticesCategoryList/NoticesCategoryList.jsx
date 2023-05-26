@@ -11,11 +11,11 @@ import {
   selectFavorites,
   selectNoticesByCategory,
   selectUserNotices,
+  selectFoundNoticesTitle,
+  selectDeleted,
 } from 'redux/notices/notices-selectors';
 import { getUserID } from 'redux/auth/auth-selectors';
 import Pagination from '../../modules/Pagination/Pagination';
-
-// import { noticies } from './notices';
 
 const NoticesCategoryList = () => {
   const dispatch = useDispatch();
@@ -24,6 +24,9 @@ const NoticesCategoryList = () => {
   const favoriteAds = useSelector(selectFavoriteAds);
   const favorites = useSelector(selectFavorites);
   const userNotices = useSelector(selectUserNotices);
+  const deleted = useSelector(selectDeleted);
+
+  const foundNoticesTitle = useSelector(selectFoundNoticesTitle);
 
   const notices = useSelector(selectNoticesByCategory);
   const category = location.pathname.split('/')[2];
@@ -39,7 +42,7 @@ const NoticesCategoryList = () => {
       list = userNotices;
       break;
     default:
-      list = notices;
+      list = foundNoticesTitle.length > 0 ? foundNoticesTitle : notices;
   }
 
   const request = () => {
@@ -64,6 +67,8 @@ const NoticesCategoryList = () => {
     favorites,
     userID,
     location.pathname,
+    deleted,
+    foundNoticesTitle,
   ]);
 
   return (

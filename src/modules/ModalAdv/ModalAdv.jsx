@@ -10,7 +10,6 @@ import sprite from '../../images/icons/sprite.svg';
 const ModalAdv = ({ isOpen, onClose, id }) => {
   const dispatch = useDispatch();
   const noticeDetails = useSelector(selectNoticeById);
-  console.log(noticeDetails);
 
   return (
     <Modal isOpen={isOpen} onClose={() => onClose()}>

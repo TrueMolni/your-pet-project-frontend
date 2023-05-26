@@ -7,6 +7,9 @@ const initialState = {
   adDetails: null,
   userNotices: [],
   favorite: [],
+  allNotices: [],
+  deleted: [],
+  foundNoticesTitle: [],
 
   pet: [],
   favoriteAds: [],
@@ -97,6 +100,7 @@ const noticesSlice = createSlice({
       .addCase(operations.deleteUserNotice.fulfilled, (store, { payload }) => {
         store.isLoading = false;
         store.isError = null;
+        store.deleted = payload._id;
         const index = store.noticesByCategory.findIndex(
           item => item._id === payload._id
         );
@@ -173,6 +177,38 @@ const noticesSlice = createSlice({
       .addCase(operations.getUserPet.rejected, (store, { payload }) => {
         store.isLoading = false;
         store.pet = [];
+        store.isError = payload;
+      })
+      // отримання всіх оголошень
+      .addCase(operations.getAllNotices.pending, store => {
+        store.isLoading = true;
+        store.isError = null;
+        store.foundNoticesTitle = [];
+      })
+      .addCase(operations.getAllNotices.fulfilled, store => {
+        store.isLoading = false;
+        store.isError = null;
+        store.foundNoticesTitle = [];
+      })
+      .addCase(operations.getAllNotices.rejected, (store, { payload }) => {
+        store.isLoading = false;
+        store.pet = [];
+        store.isError = payload;
+        store.foundNoticesTitle = [];
+      })
+      // отримання оголошення по тайтлу
+      .addCase(operations.getNoticesByTitle.pending, store => {
+        store.isLoading = true;
+        store.isError = null;
+      })
+      .addCase(operations.getNoticesByTitle.fulfilled, (store, { payload }) => {
+        store.isLoading = false;
+        store.isError = null;
+        store.foundNoticesTitle = payload.data;
+      })
+      .addCase(operations.getNoticesByTitle.rejected, (store, { payload }) => {
+        store.isLoading = false;
+        store.allNotices = [];
         store.isError = payload;
       });
   },
