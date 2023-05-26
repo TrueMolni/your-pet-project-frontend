@@ -63,24 +63,24 @@
   animation: pulsing 10s infinite;
 }
 @-webkit-keyframes pulsing {
-  60% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
+  80% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
   }
-  70% {
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
+  100% {
+    -webkit-transform: translateX(-20%);
+    transform: translateX(-20%);
   }
 }
 
 @keyframes pulsing {
-  60% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
+  80% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
   }
-  70% {
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
+  100% {
+    -webkit-transform: translateX(-20%);
+    transform: translateX(-10%);
   }
 }
 
