@@ -38,7 +38,7 @@ const UserPage = () => {
         <div className={styles.userWrap}>
           <div className={styles.userDataBox}>
             <UserData />
-            <Logout />
+            <Logout onClick={logout} />
           </div>
           <div className={styles.petsDataBox}>
             <PetsData />
