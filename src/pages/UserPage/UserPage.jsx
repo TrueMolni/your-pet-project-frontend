@@ -38,7 +38,7 @@ const UserPage = () => {
         <div className={styles.userWrap}>
           <div className={styles.userDataBox}>
             <UserData />
-            <Logout onClick={() => dispatch(logout())} />
+            <Logout />
           </div>
           <div className={styles.petsDataBox}>
             <PetsData />
