@@ -4,12 +4,11 @@ import { useState } from 'react';
 
 const File = ({ label, name, type, style, ...props }) => {
   const { setFieldValue } = useFormikContext();
-  const [selectedFile, setSelectedFile] = useState(null);
+
   const [thumbnail, setThumbnail] = useState(null);
 
   const handleFileChange = e => {
     const file = e.currentTarget.files[0];
-    setSelectedFile(file);
 
     if (file) {
       const reader = new FileReader();
@@ -22,9 +21,6 @@ const File = ({ label, name, type, style, ...props }) => {
       setThumbnail(null);
     }
   };
-  if (selectedFile) {
-    console.log(selectedFile);
-  }
 
   return (
     <div className={styles.fileWrapper}>
