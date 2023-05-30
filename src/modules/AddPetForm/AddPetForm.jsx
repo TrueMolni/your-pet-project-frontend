@@ -4,12 +4,12 @@ import { YourPet, YourPet2 } from './steps/yourPet/YourPet';
 import { Sell, Sell2 } from './steps/sell/Sell';
 import { LostFound, LostFound2 } from './steps/lostFound/LostFound';
 import { InGoodHands, InGoodHands2 } from './steps/InGoodHands/InGoodHands';
-import { useDispatch } from 'react-redux';
-import operations from '../../redux/notices/notices-operations';
+// import { useDispatch } from 'react-redux';
+// import operations from '../../redux/notices/notices-operations';
 import { useNavigate } from 'react-router-dom';
 
 export default function AddPetForm() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const [data, setData] = useState({
     category: 'your-pet',
     name: '',
@@ -68,6 +68,8 @@ export default function AddPetForm() {
             data={data}
           />,
         ];
+      default:
+        return [];
     }
   };
 
