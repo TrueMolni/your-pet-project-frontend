@@ -26,6 +26,51 @@ export default function AddPetForm() {
 
   const navigate = useNavigate();
 
+  const formType = (category, nextStepHandler, prevStepHandler) => {
+    switch (category) {
+      case 'your-pet':
+        return [
+          <YourPet next={nextStepHandler} prev={prevStepHandler} data={data} />,
+          <YourPet2
+            next={nextStepHandler}
+            prev={prevStepHandler}
+            data={data}
+          />,
+        ];
+      case 'sell':
+        return [
+          <Sell next={nextStepHandler} prev={prevStepHandler} data={data} />,
+          <Sell2 next={nextStepHandler} prev={prevStepHandler} data={data} />,
+        ];
+      case 'lost-found':
+        return [
+          <LostFound
+            next={nextStepHandler}
+            prev={prevStepHandler}
+            data={data}
+          />,
+          <LostFound2
+            next={nextStepHandler}
+            prev={prevStepHandler}
+            data={data}
+          />,
+        ];
+      case 'for-free':
+        return [
+          <InGoodHands
+            next={nextStepHandler}
+            prev={prevStepHandler}
+            data={data}
+          />,
+          <InGoodHands2
+            next={nextStepHandler}
+            prev={prevStepHandler}
+            data={data}
+          />,
+        ];
+    }
+  };
+
   const resetForm = () => {
     setData({
       category: 'your-pet',
@@ -42,8 +87,22 @@ export default function AddPetForm() {
   };
 
   const makeRequest = formData => {
-    dispatch(operations.addNoticeByCategory(formData));
-    navigate('/notices/sell');
+    const fields = Object.keys(formData);
+    const sendData = {};
+
+    for (const field of fields) {
+      if (!formData[field]) {
+        continue;
+      }
+      sendData[field] = formData[field];
+    }
+    if (sendData.category === 'your-pet') {
+      // dispatch(operations.addNoticeByCategory(sendData));
+      console.log('Form submitted. Data:', sendData);
+      return;
+    }
+    // dispatch(operations.addNoticeByCategory(sendData));
+    console.log('Form submitted. Data:', sendData);
   };
 
   const handleNextStep = (newData, final = false) => {
@@ -52,6 +111,7 @@ export default function AddPetForm() {
     if (final) {
       makeRequest(newData);
       resetForm();
+      navigate(-1);
       return;
     }
     setCurrentStep(prevStep => prevStep + 1);
@@ -64,33 +124,7 @@ export default function AddPetForm() {
 
   const steps = [<StepOne next={handleNextStep} data={data} />];
 
-  if (data.category === 'your-pet' && currentStep !== 0) {
-    steps.push(
-      <YourPet next={handleNextStep} prev={handlePrevStep} data={data} />,
-      <YourPet2 next={handleNextStep} prev={handlePrevStep} data={data} />
-    );
-  }
-
-  if (data.category === 'sell' && currentStep !== 0) {
-    steps.push(
-      <Sell next={handleNextStep} prev={handlePrevStep} data={data} />,
-      <Sell2 next={handleNextStep} prev={handlePrevStep} data={data} />
-    );
-  }
-
-  if (data.category === 'lost-found' && currentStep !== 0) {
-    steps.push(
-      <LostFound next={handleNextStep} prev={handlePrevStep} data={data} />,
-      <LostFound2 next={handleNextStep} prev={handlePrevStep} data={data} />
-    );
-  }
-
-  if (data.category === 'for-free' && currentStep !== 0) {
-    steps.push(
-      <InGoodHands next={handleNextStep} prev={handlePrevStep} data={data} />,
-      <InGoodHands2 next={handleNextStep} prev={handlePrevStep} data={data} />
-    );
-  }
+  steps.push(...formType(data.category, handleNextStep, handlePrevStep));
 
   return <div>{steps[currentStep]}</div>;
 }
