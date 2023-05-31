@@ -12,11 +12,11 @@ export default function AddPetForm() {
   // const dispatch = useDispatch();
   const [data, setData] = useState({
     category: 'your-pet',
+    sex: 'male',
     name: '',
     date: '',
     breed: '',
     image: '',
-    sex: '',
     location: '',
     price: '',
     comments: '',
